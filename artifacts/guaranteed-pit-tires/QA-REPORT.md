@@ -33,4 +33,6 @@ Desktop and mobile captures confirmed readable wrapped outcome text, four visibl
 
 This was a controlled repair-outcome UI scenario, not a naturally occurring failure during a full browser race. Both classes and all selected difficulties were covered by the engine tests. The previously accepted manual driving geometry and five-seed avoidance checks were not rerun for this narrow service change.
 
+The exact browser-accepted candidate is now serving at [http://127.0.0.1:4173/](http://127.0.0.1:4173/), promoted without rebuilding. HTTP and asset fingerprints were verified; the temporary 4174 candidate server was stopped and user tabs were untouched. Served source-manifest SHA-256: `e8c7bf6b0c38e76e74b950b566db9bf8fca9a91010857db44373c182d438b20b`. Served build-manifest SHA-256: `990328233b665c605020abab66930a8e9bb66fd3c7690b61614a56411266bc82`.
+
 Simulation SHA-256: `83e9f4356811dc653e2a63d310f9324db8df51df9f3a9a22adb36d1ede6da6c8`. All application source is frozen; no GPU/browser work ran alongside the CPU checks.
