@@ -1,0 +1,1529 @@
+{
+  "baseline": false,
+  "sourceSha256": "7b913327753dc01daec36c2d0e203da798097e92e99aa6d6b58fd2d68d9d5160",
+  "wallSeconds": 6.6896273,
+  "boundary": "Controlled two-wide positions before the pit entrance and repairable initial damage; all later approach/parking/service/exit uses normal AI and physics. No bay-center position or heading injection. Service wrapper records positions without changing them.",
+  "results": [
+    {
+      "geometry": {
+        "trackId": "daytona",
+        "length": 4023.36,
+        "straightLength": 1086.3072000000002,
+        "entryS": -488.8382400000001,
+        "exitS": 488.8382400000001,
+        "straightBayCount": 20,
+        "allPitPavingStraight": true,
+        "serviceTolerance": {
+          "heading": 0.18,
+          "speed": 0.5,
+          "lateralSpeed": 0.2
+        },
+        "parkingTolerance": {
+          "longitudinal": 0.25,
+          "lateral": 0.15,
+          "heading": 0.04,
+          "speed": 0.15,
+          "lateralSpeed": 0.1
+        }
+      },
+      "elapsed": 334.83333333319314,
+      "cars": [
+        {
+          "id": "stock-1",
+          "classId": "stock",
+          "bay": 1,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24909918165417366,
+            "lateral": 0.003975551268737831,
+            "headingDegrees": 0.004233872693526854
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 40.69999999999833,
+          "startPose": {
+            "longitudinal": 0.24909918165417366,
+            "lateral": 0.003975551268737831,
+            "headingDegrees": 0.004233872693526854,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-1",
+          "classId": "civilian",
+          "bay": 2,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24910539210418392,
+            "lateral": 0.003951383206000969,
+            "headingDegrees": 0.004000374721581202
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 204.64166666664488,
+          "startPose": {
+            "longitudinal": 0.24910539210418392,
+            "lateral": 0.003951383206000969,
+            "headingDegrees": 0.004000374721581202,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-2",
+          "classId": "stock",
+          "bay": 3,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2491062985784538,
+            "lateral": 0.008179021232756156,
+            "headingDegrees": 0.006854956418392235
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 45.60833333333139,
+          "startPose": {
+            "longitudinal": 0.2491062985784538,
+            "lateral": 0.008179021232756156,
+            "headingDegrees": 0.006854956418392235,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-2",
+          "classId": "civilian",
+          "bay": 4,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2494948884097994,
+            "lateral": 0.007939870771863866,
+            "headingDegrees": 0.0050894011989922805
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 290.7166666665666,
+          "startPose": {
+            "longitudinal": 0.2494948884097994,
+            "lateral": 0.007939870771863866,
+            "headingDegrees": 0.0050894011989922805,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-3",
+          "classId": "stock",
+          "bay": 5,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24989554171884265,
+            "lateral": 0.003977564912631237,
+            "headingDegrees": 0.004236118172243686
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 50.29999999999779,
+          "startPose": {
+            "longitudinal": 0.24989554171884265,
+            "lateral": 0.003977564912631237,
+            "headingDegrees": 0.004236118172243686,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-3",
+          "classId": "civilian",
+          "bay": 6,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24970930424319704,
+            "lateral": 0.00393615603085351,
+            "headingDegrees": 0.0035456605745386263
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 79.8250000000096,
+          "startPose": {
+            "longitudinal": 0.24970930424319704,
+            "lateral": 0.00393615603085351,
+            "headingDegrees": 0.0035456605745386263,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-4",
+          "classId": "stock",
+          "bay": 7,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24887558110572172,
+            "lateral": 0.008178006178326314,
+            "headingDegrees": 0.006853998660429113
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 55.216666666664175,
+          "startPose": {
+            "longitudinal": 0.24887558110572172,
+            "lateral": 0.008178006178326314,
+            "headingDegrees": 0.006853998660429113,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-4",
+          "classId": "civilian",
+          "bay": 8,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24922432672360628,
+            "lateral": 0.00833832508569543,
+            "headingDegrees": 0.00595055629727311
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 76.80000000000719,
+          "startPose": {
+            "longitudinal": 0.24922432672360628,
+            "lateral": 0.00833832508569543,
+            "headingDegrees": 0.00595055629727311,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-5",
+          "classId": "stock",
+          "bay": 9,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24974679635147368,
+            "lateral": 0.006246074119431455,
+            "headingDegrees": 0.00414311565972121
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 59.92499999999724,
+          "startPose": {
+            "longitudinal": 0.24974679635147368,
+            "lateral": 0.003888943743184825,
+            "headingDegrees": 0.00414311565972121,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-5",
+          "classId": "civilian",
+          "bay": 10,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24984064835848585,
+            "lateral": 0.004048185333886067,
+            "headingDegrees": 0.0037093984149268525
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 74.37500000000526,
+          "startPose": {
+            "longitudinal": 0.24984064835848585,
+            "lateral": 0.004048185333886067,
+            "headingDegrees": 0.0037093984149268525,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-6",
+          "classId": "stock",
+          "bay": 11,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24993959048538272,
+            "lateral": 0.008182707393338262,
+            "headingDegrees": 0.006858443690398736
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 64.833333333331,
+          "startPose": {
+            "longitudinal": 0.24993959048538272,
+            "lateral": 0.008182707393338262,
+            "headingDegrees": 0.006858443690398736,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-6",
+          "classId": "civilian",
+          "bay": 12,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24946467291306362,
+            "lateral": 0.008015067330163106,
+            "headingDegrees": 0.005610811270260009
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 80.71666666667697,
+          "startPose": {
+            "longitudinal": 0.24946467291306362,
+            "lateral": 0.008015067330163106,
+            "headingDegrees": 0.005610811270260009,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-7",
+          "classId": "stock",
+          "bay": 13,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2498141690969078,
+            "lateral": 0.003977319342965302,
+            "headingDegrees": 0.004235846177632048
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 69.53333333333474,
+          "startPose": {
+            "longitudinal": 0.2498141690969078,
+            "lateral": 0.003977319342965302,
+            "headingDegrees": 0.004235846177632048,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-7",
+          "classId": "civilian",
+          "bay": 14,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24919148195681373,
+            "lateral": 0.003945711592614032,
+            "headingDegrees": 0.003760507200721666
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 78.16666666667494,
+          "startPose": {
+            "longitudinal": 0.24919148195681373,
+            "lateral": 0.003945711592614032,
+            "headingDegrees": 0.003760507200721666,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-8",
+          "classId": "stock",
+          "bay": 15,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24974509124081123,
+            "lateral": 0.008181758031369668,
+            "headingDegrees": 0.006857555023497741
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 82.24166666667819,
+          "startPose": {
+            "longitudinal": 0.24974509124081123,
+            "lateral": 0.008181758031369668,
+            "headingDegrees": 0.006857555023497741,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-8",
+          "classId": "civilian",
+          "bay": 16,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24932429142995716,
+            "lateral": 0.007687203733937054,
+            "headingDegrees": 0.007865136156917548
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 79.85000000000962,
+          "startPose": {
+            "longitudinal": 0.24932429142995716,
+            "lateral": 0.007687203733937054,
+            "headingDegrees": 0.007865136156917548,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-9",
+          "classId": "stock",
+          "bay": 17,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24927641128783762,
+            "lateral": 0.003976003651494864,
+            "headingDegrees": 0.0042343764574735735
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 76.18333333334003,
+          "startPose": {
+            "longitudinal": 0.24927641128783762,
+            "lateral": 0.003976003651494864,
+            "headingDegrees": 0.0042343764574735735,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-9",
+          "classId": "civilian",
+          "bay": 18,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24931236104680465,
+            "lateral": 0.003922194085724584,
+            "headingDegrees": 0.0033638615804093674
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 81.41666666667753,
+          "startPose": {
+            "longitudinal": 0.24931236104680465,
+            "lateral": 0.003922194085724584,
+            "headingDegrees": 0.0033638615804093674,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-10",
+          "classId": "stock",
+          "bay": 19,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2498364068990213,
+            "lateral": 0.008182212404243216,
+            "headingDegrees": 0.006857979496814198
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 81.09166666667727,
+          "startPose": {
+            "longitudinal": 0.2498364068990213,
+            "lateral": 0.008182212404243216,
+            "headingDegrees": 0.006857979496814198,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-10",
+          "classId": "civilian",
+          "bay": 20,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24914072979413504,
+            "lateral": 0.008007761778841882,
+            "headingDegrees": 0.006078465951375496
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 86.99166666668197,
+          "startPose": {
+            "longitudinal": 0.24914072979413504,
+            "lateral": 0.008007761778841882,
+            "headingDegrees": 0.006078465951375496,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        }
+      ],
+      "remaining": []
+    },
+    {
+      "geometry": {
+        "trackId": "talladega",
+        "length": 4280.85504,
+        "straightLength": 1198.6394112000003,
+        "entryS": -539.3877350400002,
+        "exitS": 539.3877350400002,
+        "straightBayCount": 20,
+        "allPitPavingStraight": true,
+        "serviceTolerance": {
+          "heading": 0.18,
+          "speed": 0.5,
+          "lateralSpeed": 0.2
+        },
+        "parkingTolerance": {
+          "longitudinal": 0.25,
+          "lateral": 0.15,
+          "heading": 0.04,
+          "speed": 0.15,
+          "lateralSpeed": 0.1
+        }
+      },
+      "elapsed": 356.09999999984046,
+      "cars": [
+        {
+          "id": "stock-1",
+          "classId": "stock",
+          "bay": 1,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24949587903847714,
+            "lateral": 0.003976524454600394,
+            "headingDegrees": 0.004234958706823168
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 43.87499999999815,
+          "startPose": {
+            "longitudinal": 0.24949587903847714,
+            "lateral": 0.003976524454600394,
+            "headingDegrees": 0.004234958706823168,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-1",
+          "classId": "civilian",
+          "bay": 2,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24978693633329385,
+            "lateral": 0.003953164347350935,
+            "headingDegrees": 0.004002299358536766
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 217.70833333329966,
+          "startPose": {
+            "longitudinal": 0.24978693633329385,
+            "lateral": 0.003953164347350935,
+            "headingDegrees": 0.004002299358536766,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-2",
+          "classId": "stock",
+          "bay": 3,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24889702522614243,
+            "lateral": 0.00817810452829093,
+            "headingDegrees": 0.006854091035301562
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 48.79166666666454,
+          "startPose": {
+            "longitudinal": 0.24889702522614243,
+            "lateral": 0.00817810452829093,
+            "headingDegrees": 0.006854091035301562,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-2",
+          "classId": "civilian",
+          "bay": 4,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24972360233823565,
+            "lateral": 0.007941084508743756,
+            "headingDegrees": 0.005090397954385182
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 308.8083333332168,
+          "startPose": {
+            "longitudinal": 0.24972360233823565,
+            "lateral": 0.007941084508743756,
+            "headingDegrees": 0.005090397954385182,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-3",
+          "classId": "stock",
+          "bay": 5,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24983695390892535,
+            "lateral": 0.003977388704413443,
+            "headingDegrees": 0.004235922977111942
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 53.48333333333094,
+          "startPose": {
+            "longitudinal": 0.24983695390892535,
+            "lateral": 0.003977388704413443,
+            "headingDegrees": 0.004235922977111942,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-3",
+          "classId": "civilian",
+          "bay": 6,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2492930790003811,
+            "lateral": 0.0039351618516221265,
+            "headingDegrees": 0.003544633701010391
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 84.11666666667968,
+          "startPose": {
+            "longitudinal": 0.2492930790003811,
+            "lateral": 0.0039351618516221265,
+            "headingDegrees": 0.003544633701010391,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-4",
+          "classId": "stock",
+          "bay": 7,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24998462381972786,
+            "lateral": 0.008182918149735485,
+            "headingDegrees": 0.006858641862287941
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 58.391666666663994,
+          "startPose": {
+            "longitudinal": 0.24998462381972786,
+            "lateral": 0.008182918149735485,
+            "headingDegrees": 0.006858641862287941,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-4",
+          "classId": "civilian",
+          "bay": 8,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2499001692603997,
+            "lateral": 0.008370930108412722,
+            "headingDegrees": 0.005974375784401837
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 78.09166666667488,
+          "startPose": {
+            "longitudinal": 0.2499001692603997,
+            "lateral": 0.008370930108412722,
+            "headingDegrees": 0.005974375784401837,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-5",
+          "classId": "stock",
+          "bay": 9,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2497423998929662,
+            "lateral": 0.006247628689642681,
+            "headingDegrees": 0.004143107350623882
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 63.10833333333039,
+          "startPose": {
+            "longitudinal": 0.2497423998929662,
+            "lateral": 0.003888936447943081,
+            "headingDegrees": 0.004143107350623882,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-5",
+          "classId": "civilian",
+          "bay": 10,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24984034509543562,
+            "lateral": 0.004048185510207247,
+            "headingDegrees": 0.0037093984836395564
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 77.55833333334112,
+          "startPose": {
+            "longitudinal": 0.24984034509543562,
+            "lateral": 0.004048185510207247,
+            "headingDegrees": 0.0037093984836395564,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-6",
+          "classId": "stock",
+          "bay": 11,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24993841736159084,
+            "lateral": 0.008182701918059365,
+            "headingDegrees": 0.006858438540533652
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 68.01666666666686,
+          "startPose": {
+            "longitudinal": 0.24993841736159084,
+            "lateral": 0.008182701918059365,
+            "headingDegrees": 0.006858438540533652,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-6",
+          "classId": "civilian",
+          "bay": 12,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24946979308788286,
+            "lateral": 0.008015095116185478,
+            "headingDegrees": 0.005610834907429957
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 83.90000000001284,
+          "startPose": {
+            "longitudinal": 0.24946979308788286,
+            "lateral": 0.008015095116185478,
+            "headingDegrees": 0.005610834907429957,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-7",
+          "classId": "stock",
+          "bay": 13,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2498138406617727,
+            "lateral": 0.003977318339579483,
+            "headingDegrees": 0.004235845066778798
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 72.7166666666706,
+          "startPose": {
+            "longitudinal": 0.2498138406617727,
+            "lateral": 0.003977318339579483,
+            "headingDegrees": 0.004235845066778798,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-7",
+          "classId": "civilian",
+          "bay": 14,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2491920242418928,
+            "lateral": 0.00394571333354321,
+            "headingDegrees": 0.0037605089930532846
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 81.35000000001081,
+          "startPose": {
+            "longitudinal": 0.2491920242418928,
+            "lateral": 0.00394571333354321,
+            "headingDegrees": 0.0037605089930532846,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-8",
+          "classId": "stock",
+          "bay": 15,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24974511608434113,
+            "lateral": 0.0081817582069732,
+            "headingDegrees": 0.00685755518255092
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 85.42500000001405,
+          "startPose": {
+            "longitudinal": 0.24974511608434113,
+            "lateral": 0.0081817582069732,
+            "headingDegrees": 0.00685755518255092,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-8",
+          "classId": "civilian",
+          "bay": 16,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.249324445459024,
+            "lateral": 0.007687126047351001,
+            "headingDegrees": 0.007863341311503092
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 83.03333333334548,
+          "startPose": {
+            "longitudinal": 0.249324445459024,
+            "lateral": 0.007687126047351001,
+            "headingDegrees": 0.007863341311503092,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-9",
+          "classId": "stock",
+          "bay": 17,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2492763252093937,
+            "lateral": 0.003976003438665998,
+            "headingDegrees": 0.004234376220127861
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 79.3666666666759,
+          "startPose": {
+            "longitudinal": 0.2492763252093937,
+            "lateral": 0.003976003438665998,
+            "headingDegrees": 0.004234376220127861,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-9",
+          "classId": "civilian",
+          "bay": 18,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24931232795825053,
+            "lateral": 0.003922194006968027,
+            "headingDegrees": 0.003363861500717389
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 84.6000000000134,
+          "startPose": {
+            "longitudinal": 0.24931232795825053,
+            "lateral": 0.003922194006968027,
+            "headingDegrees": 0.003363861500717389,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-10",
+          "classId": "stock",
+          "bay": 19,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24983638404319208,
+            "lateral": 0.008182212325522187,
+            "headingDegrees": 0.006857979419908385
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 84.27500000001314,
+          "startPose": {
+            "longitudinal": 0.24983638404319208,
+            "lateral": 0.008182212325522187,
+            "headingDegrees": 0.006857979419908385,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-10",
+          "classId": "civilian",
+          "bay": 20,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24914076870391,
+            "lateral": 0.008007761885139075,
+            "headingDegrees": 0.006078466057860467
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 90.17500000001783,
+          "startPose": {
+            "longitudinal": 0.24914076870391,
+            "lateral": 0.008007761885139075,
+            "headingDegrees": 0.006078466057860467,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        }
+      ],
+      "remaining": []
+    },
+    {
+      "geometry": {
+        "trackId": "bristol",
+        "length": 1731.82381824,
+        "straightLength": 600,
+        "entryS": -250,
+        "exitS": 250,
+        "straightBayCount": 20,
+        "allPitPavingStraight": true,
+        "serviceTolerance": {
+          "heading": 0.18,
+          "speed": 0.5,
+          "lateralSpeed": 0.2
+        },
+        "parkingTolerance": {
+          "longitudinal": 0.25,
+          "lateral": 0.15,
+          "heading": 0.04,
+          "speed": 0.15,
+          "lateralSpeed": 0.1
+        }
+      },
+      "elapsed": 193.31666666665518,
+      "cars": [
+        {
+          "id": "stock-1",
+          "classId": "stock",
+          "bay": 1,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2492087522887232,
+            "lateral": 0.0039758343058657886,
+            "headingDegrees": 0.004234187714046111
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 25.49166666666586,
+          "startPose": {
+            "longitudinal": 0.2492087522887232,
+            "lateral": 0.0039758343058657886,
+            "headingDegrees": 0.004234187714046111,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-1",
+          "classId": "civilian",
+          "bay": 2,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24994414961156508,
+            "lateral": 0.003992377366071054,
+            "headingDegrees": 0.004028393283370868
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 121.02500000004238,
+          "startPose": {
+            "longitudinal": 0.24994414961156508,
+            "lateral": 0.003992377366071054,
+            "headingDegrees": 0.004028393283370868,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-2",
+          "classId": "stock",
+          "bay": 3,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24938074564670387,
+            "lateral": 0.008180101558547648,
+            "headingDegrees": 0.006855992574916362
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 30.524999999998908,
+          "startPose": {
+            "longitudinal": 0.24938074564670387,
+            "lateral": 0.008180101558547648,
+            "headingDegrees": 0.006855992574916362,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-2",
+          "classId": "civilian",
+          "bay": 4,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24997743575841014,
+            "lateral": 0.007942231720576842,
+            "headingDegrees": 0.005091378734093641
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 164.200000000015,
+          "startPose": {
+            "longitudinal": 0.24997743575841014,
+            "lateral": 0.007942231720576842,
+            "headingDegrees": 0.005091378734093641,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-3",
+          "classId": "stock",
+          "bay": 5,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24998077496866244,
+            "lateral": 0.003977815679242269,
+            "headingDegrees": 0.004236396199426111
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 35.21666666666531,
+          "startPose": {
+            "longitudinal": 0.24998077496866244,
+            "lateral": 0.003977815679242269,
+            "headingDegrees": 0.004236396199426111,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-3",
+          "classId": "civilian",
+          "bay": 6,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24987387010742168,
+            "lateral": 0.003936445676952616,
+            "headingDegrees": 0.0035459734254234252
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 62.9583333333304,
+          "startPose": {
+            "longitudinal": 0.24987387010742168,
+            "lateral": 0.003936445676952616,
+            "headingDegrees": 0.0035459734254234252,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-4",
+          "classId": "stock",
+          "bay": 7,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24890637031967344,
+            "lateral": 0.008178147217737575,
+            "headingDegrees": 0.006854131148508094
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 40.1333333333317,
+          "startPose": {
+            "longitudinal": 0.24890637031967344,
+            "lateral": 0.008178147217737575,
+            "headingDegrees": 0.006854131148508094,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-4",
+          "classId": "civilian",
+          "bay": 8,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24932725077951545,
+            "lateral": 0.007993740636592861,
+            "headingDegrees": 0.00572791336967029
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 63.91666666666368,
+          "startPose": {
+            "longitudinal": 0.24932725077951545,
+            "lateral": 0.007993740636592861,
+            "headingDegrees": 0.00572791336967029,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-5",
+          "classId": "stock",
+          "bay": 9,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.21119318038381607,
+            "lateral": 0.1416697287207711,
+            "headingDegrees": 1.1318930772911022
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 48.52499999999789,
+          "startPose": {
+            "longitudinal": 0.21119318038381607,
+            "lateral": 0.1416697287207711,
+            "headingDegrees": 1.1318930772911022,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-5",
+          "classId": "civilian",
+          "bay": 10,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24929705787235434,
+            "lateral": 0.004109856987852822,
+            "headingDegrees": 0.003743255991323875
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 57.74166666666403,
+          "startPose": {
+            "longitudinal": 0.24929705787235434,
+            "lateral": 0.004109856987852822,
+            "headingDegrees": 0.003743255991323875,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-6",
+          "classId": "stock",
+          "bay": 11,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24915488755686965,
+            "lateral": 0.008179222576565337,
+            "headingDegrees": 0.0068551479796257545
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 47.94999999999792,
+          "startPose": {
+            "longitudinal": 0.24915488755686965,
+            "lateral": 0.008179222576565337,
+            "headingDegrees": 0.0068551479796257545,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-6",
+          "classId": "civilian",
+          "bay": 12,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2491744713697699,
+            "lateral": 0.008013930887919685,
+            "headingDegrees": 0.00560977850304945
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 58.9249999999973,
+          "startPose": {
+            "longitudinal": 0.2491744713697699,
+            "lateral": 0.008013930887919685,
+            "headingDegrees": 0.00560977850304945,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-7",
+          "classId": "stock",
+          "bay": 13,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24949404967674127,
+            "lateral": 0.00397652029439044,
+            "headingDegrees": 0.004234954041089396
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 48.84166666666454,
+          "startPose": {
+            "longitudinal": 0.24949404967674127,
+            "lateral": 0.00397652029439044,
+            "headingDegrees": 0.004234954041089396,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-7",
+          "classId": "civilian",
+          "bay": 14,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24988263611794537,
+            "lateral": 0.003947649862155345,
+            "headingDegrees": 0.003762525314344707
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 59.69166666666392,
+          "startPose": {
+            "longitudinal": 0.24988263611794537,
+            "lateral": 0.003947649862155345,
+            "headingDegrees": 0.003762525314344707,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-8",
+          "classId": "stock",
+          "bay": 15,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24971300836386945,
+            "lateral": 0.008259310906652217,
+            "headingDegrees": 0.006897364075582434
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 69.30000000000122,
+          "startPose": {
+            "longitudinal": 0.24971300836386945,
+            "lateral": 0.008259310906652217,
+            "headingDegrees": 0.006897364075582434,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-8",
+          "classId": "civilian",
+          "bay": 16,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.2498667814329565,
+            "lateral": 0.0076912167392215736,
+            "headingDegrees": 0.00783880645614002
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 61.99166666666379,
+          "startPose": {
+            "longitudinal": 0.2498667814329565,
+            "lateral": 0.0076912167392215736,
+            "headingDegrees": 0.00783880645614002,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-9",
+          "classId": "stock",
+          "bay": 17,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24896319841400327,
+            "lateral": 0.00401079448920072,
+            "headingDegrees": 0.004259027856604172
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 56.66666666666409,
+          "startPose": {
+            "longitudinal": 0.24896319841400327,
+            "lateral": 0.00401079448920072,
+            "headingDegrees": 0.004259027856604172,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-9",
+          "classId": "civilian",
+          "bay": 18,
+          "componentDamage": false,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.249549128743638,
+            "lateral": 0.00392271648355802,
+            "headingDegrees": 0.0033643972777612015
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 61.98333333333046,
+          "startPose": {
+            "longitudinal": 0.249549128743638,
+            "lateral": 0.00392271648355802,
+            "headingDegrees": 0.0033643972777612015,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "stock-10",
+          "classId": "stock",
+          "bay": 19,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24892123336985605,
+            "lateral": 0.008178214677776907,
+            "headingDegrees": 0.006854194581846882
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 61.57499999999715,
+          "startPose": {
+            "longitudinal": 0.24892123336985605,
+            "lateral": 0.008178214677776907,
+            "headingDegrees": 0.006854194581846882,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        },
+        {
+          "id": "civilian-10",
+          "classId": "civilian",
+          "bay": 20,
+          "componentDamage": true,
+          "started": true,
+          "completed": true,
+          "exited": true,
+          "maximumServiceError": {
+            "longitudinal": 0.24901315410443203,
+            "lateral": 0.008007254419055698,
+            "headingDegrees": 0.006077996299335734
+          },
+          "footprintContained": true,
+          "servicePositionShift": 0,
+          "startAt": 67.01666666666607,
+          "startPose": {
+            "longitudinal": 0.24901315410443203,
+            "lateral": 0.008007254419055698,
+            "headingDegrees": 0.006077996299335734,
+            "footprintContained": true
+          },
+          "serviceHeadingShift": 0
+        }
+      ],
+      "remaining": []
+    }
+  ]
+}

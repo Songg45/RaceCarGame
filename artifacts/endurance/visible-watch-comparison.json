@@ -1,0 +1,37 @@
+{
+  "matched": true,
+  "matchedCars": 60,
+  "toleranceSeconds": 0.0001,
+  "actualStartedAt": "2026-11-12T19:30:30.519Z",
+  "actualCompletedAt": "2026-11-12T19:38:01.399Z",
+  "actualWallSeconds": 450.88,
+  "comparisons": [
+    {
+      "name": "Easy",
+      "matchedCars": 20,
+      "finishers": 20,
+      "dnfs": 0,
+      "simulatedSeconds": 291.3333333332327,
+      "actualRaceStartedAt": "2026-11-12T19:30:30.520Z",
+      "actualRaceEndedAt": "2026-11-12T19:35:24.985Z"
+    },
+    {
+      "name": "Medium",
+      "matchedCars": 20,
+      "finishers": 0,
+      "dnfs": 20,
+      "simulatedSeconds": 96.90000000002318,
+      "actualRaceStartedAt": "2026-11-12T19:35:35.001Z",
+      "actualRaceEndedAt": "2026-11-12T19:37:14.983Z"
+    },
+    {
+      "name": "Extreme",
+      "matchedCars": 20,
+      "finishers": 0,
+      "dnfs": 20,
+      "simulatedSeconds": 33.31666666666542,
+      "actualRaceStartedAt": "2026-11-12T19:37:24.983Z",
+      "actualRaceEndedAt": "2026-11-12T19:38:01.399Z"
+    }
+  ]
+}

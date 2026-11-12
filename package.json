@@ -1,0 +1,24 @@
+{
+  "name": "split-grid-racing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "build:play": "node scripts/publish-play.mjs",
+    "build:candidate": "node scripts/publish-play.mjs --candidate",
+    "publish:candidate": "node scripts/promote-play.mjs",
+    "play": "node scripts/play-server.mjs",
+    "preview:candidate": "node scripts/play-server.mjs --port 4174 --directory dist-candidate",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test --test-concurrency=1"
+  },
+  "dependencies": {
+    "three": "^0.181.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "vite": "^7.2.2"
+  }
+}

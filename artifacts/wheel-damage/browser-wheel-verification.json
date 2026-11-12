@@ -1,0 +1,278 @@
+{
+  "passed": true,
+  "baseURL": "http://127.0.0.1:4173/",
+  "checks": [
+    {
+      "check": "Stable production snapshot at DPR1; idle garage does not redraw continuously",
+      "idleBefore": 2,
+      "idleAfter": 2
+    },
+    {
+      "check": "20 distinct engine bays and rendered bay groups; four corner HUD; own bay identity",
+      "assignedBay": {
+        "id": "bay-09",
+        "carId": "stock-5",
+        "number": 9,
+        "s": -24,
+        "lateral": -30.5,
+        "length": 14,
+        "width": 7
+      }
+    },
+    {
+      "check": "Active drawing is capped; controlled visibility event suspends physics and drawing",
+      "activeDrawsInOneSecond": 44,
+      "hiddenState": {
+        "elapsed": 1.2666666666666646,
+        "draws": 183
+      }
+    },
+    {
+      "check": "Controlled WebGL context loss pauses the field; explicit recovery retains the same race and resumes without reset",
+      "recoveryState": {
+        "elapsed": 1.2916666666666645,
+        "s": -64
+      }
+    },
+    {
+      "check": "Controlled FL puncture pressure drops during real-time play and freezes on pause",
+      "initialPressure": 0.95,
+      "pausedPressure": 0.8606666666666765
+    },
+    {
+      "check": "Controlled four distinct failures: correct per-corner labels, flat-tire visual, reduced handling, real throttle input",
+      "damaged": {
+        "state": "racing",
+        "elapsed": 4.29166666666667,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "punctured",
+            "pressure": 0.8383333333333346,
+            "leakRate": 0.02,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0.8,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0.95,
+            "suspensionStatus": "broken",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "handling": {
+          "gripFactor": 0.4647666796322918,
+          "steeringFactor": 0.5725,
+          "brakingFactor": 0.5806666666666667,
+          "accelerationFactor": 0.74,
+          "topSpeedFactor": 0.6627556132640625,
+          "limpSpeed": 18,
+          "pull": 1.4966666666666673,
+          "blownTires": 1,
+          "maxSuspensionDamage": 0.95,
+          "averageSuspensionDamage": 0.2375,
+          "minPressure": 0,
+          "averageBend": 0.2,
+          "vibrationFactor": 0.38,
+          "brokenSuspensions": 1,
+          "puncturedTires": 1
+        },
+        "damage": 0.55,
+        "speed": 14.466739765064238,
+        "pitState": "none",
+        "assignedBay": {
+          "id": "bay-09",
+          "carId": "stock-5",
+          "number": 9,
+          "s": -24,
+          "lateral": -30.5,
+          "length": 14,
+          "width": 7
+        },
+        "bayCount": 20,
+        "renderedBays": 20,
+        "carCount": 20
+      },
+      "cornerMeshes": [
+        {
+          "id": "RR",
+          "side": 1,
+          "tireScale": 1,
+          "y": 0.34625000000000006
+        },
+        {
+          "id": "FR",
+          "side": 1,
+          "tireScale": 0.61,
+          "y": 0.28
+        },
+        {
+          "id": "RL",
+          "side": -1,
+          "tireScale": 1,
+          "y": 0.42000000000000004
+        },
+        {
+          "id": "FL",
+          "side": -1,
+          "tireScale": 0.9369500000000005,
+          "y": 0.39736666666666687
+        }
+      ]
+    },
+    {
+      "check": "Injected own-bay position, real E input and full service duration restore all Easy components and HUD",
+      "repaired": {
+        "state": "racing",
+        "elapsed": 9.575000000000097,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "handling": {
+          "gripFactor": 1,
+          "steeringFactor": 1,
+          "brakingFactor": 1,
+          "accelerationFactor": 1,
+          "topSpeedFactor": 1,
+          "limpSpeed": null,
+          "pull": 0,
+          "blownTires": 0,
+          "maxSuspensionDamage": 0,
+          "averageSuspensionDamage": 0,
+          "minPressure": 1,
+          "averageBend": 0,
+          "vibrationFactor": 0,
+          "brokenSuspensions": 0,
+          "puncturedTires": 0
+        },
+        "damage": 0,
+        "speed": 0,
+        "pitState": "complete",
+        "assignedBay": {
+          "id": "bay-09",
+          "carId": "stock-5",
+          "number": 9,
+          "s": -24,
+          "lateral": -30.5,
+          "length": 14,
+          "width": 7
+        },
+        "bayCount": 20,
+        "renderedBays": 20,
+        "carCount": 20
+      }
+    },
+    {
+      "check": "390px mobile component HUD stays on-screen and does not overlap pedals",
+      "layout": {
+        "telemetryBottom": 728,
+        "touchTop": 761,
+        "wheelTop": 547.40625,
+        "wheelBottom": 611.40625,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "check": "Controlled assembly-loss scenario hides the correct wheel and retires the car permanently"
+    }
+  ],
+  "errors": [],
+  "boundary": "Independent headless browser. Component/bay scenarios use explicitly injected starting states; real time, key input, rendering, HUD, pause, service, and mobile layout are then exercised. Normal physical approach, contact randomness, and full races are covered separately by engine tests."
+}

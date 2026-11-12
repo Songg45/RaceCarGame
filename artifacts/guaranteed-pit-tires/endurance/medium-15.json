@@ -1,0 +1,5975 @@
+{
+  "scenario": {
+    "name": "Medium",
+    "slug": "medium-15",
+    "difficulty": 50,
+    "laps": 15
+  },
+  "options": {
+    "trackId": "bristol",
+    "playerClass": "stock",
+    "vehicleId": "civic",
+    "seed": 20261112,
+    "laps": 15,
+    "difficulty": 50
+  },
+  "simulationSourceSha256": "83e9f4356811dc653e2a63d310f9324db8df51df9f3a9a22adb36d1ede6da6c8",
+  "catalogSourceSha256": "5a8b98405c23fd6fbc9c3757d88649802cfcfd352944014a66c5913456a39ad8",
+  "trackLengthMeters": 1731.82381824,
+  "trackMiles": 1.0761054306848008,
+  "fixedStepSeconds": 0.016666666666666666,
+  "raceComplete": true,
+  "terminationReason": "all-cars-finished-or-wrecked",
+  "simulatedRaceSeconds": 1037.0667,
+  "simulatedCountdownSeconds": 3,
+  "harnessWallSeconds": 11.1046,
+  "frames": 62404,
+  "potholes": 68,
+  "finished": 19,
+  "dnf": 1,
+  "stillRunning": 0,
+  "collisionCount": 8,
+  "crossClassCollisions": 4,
+  "totalPotholeHits": 1143,
+  "pitServiceStarts": 53,
+  "completedPitServices": 53,
+  "destroyedDuringService": 0,
+  "player": {
+    "id": "stock-5",
+    "name": "V8 Stock Car",
+    "number": 88,
+    "classId": "stock",
+    "isPlayer": true,
+    "overallPosition": 9,
+    "classPosition": 5,
+    "result": "FINISHED",
+    "completedLaps": 15,
+    "finishTime": 958.0021,
+    "wreckTime": null,
+    "wreckReason": "",
+    "physicallyWreckedAfterFinish": false,
+    "wheelComponents": [
+      {
+        "id": "FL",
+        "label": "Front left",
+        "side": -1,
+        "axle": 1,
+        "suspensionDamage": 0.1259363366660895,
+        "suspensionStatus": "worn",
+        "tire": "intact",
+        "pressure": 1,
+        "leakRate": 0,
+        "bend": 0,
+        "assembly": "intact",
+        "lastImpactTime": 865.1666666660442
+      },
+      {
+        "id": "FR",
+        "label": "Front right",
+        "side": 1,
+        "axle": 1,
+        "suspensionDamage": 0.20675962860674735,
+        "suspensionStatus": "worn",
+        "tire": "intact",
+        "pressure": 1,
+        "leakRate": 0,
+        "bend": 0,
+        "assembly": "intact",
+        "lastImpactTime": 920.6916666659937
+      },
+      {
+        "id": "RL",
+        "label": "Rear left",
+        "side": -1,
+        "axle": -1,
+        "suspensionDamage": 0.12371300725266342,
+        "suspensionStatus": "worn",
+        "tire": "intact",
+        "pressure": 1,
+        "leakRate": 0,
+        "bend": 0,
+        "assembly": "intact",
+        "lastImpactTime": 865.3749999993773
+      },
+      {
+        "id": "RR",
+        "label": "Rear right",
+        "side": 1,
+        "axle": -1,
+        "suspensionDamage": 0.23396878614810152,
+        "suspensionStatus": "worn",
+        "tire": "intact",
+        "pressure": 1,
+        "leakRate": 0,
+        "bend": 0,
+        "assembly": "intact",
+        "lastImpactTime": 920.8916666659935
+      }
+    ],
+    "engine": {
+      "heat": 0,
+      "wear": 0,
+      "status": "normal",
+      "grassDrivingSeconds": 0,
+      "cooling": false,
+      "heatRate": 0
+    },
+    "handling": {
+      "gripFactor": 0.8879071768758505,
+      "steeringFactor": 0.9125521505680104,
+      "brakingFactor": 0.9236749033466407,
+      "accelerationFactor": 0.9470710385016905,
+      "topSpeedFactor": 0.9334868711291979,
+      "limpSpeed": null,
+      "pull": 0.08009908448528713,
+      "blownTires": 0,
+      "maxSuspensionDamage": 0.23396878614810152,
+      "averageSuspensionDamage": 0.17259443966840043,
+      "minPressure": 1,
+      "averageBend": 0,
+      "vibrationFactor": 0,
+      "brokenSuspensions": 0,
+      "puncturedTires": 0
+    },
+    "assignedPitBay": "bay-09",
+    "damage": 0.1227,
+    "potholeHitsAtTermination": 65,
+    "potholeHitsAtFieldCompletion": 65,
+    "pitEntries": 3,
+    "serviceStarts": 3,
+    "serviceOutcomes": [
+      {
+        "startedAt": 365.3333,
+        "visitsBefore": 0,
+        "damageAtStart": 0.3455,
+        "s": 10366.6949,
+        "lateral": -30.492,
+        "endedAt": 370.3333,
+        "damageAtEnd": 0.1365,
+        "netDamageChangeDuringVisit": -0.209,
+        "outcome": "service-completed",
+        "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+        "wrecked": false
+      },
+      {
+        "startedAt": 630.9833,
+        "visitsBefore": 1,
+        "damageAtStart": 0.3483,
+        "s": 17293.9903,
+        "lateral": -30.4904,
+        "endedAt": 635.9833,
+        "damageAtEnd": 0.1281,
+        "netDamageChangeDuringVisit": -0.2202,
+        "outcome": "service-completed",
+        "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+        "wrecked": false
+      },
+      {
+        "startedAt": 947.9333,
+        "visitsBefore": 2,
+        "damageAtStart": 0.3494,
+        "s": 25953.1079,
+        "lateral": -30.4904,
+        "endedAt": 952.9333,
+        "damageAtEnd": 0.1227,
+        "netDamageChangeDuringVisit": -0.2267,
+        "outcome": "service-completed",
+        "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+        "wrecked": false
+      }
+    ],
+    "lapEvents": [
+      {
+        "lap": 1,
+        "time": 68.5566
+      },
+      {
+        "lap": 2,
+        "time": 123.9156
+      },
+      {
+        "lap": 3,
+        "time": 174.1043
+      },
+      {
+        "lap": 4,
+        "time": 222.2846
+      },
+      {
+        "lap": 5,
+        "time": 281.2767
+      },
+      {
+        "lap": 6,
+        "time": 375.4541
+      },
+      {
+        "lap": 7,
+        "time": 437.4529
+      },
+      {
+        "lap": 8,
+        "time": 488.9934
+      },
+      {
+        "lap": 9,
+        "time": 540.2313
+      },
+      {
+        "lap": 10,
+        "time": 646.1895
+      },
+      {
+        "lap": 11,
+        "time": 703.5685
+      },
+      {
+        "lap": 12,
+        "time": 753.9702
+      },
+      {
+        "lap": 13,
+        "time": 806.3098
+      },
+      {
+        "lap": 14,
+        "time": 857.3608
+      },
+      {
+        "lap": 15,
+        "time": 958.0021
+      }
+    ],
+    "terminalSnapshot": {
+      "result": "FINISHED",
+      "time": 958.0021,
+      "elapsed": 958.0167,
+      "s": 25977.5188,
+      "lateral": -20.6465,
+      "speed": 11.0944,
+      "damage": 0.1227,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 65,
+      "pitState": "complete",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "through-exit",
+      "assignedBay": "bay-09",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    "finalSnapshot": {
+      "elapsed": 1037.0667,
+      "s": 28179.3553,
+      "lateral": 3.2976,
+      "speed": 33.1054,
+      "damage": 0.1227,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 65,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-09",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    "secondsSinceLastForwardProgress": 0
+  },
+  "cars": [
+    {
+      "id": "stock-6",
+      "name": "V8 Stock Car",
+      "number": 3,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 1,
+      "classPosition": 1,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 835.4279,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.6319881243375178,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 770.4166666661304
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.5330877163788967,
+          "suspensionStatus": "worn",
+          "tire": "blown",
+          "pressure": 0,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 814.9166666660899
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.6194343188825324,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 770.6249999994635
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.5277202819712569,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 815.1083333327564
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.45866149533302675,
+        "steeringFactor": 0.5842648298176343,
+        "brakingFactor": 0.5705665488484409,
+        "accelerationFactor": 0.7198763518961445,
+        "topSpeedFactor": 0.6937513590988246,
+        "limpSpeed": 24,
+        "pull": 1.6127862255990768,
+        "blownTires": 1,
+        "maxSuspensionDamage": 0.6319881243375178,
+        "averageSuspensionDamage": 0.578057610392551,
+        "minPressure": 0,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-11",
+      "damage": 0.4301,
+      "potholeHitsAtTermination": 48,
+      "potholeHitsAtFieldCompletion": 48,
+      "pitEntries": 2,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 97.2,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2798,
+          "s": 1739.5739,
+          "lateral": -30.4941,
+          "endedAt": 102.2,
+          "damageAtEnd": 0.1232,
+          "netDamageChangeDuringVisit": -0.1566,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 88.6403
+        },
+        {
+          "lap": 2,
+          "time": 166.1678
+        },
+        {
+          "lap": 3,
+          "time": 222.8989
+        },
+        {
+          "lap": 4,
+          "time": 270.5884
+        },
+        {
+          "lap": 5,
+          "time": 317.0332
+        },
+        {
+          "lap": 6,
+          "time": 368.3601
+        },
+        {
+          "lap": 7,
+          "time": 422.6409
+        },
+        {
+          "lap": 8,
+          "time": 472.9519
+        },
+        {
+          "lap": 9,
+          "time": 519.599
+        },
+        {
+          "lap": 10,
+          "time": 566.9314
+        },
+        {
+          "lap": 11,
+          "time": 616.4918
+        },
+        {
+          "lap": 12,
+          "time": 668.9157
+        },
+        {
+          "lap": 13,
+          "time": 715.776
+        },
+        {
+          "lap": 14,
+          "time": 762.7238
+        },
+        {
+          "lap": 15,
+          "time": 835.4279
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 835.4279,
+        "elapsed": 835.4333,
+        "s": 25977.376,
+        "lateral": -29.5102,
+        "speed": 3.4212,
+        "damage": 0.4301,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 48,
+        "pitState": "none",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "enter-stall",
+        "assignedBay": "bay-11",
+        "pitMergeCommitted": false,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 25985.1221,
+        "lateral": -30.49,
+        "speed": 0,
+        "damage": 0.4301,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 48,
+        "pitState": "none",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "enter-stall",
+        "assignedBay": "bay-11",
+        "pitMergeCommitted": false,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 194.6333
+    },
+    {
+      "id": "stock-8",
+      "name": "V8 Stock Car",
+      "number": 22,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 2,
+      "classPosition": 2,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 847.9077,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.5598085868757137,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 968.9083333326165
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.3879794021924382,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 750.2583333328154
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.5510336759417631,
+          "suspensionStatus": "worn",
+          "tire": "blown",
+          "pressure": 0,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 969.1333333326163
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.3809396913109208,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 750.4083333328152
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.5053668255401755,
+        "steeringFactor": 0.7211190434139653,
+        "brakingFactor": 0.6211448036706692,
+        "accelerationFactor": 0.7551071112300071,
+        "topSpeedFactor": 0.7304082904472896,
+        "limpSpeed": 24,
+        "pull": -1.3042124662018395,
+        "blownTires": 1,
+        "maxSuspensionDamage": 0.5598085868757137,
+        "averageSuspensionDamage": 0.469940339080209,
+        "minPressure": 0,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-15",
+      "damage": 0.3394,
+      "potholeHitsAtTermination": 42,
+      "potholeHitsAtFieldCompletion": 48,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 675.5,
+          "visitsBefore": 0,
+          "damageAtStart": 0.4052,
+          "s": 20853.6365,
+          "lateral": -30.4904,
+          "endedAt": 680.5,
+          "damageAtEnd": 0.1465,
+          "netDamageChangeDuringVisit": -0.2587,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 78.8151
+        },
+        {
+          "lap": 2,
+          "time": 134.0422
+        },
+        {
+          "lap": 3,
+          "time": 186.3671
+        },
+        {
+          "lap": 4,
+          "time": 235.8733
+        },
+        {
+          "lap": 5,
+          "time": 287.1631
+        },
+        {
+          "lap": 6,
+          "time": 338.016
+        },
+        {
+          "lap": 7,
+          "time": 387.6743
+        },
+        {
+          "lap": 8,
+          "time": 435.1927
+        },
+        {
+          "lap": 9,
+          "time": 487.2605
+        },
+        {
+          "lap": 10,
+          "time": 538.557
+        },
+        {
+          "lap": 11,
+          "time": 590.866
+        },
+        {
+          "lap": 12,
+          "time": 658.2238
+        },
+        {
+          "lap": 13,
+          "time": 742.8181
+        },
+        {
+          "lap": 14,
+          "time": 799.9911
+        },
+        {
+          "lap": 15,
+          "time": 847.9077
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 847.9077,
+        "elapsed": 847.9167,
+        "s": 25977.7246,
+        "lateral": 9.6999,
+        "speed": 40.8946,
+        "damage": 0.2699,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 42,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-15",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 31199.1507,
+        "lateral": 9.7,
+        "speed": 21.5098,
+        "damage": 0.3394,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 48,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-15",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "stock-1",
+      "name": "V8 Stock Car",
+      "number": 7,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 3,
+      "classPosition": 3,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 897.7944,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.19997355980573664,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.03516202113797854,
+          "assembly": "intact",
+          "lastImpactTime": 956.8499999992941
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.40418967715236986,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1017.9916666659052
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.21058383642166179,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 957.0583333326273
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.3996066377005323,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1018.2083333325717
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8057731795346573,
+        "steeringFactor": 0.8439842369420383,
+        "brakingFactor": 0.8657464508305668,
+        "accelerationFactor": 0.9055809730245027,
+        "topSpeedFactor": 0.8821998618534201,
+        "limpSpeed": null,
+        "pull": 0.16417326708293892,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.40418967715236986,
+        "averageSuspensionDamage": 0.3035884277700751,
+        "minPressure": 1,
+        "averageBend": 0.008790505284494635,
+        "vibrationFactor": 0.016701960040539806,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-01",
+      "damage": 0.2159,
+      "potholeHitsAtTermination": 49,
+      "potholeHitsAtFieldCompletion": 53,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 129.4667,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1767,
+          "s": 3311.3978,
+          "lateral": -30.4945,
+          "endedAt": 134.4667,
+          "damageAtEnd": 0.0684,
+          "netDamageChangeDuringVisit": -0.1083,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 623.5,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2376,
+          "s": 18897.8122,
+          "lateral": -30.4939,
+          "endedAt": 628.5,
+          "damageAtEnd": 0.091,
+          "netDamageChangeDuringVisit": -0.1466,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 767.6167,
+          "visitsBefore": 2,
+          "damageAtStart": 0.2313,
+          "s": 22361.4598,
+          "lateral": -30.4931,
+          "endedAt": 772.6167,
+          "damageAtEnd": 0.1043,
+          "netDamageChangeDuringVisit": -0.127,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 60.9818
+        },
+        {
+          "lap": 2,
+          "time": 147.6175
+        },
+        {
+          "lap": 3,
+          "time": 204.4173
+        },
+        {
+          "lap": 4,
+          "time": 250.2363
+        },
+        {
+          "lap": 5,
+          "time": 301.9713
+        },
+        {
+          "lap": 6,
+          "time": 351.8158
+        },
+        {
+          "lap": 7,
+          "time": 408.624
+        },
+        {
+          "lap": 8,
+          "time": 456.6081
+        },
+        {
+          "lap": 9,
+          "time": 505.5376
+        },
+        {
+          "lap": 10,
+          "time": 557.5127
+        },
+        {
+          "lap": 11,
+          "time": 641.6649
+        },
+        {
+          "lap": 12,
+          "time": 701.6714
+        },
+        {
+          "lap": 13,
+          "time": 785.7759
+        },
+        {
+          "lap": 14,
+          "time": 846.6825
+        },
+        {
+          "lap": 15,
+          "time": 897.7944
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 897.7944,
+        "elapsed": 897.8,
+        "s": 25977.6404,
+        "lateral": 8.5361,
+        "speed": 50.8995,
+        "damage": 0.174,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 49,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-01",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 30350.3609,
+        "lateral": 7.756,
+        "speed": 31.3579,
+        "damage": 0.2159,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 53,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-01",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-1",
+      "name": "Ford Mustang",
+      "number": 101,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 4,
+      "classPosition": 1,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 913.2803,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.19917253089251485,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.5274288116521202,
+          "assembly": "intact",
+          "lastImpactTime": 904.4249999993418
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.2989697105505619,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 597.808333332954
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.19692907647308064,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 904.5416666660084
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.2945721562452851,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 597.9833333329539
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8406860024963316,
+        "steeringFactor": 0.8416808592112931,
+        "brakingFactor": 0.8905894159121517,
+        "accelerationFactor": 0.9043487532106682,
+        "topSpeedFactor": 0.8695517974618487,
+        "limpSpeed": null,
+        "pull": -0.14806402852267242,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.2989697105505619,
+        "averageSuspensionDamage": 0.24741086854036062,
+        "minPressure": 1,
+        "averageBend": 0.13185720291303005,
+        "vibrationFactor": 0.2505286855347571,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-02",
+      "damage": 0.1759,
+      "potholeHitsAtTermination": 40,
+      "potholeHitsAtFieldCompletion": 40,
+      "pitEntries": 2,
+      "serviceStarts": 2,
+      "serviceOutcomes": [
+        {
+          "startedAt": 388.0167,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2605,
+          "s": 11986.5173,
+          "lateral": -30.4939,
+          "endedAt": 393.0167,
+          "damageAtEnd": 0.0958,
+          "netDamageChangeDuringVisit": -0.1647,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 550.8167,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2184,
+          "s": 15450.1645,
+          "lateral": -30.4936,
+          "endedAt": 555.8167,
+          "damageAtEnd": 0.0898,
+          "netDamageChangeDuringVisit": -0.1286,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 57.7685
+        },
+        {
+          "lap": 2,
+          "time": 107.6371
+        },
+        {
+          "lap": 3,
+          "time": 157.4467
+        },
+        {
+          "lap": 4,
+          "time": 212.483
+        },
+        {
+          "lap": 5,
+          "time": 263.3901
+        },
+        {
+          "lap": 6,
+          "time": 319.1196
+        },
+        {
+          "lap": 7,
+          "time": 405.3655
+        },
+        {
+          "lap": 8,
+          "time": 466.4377
+        },
+        {
+          "lap": 9,
+          "time": 568.133
+        },
+        {
+          "lap": 10,
+          "time": 631.983
+        },
+        {
+          "lap": 11,
+          "time": 689.5532
+        },
+        {
+          "lap": 12,
+          "time": 743.0407
+        },
+        {
+          "lap": 13,
+          "time": 804.3627
+        },
+        {
+          "lap": 14,
+          "time": 858.7251
+        },
+        {
+          "lap": 15,
+          "time": 913.2803
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 913.2803,
+        "elapsed": 913.2833,
+        "s": 25977.5059,
+        "lateral": 8.4961,
+        "speed": 49.77,
+        "damage": 0.1759,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 40,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-02",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 29398.6273,
+        "lateral": 9.0026,
+        "speed": 23.7553,
+        "damage": 0.1759,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 40,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-02",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "civilian-5",
+      "name": "Honda Civic",
+      "number": 105,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 5,
+      "classPosition": 2,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 928.6481,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.5738569975231499,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.20459270661403203,
+          "assembly": "intact",
+          "lastImpactTime": 1006.8166666659154
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.45120191451992003,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 803.4666666661003
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.5640077550272921,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1007.0249999992485
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.43434817237631684,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 803.6333333327668
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.6839367695449066,
+        "steeringFactor": 0.7309137428400437,
+        "brakingFactor": 0.7763002483056172,
+        "accelerationFactor": 0.8371993024777284,
+        "topSpeedFactor": 0.7990789379068676,
+        "limpSpeed": null,
+        "pull": -0.20420741759115765,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.5738569975231499,
+        "averageSuspensionDamage": 0.5058537098616697,
+        "minPressure": 1,
+        "averageBend": 0.05114817665350801,
+        "vibrationFactor": 0.0971815356416652,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-10",
+      "damage": 0.3597,
+      "potholeHitsAtTermination": 41,
+      "potholeHitsAtFieldCompletion": 45,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 451.5833,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2999,
+          "s": 12114.5171,
+          "lateral": -30.4919,
+          "endedAt": 456.5833,
+          "damageAtEnd": 0.111,
+          "netDamageChangeDuringVisit": -0.1889,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 83.054
+        },
+        {
+          "lap": 2,
+          "time": 141.3344
+        },
+        {
+          "lap": 3,
+          "time": 201.1618
+        },
+        {
+          "lap": 4,
+          "time": 256.1102
+        },
+        {
+          "lap": 5,
+          "time": 311.0356
+        },
+        {
+          "lap": 6,
+          "time": 367.2502
+        },
+        {
+          "lap": 7,
+          "time": 458.994
+        },
+        {
+          "lap": 8,
+          "time": 525.34
+        },
+        {
+          "lap": 9,
+          "time": 580.1317
+        },
+        {
+          "lap": 10,
+          "time": 635.6149
+        },
+        {
+          "lap": 11,
+          "time": 696.6352
+        },
+        {
+          "lap": 12,
+          "time": 755.4849
+        },
+        {
+          "lap": 13,
+          "time": 813.5361
+        },
+        {
+          "lap": 14,
+          "time": 867.1407
+        },
+        {
+          "lap": 15,
+          "time": 928.6481
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 928.6481,
+        "elapsed": 928.65,
+        "s": 25977.4284,
+        "lateral": 9.79,
+        "speed": 37.6407,
+        "damage": 0.3132,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 41,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-10",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 28715.9428,
+        "lateral": 5.8738,
+        "speed": 27.6294,
+        "damage": 0.3597,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 45,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-10",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-6",
+      "name": "Mazda3",
+      "number": 106,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 6,
+      "classPosition": 3,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 931.0523,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.6307203283073148,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1008.5916666659137
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.36804340837185656,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 921.9416666659926
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.6188344864729869,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1008.7999999992469
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.36093919184185475,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 922.0666666659924
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.6895533276905385,
+        "steeringFactor": 0.7483927091031006,
+        "brakingFactor": 0.779938294678785,
+        "accelerationFactor": 0.8473195798528013,
+        "topSpeedFactor": 0.8138885471152539,
+        "limpSpeed": null,
+        "pull": -0.23521382161583088,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.6307203283073148,
+        "averageSuspensionDamage": 0.49463435374850323,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-12",
+      "damage": 0.3584,
+      "potholeHitsAtTermination": 44,
+      "potholeHitsAtFieldCompletion": 48,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 628.9,
+          "visitsBefore": 0,
+          "damageAtStart": 0.4393,
+          "s": 17341.9883,
+          "lateral": -30.49,
+          "endedAt": 633.9,
+          "damageAtEnd": 0.1747,
+          "netDamageChangeDuringVisit": -0.2646,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 68.1282
+        },
+        {
+          "lap": 2,
+          "time": 123.3846
+        },
+        {
+          "lap": 3,
+          "time": 187.9207
+        },
+        {
+          "lap": 4,
+          "time": 250.8262
+        },
+        {
+          "lap": 5,
+          "time": 306.1503
+        },
+        {
+          "lap": 6,
+          "time": 367.968
+        },
+        {
+          "lap": 7,
+          "time": 423.8307
+        },
+        {
+          "lap": 8,
+          "time": 483.1607
+        },
+        {
+          "lap": 9,
+          "time": 542.356
+        },
+        {
+          "lap": 10,
+          "time": 616.4485
+        },
+        {
+          "lap": 11,
+          "time": 701.8749
+        },
+        {
+          "lap": 12,
+          "time": 757.6427
+        },
+        {
+          "lap": 13,
+          "time": 814.0947
+        },
+        {
+          "lap": 14,
+          "time": 870.6329
+        },
+        {
+          "lap": 15,
+          "time": 931.0523
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 931.0523,
+        "elapsed": 931.0667,
+        "s": 25977.9293,
+        "lateral": 9.7976,
+        "speed": 39.8974,
+        "damage": 0.3119,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 44,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-12",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 28679.9212,
+        "lateral": 7.8386,
+        "speed": 29.9715,
+        "damage": 0.3584,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 48,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-12",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "stock-7",
+      "name": "V8 Stock Car",
+      "number": 19,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 7,
+      "classPosition": 4,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 944.3723,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.34689471525040944,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 933.3666666659822
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.31537559575783325,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1025.0083333325792
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.3363440116382075,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 933.5583333326487
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.30581066882999197,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1025.1333333325808
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.7919100204810061,
+        "steeringFactor": 0.8347728344129839,
+        "brakingFactor": 0.8557885703867711,
+        "accelerationFactor": 0.899994083986806,
+        "topSpeedFactor": 0.8762500097754407,
+        "limpSpeed": null,
+        "pull": -0.028120763372228408,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.34689471525040944,
+        "averageSuspensionDamage": 0.3261062478691105,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-13",
+      "damage": 0.2319,
+      "potholeHitsAtTermination": 68,
+      "potholeHitsAtFieldCompletion": 70,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 309.75,
+          "visitsBefore": 0,
+          "damageAtStart": 0.3441,
+          "s": 8698.8699,
+          "lateral": -30.4919,
+          "endedAt": 314.75,
+          "damageAtEnd": 0.1487,
+          "netDamageChangeDuringVisit": -0.1954,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 666.5,
+          "visitsBefore": 1,
+          "damageAtStart": 0.3899,
+          "s": 19089.8128,
+          "lateral": -30.4906,
+          "endedAt": 671.5,
+          "damageAtEnd": 0.1554,
+          "netDamageChangeDuringVisit": -0.2345,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 828.7,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3229,
+          "s": 22553.4605,
+          "lateral": -30.491,
+          "endedAt": 833.7,
+          "damageAtEnd": 0.1174,
+          "netDamageChangeDuringVisit": -0.2055,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 65.0829
+        },
+        {
+          "lap": 2,
+          "time": 118.2679
+        },
+        {
+          "lap": 3,
+          "time": 176.7022
+        },
+        {
+          "lap": 4,
+          "time": 226.6521
+        },
+        {
+          "lap": 5,
+          "time": 294.7298
+        },
+        {
+          "lap": 6,
+          "time": 372.1025
+        },
+        {
+          "lap": 7,
+          "time": 430.1855
+        },
+        {
+          "lap": 8,
+          "time": 482.3041
+        },
+        {
+          "lap": 9,
+          "time": 536.121
+        },
+        {
+          "lap": 10,
+          "time": 586.4743
+        },
+        {
+          "lap": 11,
+          "time": 651.4574
+        },
+        {
+          "lap": 12,
+          "time": 737.0899
+        },
+        {
+          "lap": 13,
+          "time": 813.6326
+        },
+        {
+          "lap": 14,
+          "time": 895.4584
+        },
+        {
+          "lap": 15,
+          "time": 944.3723
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 944.3723,
+        "elapsed": 944.3833,
+        "s": 25977.7683,
+        "lateral": 0.0193,
+        "speed": 37.2069,
+        "damage": 0.203,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 68,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-13",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 28720.9303,
+        "lateral": -8.4448,
+        "speed": 27.2562,
+        "damage": 0.2319,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 70,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-13",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-10",
+      "name": "Dodge Charger",
+      "number": 110,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 8,
+      "classPosition": 4,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 949.229,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.1527542616343435,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 681.766666666211
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.43919447588035754,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1030.4416666659818
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.14933915717390897,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 681.9583333328775
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.4320964463631202,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1030.6249999993174
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.812103721511651,
+        "steeringFactor": 0.8513713168001142,
+        "brakingFactor": 0.8702758422948365,
+        "accelerationFactor": 0.9100405338527007,
+        "topSpeedFactor": 0.8883127285253114,
+        "limpSpeed": null,
+        "pull": 0.2568754615572119,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.43919447588035754,
+        "averageSuspensionDamage": 0.29334608526293254,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-20",
+      "damage": 0.2086,
+      "potholeHitsAtTermination": 42,
+      "potholeHitsAtFieldCompletion": 46,
+      "pitEntries": 2,
+      "serviceStarts": 2,
+      "serviceOutcomes": [
+        {
+          "startedAt": 514.3167,
+          "visitsBefore": 0,
+          "damageAtStart": 0.3614,
+          "s": 14006.3415,
+          "lateral": -30.4916,
+          "endedAt": 519.3167,
+          "damageAtEnd": 0.1422,
+          "netDamageChangeDuringVisit": -0.2192,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 778.4833,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2566,
+          "s": 20933.6366,
+          "lateral": -30.494,
+          "endedAt": 783.4833,
+          "damageAtEnd": 0.1162,
+          "netDamageChangeDuringVisit": -0.1404,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 75.0587
+        },
+        {
+          "lap": 2,
+          "time": 131.9199
+        },
+        {
+          "lap": 3,
+          "time": 188.9504
+        },
+        {
+          "lap": 4,
+          "time": 245.7257
+        },
+        {
+          "lap": 5,
+          "time": 302.1535
+        },
+        {
+          "lap": 6,
+          "time": 361.2183
+        },
+        {
+          "lap": 7,
+          "time": 420.8069
+        },
+        {
+          "lap": 8,
+          "time": 491.7317
+        },
+        {
+          "lap": 9,
+          "time": 574.946
+        },
+        {
+          "lap": 10,
+          "time": 633.7545
+        },
+        {
+          "lap": 11,
+          "time": 691.2256
+        },
+        {
+          "lap": 12,
+          "time": 755.9612
+        },
+        {
+          "lap": 13,
+          "time": 841.1194
+        },
+        {
+          "lap": 14,
+          "time": 892.8516
+        },
+        {
+          "lap": 15,
+          "time": 949.229
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 949.229,
+        "elapsed": 949.2333,
+        "s": 25977.5637,
+        "lateral": 8.4916,
+        "speed": 47.977,
+        "damage": 0.1619,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 42,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-20",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 28513.913,
+        "lateral": 7.3948,
+        "speed": 38.1087,
+        "damage": 0.2086,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 46,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-20",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-5",
+      "name": "V8 Stock Car",
+      "number": 88,
+      "classId": "stock",
+      "isPlayer": true,
+      "overallPosition": 9,
+      "classPosition": 5,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 958.0021,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.1259363366660895,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 865.1666666660442
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.20675962860674735,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 920.6916666659937
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.12371300725266342,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 865.3749999993773
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.23396878614810152,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 920.8916666659935
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8879071768758505,
+        "steeringFactor": 0.9125521505680104,
+        "brakingFactor": 0.9236749033466407,
+        "accelerationFactor": 0.9470710385016905,
+        "topSpeedFactor": 0.9334868711291979,
+        "limpSpeed": null,
+        "pull": 0.08009908448528713,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.23396878614810152,
+        "averageSuspensionDamage": 0.17259443966840043,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-09",
+      "damage": 0.1227,
+      "potholeHitsAtTermination": 65,
+      "potholeHitsAtFieldCompletion": 65,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 365.3333,
+          "visitsBefore": 0,
+          "damageAtStart": 0.3455,
+          "s": 10366.6949,
+          "lateral": -30.492,
+          "endedAt": 370.3333,
+          "damageAtEnd": 0.1365,
+          "netDamageChangeDuringVisit": -0.209,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 630.9833,
+          "visitsBefore": 1,
+          "damageAtStart": 0.3483,
+          "s": 17293.9903,
+          "lateral": -30.4904,
+          "endedAt": 635.9833,
+          "damageAtEnd": 0.1281,
+          "netDamageChangeDuringVisit": -0.2202,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 947.9333,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3494,
+          "s": 25953.1079,
+          "lateral": -30.4904,
+          "endedAt": 952.9333,
+          "damageAtEnd": 0.1227,
+          "netDamageChangeDuringVisit": -0.2267,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 68.5566
+        },
+        {
+          "lap": 2,
+          "time": 123.9156
+        },
+        {
+          "lap": 3,
+          "time": 174.1043
+        },
+        {
+          "lap": 4,
+          "time": 222.2846
+        },
+        {
+          "lap": 5,
+          "time": 281.2767
+        },
+        {
+          "lap": 6,
+          "time": 375.4541
+        },
+        {
+          "lap": 7,
+          "time": 437.4529
+        },
+        {
+          "lap": 8,
+          "time": 488.9934
+        },
+        {
+          "lap": 9,
+          "time": 540.2313
+        },
+        {
+          "lap": 10,
+          "time": 646.1895
+        },
+        {
+          "lap": 11,
+          "time": 703.5685
+        },
+        {
+          "lap": 12,
+          "time": 753.9702
+        },
+        {
+          "lap": 13,
+          "time": 806.3098
+        },
+        {
+          "lap": 14,
+          "time": 857.3608
+        },
+        {
+          "lap": 15,
+          "time": 958.0021
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 958.0021,
+        "elapsed": 958.0167,
+        "s": 25977.5188,
+        "lateral": -20.6465,
+        "speed": 11.0944,
+        "damage": 0.1227,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 65,
+        "pitState": "complete",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "through-exit",
+        "assignedBay": "bay-09",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 28179.3553,
+        "lateral": 3.2976,
+        "speed": 33.1054,
+        "damage": 0.1227,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 65,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-09",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-2",
+      "name": "V8 Stock Car",
+      "number": 12,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 10,
+      "classPosition": 6,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 961.21,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.33104133045633594,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1021.2833333325689
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.29977296443992413,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.25625266705956246,
+          "assembly": "intact",
+          "lastImpactTime": 979.8916666659399
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.3252603301124101,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1021.541666665902
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.2960702413725812,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 980.0666666659397
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.7999474896193755,
+        "steeringFactor": 0.8253791919004855,
+        "brakingFactor": 0.8615684286611838,
+        "accelerationFactor": 0.8943927518960372,
+        "topSpeedFactor": 0.8641197758396849,
+        "limpSpeed": null,
+        "pull": 0.08769174008117821,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.33104133045633594,
+        "averageSuspensionDamage": 0.3130362165953129,
+        "minPressure": 1,
+        "averageBend": 0.06406316676489061,
+        "vibrationFactor": 0.12172001685329217,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-03",
+      "damage": 0.2226,
+      "potholeHitsAtTermination": 68,
+      "potholeHitsAtFieldCompletion": 72,
+      "pitEntries": 4,
+      "serviceStarts": 4,
+      "serviceOutcomes": [
+        {
+          "startedAt": 181.1333,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1466,
+          "s": 5075.2215,
+          "lateral": -30.4956,
+          "endedAt": 186.1333,
+          "damageAtEnd": 0.0654,
+          "netDamageChangeDuringVisit": -0.0812,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 386.6333,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2494,
+          "s": 10270.693,
+          "lateral": -30.494,
+          "endedAt": 391.6333,
+          "damageAtEnd": 0.1075,
+          "netDamageChangeDuringVisit": -0.1419,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 583.2667,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3088,
+          "s": 15466.1645,
+          "lateral": -30.4928,
+          "endedAt": 588.2667,
+          "damageAtEnd": 0.1221,
+          "netDamageChangeDuringVisit": -0.1867,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 944,
+          "visitsBefore": 3,
+          "damageAtStart": 0.4053,
+          "s": 25857.108,
+          "lateral": -30.4923,
+          "endedAt": 949,
+          "damageAtEnd": 0.1878,
+          "netDamageChangeDuringVisit": -0.2175,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 55.5744
+        },
+        {
+          "lap": 2,
+          "time": 111.3778
+        },
+        {
+          "lap": 3,
+          "time": 197.1882
+        },
+        {
+          "lap": 4,
+          "time": 255.737
+        },
+        {
+          "lap": 5,
+          "time": 313.8988
+        },
+        {
+          "lap": 6,
+          "time": 402.7867
+        },
+        {
+          "lap": 7,
+          "time": 461.5492
+        },
+        {
+          "lap": 8,
+          "time": 514.3233
+        },
+        {
+          "lap": 9,
+          "time": 604.7445
+        },
+        {
+          "lap": 10,
+          "time": 666.701
+        },
+        {
+          "lap": 11,
+          "time": 715.1453
+        },
+        {
+          "lap": 12,
+          "time": 766.817
+        },
+        {
+          "lap": 13,
+          "time": 818.1311
+        },
+        {
+          "lap": 14,
+          "time": 870.3157
+        },
+        {
+          "lap": 15,
+          "time": 961.21
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 961.21,
+        "elapsed": 961.2167,
+        "s": 25977.4629,
+        "lateral": -20.5,
+        "speed": 15.9496,
+        "damage": 0.1878,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 68,
+        "pitState": "complete",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "through-exit",
+        "assignedBay": "bay-03",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 27692.8644,
+        "lateral": 8.6438,
+        "speed": 23.2215,
+        "damage": 0.2226,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 72,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-03",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-4",
+      "name": "Honda Accord",
+      "number": 104,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 11,
+      "classPosition": 5,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 961.9931,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.37808056175689386,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1025.9416666659245
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.24810169554340977,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 799.824999999437
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.36975284580862805,
+          "suspensionStatus": "worn",
+          "tire": "punctured",
+          "pressure": 0.9292467409624381,
+          "leakRate": 0.006441874874442118,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1026.083333332593
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.21803713722993004,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 800.0166666661034
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.7971891405484158,
+        "steeringFactor": 0.8448680685713051,
+        "brakingFactor": 0.8604348091629623,
+        "accelerationFactor": 0.9055666805882483,
+        "topSpeedFactor": 0.8752420855721915,
+        "limpSpeed": null,
+        "pull": -0.15779181970222014,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.37808056175689386,
+        "averageSuspensionDamage": 0.30349306008471544,
+        "minPressure": 0.9292467409624381,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 1
+      },
+      "assignedPitBay": "bay-08",
+      "damage": 0.2249,
+      "potholeHitsAtTermination": 49,
+      "potholeHitsAtFieldCompletion": 51,
+      "pitEntries": 2,
+      "serviceStarts": 2,
+      "serviceOutcomes": [
+        {
+          "startedAt": 151.8833,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1811,
+          "s": 3423.3984,
+          "lateral": -30.4952,
+          "endedAt": 156.8833,
+          "damageAtEnd": 0.0784,
+          "netDamageChangeDuringVisit": -0.1027,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 826.4167,
+          "visitsBefore": 1,
+          "damageAtStart": 0.488,
+          "s": 22473.4606,
+          "lateral": -30.4912,
+          "endedAt": 831.4167,
+          "damageAtEnd": 0.1735,
+          "netDamageChangeDuringVisit": -0.3145,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 70.6855
+        },
+        {
+          "lap": 2,
+          "time": 164.9845
+        },
+        {
+          "lap": 3,
+          "time": 227.294
+        },
+        {
+          "lap": 4,
+          "time": 284.1737
+        },
+        {
+          "lap": 5,
+          "time": 339.7992
+        },
+        {
+          "lap": 6,
+          "time": 399.2874
+        },
+        {
+          "lap": 7,
+          "time": 452.1059
+        },
+        {
+          "lap": 8,
+          "time": 509.2268
+        },
+        {
+          "lap": 9,
+          "time": 562.6642
+        },
+        {
+          "lap": 10,
+          "time": 620.9208
+        },
+        {
+          "lap": 11,
+          "time": 680.3972
+        },
+        {
+          "lap": 12,
+          "time": 739.2212
+        },
+        {
+          "lap": 13,
+          "time": 838.1856
+        },
+        {
+          "lap": 14,
+          "time": 901.5663
+        },
+        {
+          "lap": 15,
+          "time": 961.9931
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 961.9931,
+        "elapsed": 962,
+        "s": 25977.5798,
+        "lateral": 1.9559,
+        "speed": 32.4651,
+        "damage": 0.1895,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 49,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-08",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 27805.5057,
+        "lateral": 5.4373,
+        "speed": 25.369,
+        "damage": 0.2249,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 51,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-08",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-7",
+      "name": "Volkswagen Golf",
+      "number": 107,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 12,
+      "classPosition": 6,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 982.821,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.31230459829419194,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 881.508333332696
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.2717487737166422,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 881.5749999993626
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.30467737154028357,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 881.6916666660292
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.26819042437505686,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 881.7583333326958
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8146519633204333,
+        "steeringFactor": 0.8534566520626845,
+        "brakingFactor": 0.8720959375459396,
+        "accelerationFactor": 0.9113027104589932,
+        "topSpeedFactor": 0.8898340453563445,
+        "limpSpeed": null,
+        "pull": -0.03548302276671403,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.31230459829419194,
+        "averageSuspensionDamage": 0.2892302919815436,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-14",
+      "damage": 0.2057,
+      "potholeHitsAtTermination": 56,
+      "potholeHitsAtFieldCompletion": 56,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 150.1333,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2613,
+          "s": 3519.3983,
+          "lateral": -30.4939,
+          "endedAt": 155.1333,
+          "damageAtEnd": 0.1038,
+          "netDamageChangeDuringVisit": -0.1575,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 527.1667,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2492,
+          "s": 13910.3406,
+          "lateral": -30.4941,
+          "endedAt": 532.1667,
+          "damageAtEnd": 0.0951,
+          "netDamageChangeDuringVisit": -0.1541,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 738.2667,
+          "visitsBefore": 2,
+          "damageAtStart": 0.258,
+          "s": 19105.8121,
+          "lateral": -30.4939,
+          "endedAt": 743.2667,
+          "damageAtEnd": 0.1051,
+          "netDamageChangeDuringVisit": -0.1529,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 64.7694
+        },
+        {
+          "lap": 2,
+          "time": 133.6103
+        },
+        {
+          "lap": 3,
+          "time": 217.1952
+        },
+        {
+          "lap": 4,
+          "time": 280.0335
+        },
+        {
+          "lap": 5,
+          "time": 335.8062
+        },
+        {
+          "lap": 6,
+          "time": 388.5292
+        },
+        {
+          "lap": 7,
+          "time": 445.7534
+        },
+        {
+          "lap": 8,
+          "time": 510.6655
+        },
+        {
+          "lap": 9,
+          "time": 603.5298
+        },
+        {
+          "lap": 10,
+          "time": 657.3171
+        },
+        {
+          "lap": 11,
+          "time": 721.7508
+        },
+        {
+          "lap": 12,
+          "time": 814.0579
+        },
+        {
+          "lap": 13,
+          "time": 869.8864
+        },
+        {
+          "lap": 14,
+          "time": 930.6043
+        },
+        {
+          "lap": 15,
+          "time": 982.821
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 982.821,
+        "elapsed": 982.8333,
+        "s": 25977.7647,
+        "lateral": 1.9636,
+        "speed": 32.9975,
+        "damage": 0.2057,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 56,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-14",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 27472.3857,
+        "lateral": 5.6045,
+        "speed": 30.3358,
+        "damage": 0.2057,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 56,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-14",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-3",
+      "name": "V8 Stock Car",
+      "number": 24,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 13,
+      "classPosition": 7,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 992.6378,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.16796631302880088,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.035462208655201895,
+          "assembly": "intact",
+          "lastImpactTime": 1022.0499999992348
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.18985534959156733,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 955.491666665962
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.16350728195957703,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1022.1916666659014
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.18837797975409912,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 955.6833333326285
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8841311883851602,
+        "steeringFactor": 0.9073081927859082,
+        "brakingFactor": 0.9207656783552973,
+        "accelerationFactor": 0.9436800942189906,
+        "topSpeedFactor": 0.9281767601069012,
+        "limpSpeed": null,
+        "pull": 0.004487554319587854,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.18985534959156733,
+        "averageSuspensionDamage": 0.17742673108351106,
+        "minPressure": 1,
+        "averageBend": 0.008865552163800474,
+        "vibrationFactor": 0.0168445491112209,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-05",
+      "damage": 0.13,
+      "potholeHitsAtTermination": 72,
+      "potholeHitsAtFieldCompletion": 74,
+      "pitEntries": 5,
+      "serviceStarts": 5,
+      "serviceOutcomes": [
+        {
+          "startedAt": 137.6667,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1927,
+          "s": 3375.3977,
+          "lateral": -30.495,
+          "endedAt": 142.6667,
+          "damageAtEnd": 0.0778,
+          "netDamageChangeDuringVisit": -0.1149,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 325.6667,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2247,
+          "s": 8570.8692,
+          "lateral": -30.4944,
+          "endedAt": 330.6667,
+          "damageAtEnd": 0.0954,
+          "netDamageChangeDuringVisit": -0.1293,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 519.0333,
+          "visitsBefore": 2,
+          "damageAtStart": 0.2645,
+          "s": 13766.3411,
+          "lateral": -30.4927,
+          "endedAt": 524.0333,
+          "damageAtEnd": 0.1153,
+          "netDamageChangeDuringVisit": -0.1492,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 823.6833,
+          "visitsBefore": 3,
+          "damageAtStart": 0.3727,
+          "s": 22425.4602,
+          "lateral": -30.4911,
+          "endedAt": 828.6833,
+          "damageAtEnd": 0.1469,
+          "netDamageChangeDuringVisit": -0.2258,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 978.4833,
+          "visitsBefore": 4,
+          "damageAtStart": 0.2827,
+          "s": 25889.1076,
+          "lateral": -30.4933,
+          "endedAt": 983.4833,
+          "damageAtEnd": 0.1071,
+          "netDamageChangeDuringVisit": -0.1756,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 64.8679
+        },
+        {
+          "lap": 2,
+          "time": 152.1231
+        },
+        {
+          "lap": 3,
+          "time": 208.749
+        },
+        {
+          "lap": 4,
+          "time": 257.2295
+        },
+        {
+          "lap": 5,
+          "time": 339.7985
+        },
+        {
+          "lap": 6,
+          "time": 405.5353
+        },
+        {
+          "lap": 7,
+          "time": 451.9524
+        },
+        {
+          "lap": 8,
+          "time": 533.2924
+        },
+        {
+          "lap": 9,
+          "time": 593.5462
+        },
+        {
+          "lap": 10,
+          "time": 642.9177
+        },
+        {
+          "lap": 11,
+          "time": 696.1284
+        },
+        {
+          "lap": 12,
+          "time": 748.6306
+        },
+        {
+          "lap": 13,
+          "time": 838.9908
+        },
+        {
+          "lap": 14,
+          "time": 906.0112
+        },
+        {
+          "lap": 15,
+          "time": 992.6378
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 992.6378,
+        "elapsed": 992.65,
+        "s": 25977.5525,
+        "lateral": -20.5,
+        "speed": 15.9565,
+        "damage": 0.1071,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 72,
+        "pitState": "complete",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "through-exit",
+        "assignedBay": "bay-05",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 27132.2758,
+        "lateral": 7.76,
+        "speed": 33.2071,
+        "damage": 0.13,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 74,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-05",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-10",
+      "name": "V8 Stock Car",
+      "number": 9,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 14,
+      "classPosition": 8,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1000.3045,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.3390603448529329,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1004.4333333325842
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.4111744675898725,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1011.591666665911
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.33325976658353085,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1004.5166666659175
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.40816346706483386,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1011.8166666659108
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.7632264513494716,
+        "steeringFactor": 0.8109580982472426,
+        "brakingFactor": 0.8349575170183086,
+        "accelerationFactor": 0.8855410005518011,
+        "topSpeedFactor": 0.858993457940481,
+        "limpSpeed": null,
+        "pull": 0.06560010489933649,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.4111744675898725,
+        "averageSuspensionDamage": 0.37291451152279254,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-19",
+      "damage": 0.2658,
+      "potholeHitsAtTermination": 90,
+      "potholeHitsAtFieldCompletion": 94,
+      "pitEntries": 4,
+      "serviceStarts": 4,
+      "serviceOutcomes": [
+        {
+          "startedAt": 277.2333,
+          "visitsBefore": 0,
+          "damageAtStart": 0.3637,
+          "s": 7063.0458,
+          "lateral": -30.4919,
+          "endedAt": 282.2333,
+          "damageAtEnd": 0.1333,
+          "netDamageChangeDuringVisit": -0.2304,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 578.8167,
+          "visitsBefore": 1,
+          "damageAtStart": 0.4116,
+          "s": 15722.1647,
+          "lateral": -30.4923,
+          "endedAt": 583.8167,
+          "damageAtEnd": 0.1475,
+          "netDamageChangeDuringVisit": -0.2641,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 786.2333,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3695,
+          "s": 20917.6368,
+          "lateral": -30.4913,
+          "endedAt": 791.2333,
+          "damageAtEnd": 0.1626,
+          "netDamageChangeDuringVisit": -0.2069,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 935.7833,
+          "visitsBefore": 3,
+          "damageAtStart": 0.3192,
+          "s": 24381.284,
+          "lateral": -30.4925,
+          "endedAt": 940.7833,
+          "damageAtEnd": 0.1354,
+          "netDamageChangeDuringVisit": -0.1838,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 70.4733
+        },
+        {
+          "lap": 2,
+          "time": 123.7249
+        },
+        {
+          "lap": 3,
+          "time": 186.7216
+        },
+        {
+          "lap": 4,
+          "time": 255.967
+        },
+        {
+          "lap": 5,
+          "time": 338.064
+        },
+        {
+          "lap": 6,
+          "time": 389.8307
+        },
+        {
+          "lap": 7,
+          "time": 439.1286
+        },
+        {
+          "lap": 8,
+          "time": 491.619
+        },
+        {
+          "lap": 9,
+          "time": 557.4689
+        },
+        {
+          "lap": 10,
+          "time": 642.8058
+        },
+        {
+          "lap": 11,
+          "time": 694.7049
+        },
+        {
+          "lap": 12,
+          "time": 763.4245
+        },
+        {
+          "lap": 13,
+          "time": 849.0428
+        },
+        {
+          "lap": 14,
+          "time": 914.5319
+        },
+        {
+          "lap": 15,
+          "time": 1000.3045
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1000.3045,
+        "elapsed": 1000.3167,
+        "s": 25977.81,
+        "lateral": 1.9489,
+        "speed": 37.2338,
+        "damage": 0.2007,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 90,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-19",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 27227.8156,
+        "lateral": 6.9495,
+        "speed": 31.2098,
+        "damage": 0.2658,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 94,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-19",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "stock-4",
+      "name": "V8 Stock Car",
+      "number": 48,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 15,
+      "classPosition": 9,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1002.6981,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.28745315724882575,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.2084868031726991,
+          "assembly": "intact",
+          "lastImpactTime": 1019.8416666659035
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.3021664114447208,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.004708168093835583,
+          "assembly": "intact",
+          "lastImpactTime": 914.7249999993325
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.2840305137727203,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.09974589446133388,
+          "assembly": "intact",
+          "lastImpactTime": 1020.05833333257
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.29179491640945454,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 914.8833333326656
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8131606625567971,
+        "steeringFactor": 0.8326664534058983,
+        "brakingFactor": 0.870951301619604,
+        "accelerationFactor": 0.8987622249928812,
+        "topSpeedFactor": 0.8679286738573156,
+        "limpSpeed": null,
+        "pull": -0.12508132240657352,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.3021664114447208,
+        "averageSuspensionDamage": 0.2913612497189304,
+        "minPressure": 1,
+        "averageBend": 0.07823521643196714,
+        "vibrationFactor": 0.11731069245418671,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-07",
+      "damage": 0.2082,
+      "potholeHitsAtTermination": 82,
+      "potholeHitsAtFieldCompletion": 84,
+      "pitEntries": 5,
+      "serviceStarts": 5,
+      "serviceOutcomes": [
+        {
+          "startedAt": 147.8833,
+          "visitsBefore": 0,
+          "damageAtStart": 0.3131,
+          "s": 3407.3977,
+          "lateral": -30.4935,
+          "endedAt": 152.8833,
+          "damageAtEnd": 0.1212,
+          "netDamageChangeDuringVisit": -0.1919,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 240.4167,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2336,
+          "s": 5139.2215,
+          "lateral": -30.4936,
+          "endedAt": 245.4167,
+          "damageAtEnd": 0.0856,
+          "netDamageChangeDuringVisit": -0.148,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 494.8167,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3914,
+          "s": 12066.517,
+          "lateral": -30.4917,
+          "endedAt": 499.8167,
+          "damageAtEnd": 0.1398,
+          "netDamageChangeDuringVisit": -0.2516,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 731.95,
+          "visitsBefore": 3,
+          "damageAtStart": 0.2797,
+          "s": 18993.8127,
+          "lateral": -30.4909,
+          "endedAt": 736.95,
+          "damageAtEnd": 0.1293,
+          "netDamageChangeDuringVisit": -0.1504,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 884.1833,
+          "visitsBefore": 4,
+          "damageAtStart": 0.3521,
+          "s": 22457.4607,
+          "lateral": -30.4896,
+          "endedAt": 889.1833,
+          "damageAtEnd": 0.1417,
+          "netDamageChangeDuringVisit": -0.2104,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 75.6206
+        },
+        {
+          "lap": 2,
+          "time": 160.0493
+        },
+        {
+          "lap": 3,
+          "time": 252.4971
+        },
+        {
+          "lap": 4,
+          "time": 313.3794
+        },
+        {
+          "lap": 5,
+          "time": 368.4715
+        },
+        {
+          "lap": 6,
+          "time": 421.3839
+        },
+        {
+          "lap": 7,
+          "time": 507.0328
+        },
+        {
+          "lap": 8,
+          "time": 566.3833
+        },
+        {
+          "lap": 9,
+          "time": 613.9659
+        },
+        {
+          "lap": 10,
+          "time": 662.984
+        },
+        {
+          "lap": 11,
+          "time": 744.218
+        },
+        {
+          "lap": 12,
+          "time": 806.3908
+        },
+        {
+          "lap": 13,
+          "time": 896.5147
+        },
+        {
+          "lap": 14,
+          "time": 952.6579
+        },
+        {
+          "lap": 15,
+          "time": 1002.6981
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1002.6981,
+        "elapsed": 1002.7,
+        "s": 25977.459,
+        "lateral": 8.5342,
+        "speed": 52.3644,
+        "damage": 0.1864,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 82,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-07",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 26916.9099,
+        "lateral": 7.7579,
+        "speed": 31.0775,
+        "damage": 0.2082,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 84,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-07",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-9",
+      "name": "V8 Stock Car",
+      "number": 43,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 16,
+      "classPosition": 10,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1009.6585,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.3690024253458815,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 936.9833333326455
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.5821822918683952,
+          "suspensionStatus": "worn",
+          "tire": "punctured",
+          "pressure": 0.4325594433597948,
+          "leakRate": 0.006616739558528177,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 993.8416666659272
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.3619807553646601,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 937.174999999312
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.5932648545547486,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0.5450582307437435,
+          "assembly": "intact",
+          "lastImpactTime": 994.041666665927
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.6511720724437672,
+        "steeringFactor": 0.7241602655604042,
+        "brakingFactor": 0.7604716145599723,
+        "accelerationFactor": 0.8331082376856821,
+        "topSpeedFactor": 0.737544180324983,
+        "limpSpeed": null,
+        "pull": 0.7253844201919432,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.5932648545547486,
+        "averageSuspensionDamage": 0.47660758178342133,
+        "minPressure": 0.4325594433597948,
+        "averageBend": 0.13626455768593587,
+        "vibrationFactor": 0.2589026596032782,
+        "brokenSuspensions": 0,
+        "puncturedTires": 1
+      },
+      "assignedPitBay": "bay-17",
+      "damage": 0.3409,
+      "potholeHitsAtTermination": 78,
+      "potholeHitsAtFieldCompletion": 78,
+      "pitEntries": 5,
+      "serviceStarts": 4,
+      "serviceOutcomes": [
+        {
+          "startedAt": 110.45,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2318,
+          "s": 1835.5743,
+          "lateral": -30.4952,
+          "endedAt": 115.45,
+          "damageAtEnd": 0.0997,
+          "netDamageChangeDuringVisit": -0.1321,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 366.3667,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2691,
+          "s": 8762.8702,
+          "lateral": -30.4941,
+          "endedAt": 371.3667,
+          "damageAtEnd": 0.1087,
+          "netDamageChangeDuringVisit": -0.1604,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 619.4167,
+          "visitsBefore": 2,
+          "damageAtStart": 0.4086,
+          "s": 15690.1646,
+          "lateral": -30.4903,
+          "endedAt": 624.4167,
+          "damageAtEnd": 0.1554,
+          "netDamageChangeDuringVisit": -0.2532,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 781.4,
+          "visitsBefore": 3,
+          "damageAtStart": 0.3007,
+          "s": 19153.8129,
+          "lateral": -30.4917,
+          "endedAt": 786.4,
+          "damageAtEnd": 0.1342,
+          "netDamageChangeDuringVisit": -0.1665,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 88.8467
+        },
+        {
+          "lap": 2,
+          "time": 176.7244
+        },
+        {
+          "lap": 3,
+          "time": 226.2564
+        },
+        {
+          "lap": 4,
+          "time": 280.7319
+        },
+        {
+          "lap": 5,
+          "time": 347.1452
+        },
+        {
+          "lap": 6,
+          "time": 428.6663
+        },
+        {
+          "lap": 7,
+          "time": 483.0935
+        },
+        {
+          "lap": 8,
+          "time": 533.7331
+        },
+        {
+          "lap": 9,
+          "time": 600.1334
+        },
+        {
+          "lap": 10,
+          "time": 681.3319
+        },
+        {
+          "lap": 11,
+          "time": 761.9888
+        },
+        {
+          "lap": 12,
+          "time": 845.7115
+        },
+        {
+          "lap": 13,
+          "time": 895.8143
+        },
+        {
+          "lap": 14,
+          "time": 945.3641
+        },
+        {
+          "lap": 15,
+          "time": 1009.6585
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1009.6585,
+        "elapsed": 1009.6667,
+        "s": 25977.4874,
+        "lateral": -20.5,
+        "speed": 15.9382,
+        "damage": 0.3409,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 78,
+        "pitState": "none",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "approach",
+        "assignedBay": "bay-17",
+        "pitMergeCommitted": false,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 26081.1213,
+        "lateral": -30.4908,
+        "speed": 0,
+        "damage": 0.3409,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 78,
+        "pitState": "none",
+        "inPit": true,
+        "pitTarget": true,
+        "pitRoute": "enter-stall",
+        "assignedBay": "bay-17",
+        "pitMergeCommitted": false,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 8.65
+    },
+    {
+      "id": "civilian-3",
+      "name": "Toyota Camry",
+      "number": 103,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 17,
+      "classPosition": 7,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1030.1306,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.13281168561411916,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 872.6083333327041
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.3497499538584559,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1004.4249999992509
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.13094538526812252,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 872.8166666660372
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.34680881686040815,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 1004.6166666659174
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8452770207849514,
+        "steeringFactor": 0.8783599933971933,
+        "brakingFactor": 0.8938317486229889,
+        "accelerationFactor": 0.9263757854772486,
+        "topSpeedFactor": 0.9081023431606037,
+        "limpSpeed": null,
+        "pull": 0.1949757322568903,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.3497499538584559,
+        "averageSuspensionDamage": 0.24007896040027643,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-06",
+      "damage": 0.1707,
+      "potholeHitsAtTermination": 50,
+      "potholeHitsAtFieldCompletion": 50,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 89.6833,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1098,
+          "s": 1659.5741,
+          "lateral": -30.4961,
+          "endedAt": 94.6833,
+          "damageAtEnd": 0.0439,
+          "netDamageChangeDuringVisit": -0.0659,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 425.9333,
+          "visitsBefore": 1,
+          "damageAtStart": 0.1823,
+          "s": 10318.6931,
+          "lateral": -30.4944,
+          "endedAt": 430.9333,
+          "damageAtEnd": 0.0783,
+          "netDamageChangeDuringVisit": -0.104,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 946.4833,
+          "visitsBefore": 2,
+          "damageAtStart": 0.3436,
+          "s": 24173.2839,
+          "lateral": -30.4928,
+          "endedAt": 951.4833,
+          "damageAtEnd": 0.1484,
+          "netDamageChangeDuringVisit": -0.1952,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 103.2857
+        },
+        {
+          "lap": 2,
+          "time": 166.4071
+        },
+        {
+          "lap": 3,
+          "time": 219.2443
+        },
+        {
+          "lap": 4,
+          "time": 277.4508
+        },
+        {
+          "lap": 5,
+          "time": 332.2359
+        },
+        {
+          "lap": 6,
+          "time": 444.1119
+        },
+        {
+          "lap": 7,
+          "time": 514.0228
+        },
+        {
+          "lap": 8,
+          "time": 575.8863
+        },
+        {
+          "lap": 9,
+          "time": 633.6036
+        },
+        {
+          "lap": 10,
+          "time": 691.7172
+        },
+        {
+          "lap": 11,
+          "time": 747.7894
+        },
+        {
+          "lap": 12,
+          "time": 807.9955
+        },
+        {
+          "lap": 13,
+          "time": 863.8618
+        },
+        {
+          "lap": 14,
+          "time": 960.354
+        },
+        {
+          "lap": 15,
+          "time": 1030.1306
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1030.1306,
+        "elapsed": 1030.1333,
+        "s": 25977.478,
+        "lateral": 8.4568,
+        "speed": 43.9618,
+        "damage": 0.1707,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 50,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-06",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 26234.7428,
+        "lateral": 3.4528,
+        "speed": 28.1964,
+        "damage": 0.1707,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 50,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-06",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "civilian-9",
+      "name": "Toyota RAV4",
+      "number": 109,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 18,
+      "classPosition": 8,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1036.5343,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.4121305034411217,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 955.0666666659624
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.24992613712344153,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 622.0916666662653
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.40441923127660484,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 955.1999999992956
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.24820275107134665,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 622.2416666662651
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.7903366061036164,
+        "steeringFactor": 0.8334740410977481,
+        "brakingFactor": 0.8546549744668942,
+        "accelerationFactor": 0.8992079722433739,
+        "topSpeedFactor": 0.875309606670277,
+        "limpSpeed": null,
+        "pull": -0.1444869581578066,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.4121305034411217,
+        "averageSuspensionDamage": 0.3286696557281287,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-18",
+      "damage": 0.2337,
+      "potholeHitsAtTermination": 56,
+      "potholeHitsAtFieldCompletion": 56,
+      "pitEntries": 3,
+      "serviceStarts": 3,
+      "serviceOutcomes": [
+        {
+          "startedAt": 107.8667,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1766,
+          "s": 1851.5741,
+          "lateral": -30.4953,
+          "endedAt": 112.8667,
+          "damageAtEnd": 0.0687,
+          "netDamageChangeDuringVisit": -0.1079,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 441.4167,
+          "visitsBefore": 1,
+          "damageAtStart": 0.2188,
+          "s": 10510.6937,
+          "lateral": -30.4945,
+          "endedAt": 446.4167,
+          "damageAtEnd": 0.0857,
+          "netDamageChangeDuringVisit": -0.1331,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 598.1333,
+          "visitsBefore": 2,
+          "damageAtStart": 0.2359,
+          "s": 13974.3408,
+          "lateral": -30.4944,
+          "endedAt": 603.1333,
+          "damageAtEnd": 0.0952,
+          "netDamageChangeDuringVisit": -0.1407,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 87.0813
+        },
+        {
+          "lap": 2,
+          "time": 176.0601
+        },
+        {
+          "lap": 3,
+          "time": 232.195
+        },
+        {
+          "lap": 4,
+          "time": 289.5776
+        },
+        {
+          "lap": 5,
+          "time": 349.5853
+        },
+        {
+          "lap": 6,
+          "time": 420.4605
+        },
+        {
+          "lap": 7,
+          "time": 506.4934
+        },
+        {
+          "lap": 8,
+          "time": 577.3033
+        },
+        {
+          "lap": 9,
+          "time": 668.2688
+        },
+        {
+          "lap": 10,
+          "time": 729.7918
+        },
+        {
+          "lap": 11,
+          "time": 789.0597
+        },
+        {
+          "lap": 12,
+          "time": 846.9704
+        },
+        {
+          "lap": 13,
+          "time": 910.6948
+        },
+        {
+          "lap": 14,
+          "time": 969.0821
+        },
+        {
+          "lap": 15,
+          "time": 1036.5343
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1036.5343,
+        "elapsed": 1036.55,
+        "s": 25977.7068,
+        "lateral": 8.4079,
+        "speed": 22.2681,
+        "damage": 0.2337,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 56,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-18",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 25988.8517,
+        "lateral": 7.2534,
+        "speed": 21.7042,
+        "damage": 0.2337,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 56,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-18",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-8",
+      "name": "Ford F-150",
+      "number": 108,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 19,
+      "classPosition": 9,
+      "result": "FINISHED",
+      "completedLaps": 15,
+      "finishTime": 1037.0553,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 0.11333179775816819,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 437.37499999976654
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.3414472929073853,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 863.1083333327127
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.09173794055912854,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 437.5833333330997
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.32565227089417775,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 863.2833333327126
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.8583115104454548,
+        "steeringFactor": 0.8888383039121465,
+        "brakingFactor": 0.9026609478397956,
+        "accelerationFactor": 0.9324467690180895,
+        "topSpeedFactor": 0.9151705063942254,
+        "limpSpeed": null,
+        "pull": 0.20675365443075344,
+        "blownTires": 0,
+        "maxSuspensionDamage": 0.3414472929073853,
+        "averageSuspensionDamage": 0.21804232552971498,
+        "minPressure": 1,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 0,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-16",
+      "damage": 0.1596,
+      "potholeHitsAtTermination": 40,
+      "potholeHitsAtFieldCompletion": 40,
+      "pitEntries": 2,
+      "serviceStarts": 2,
+      "serviceOutcomes": [
+        {
+          "startedAt": 107.2167,
+          "visitsBefore": 0,
+          "damageAtStart": 0.1541,
+          "s": 1819.574,
+          "lateral": -30.4952,
+          "endedAt": 112.2167,
+          "damageAtEnd": 0.0711,
+          "netDamageChangeDuringVisit": -0.083,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        },
+        {
+          "startedAt": 835.8833,
+          "visitsBefore": 1,
+          "damageAtStart": 0.3899,
+          "s": 20869.6363,
+          "lateral": -30.4912,
+          "endedAt": 840.8833,
+          "damageAtEnd": 0.1436,
+          "netDamageChangeDuringVisit": -0.2463,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 88.0968
+        },
+        {
+          "lap": 2,
+          "time": 185.3021
+        },
+        {
+          "lap": 3,
+          "time": 241.1915
+        },
+        {
+          "lap": 4,
+          "time": 301.0143
+        },
+        {
+          "lap": 5,
+          "time": 361.4704
+        },
+        {
+          "lap": 6,
+          "time": 424.1747
+        },
+        {
+          "lap": 7,
+          "time": 491.2475
+        },
+        {
+          "lap": 8,
+          "time": 553.0851
+        },
+        {
+          "lap": 9,
+          "time": 615.4933
+        },
+        {
+          "lap": 10,
+          "time": 677.0896
+        },
+        {
+          "lap": 11,
+          "time": 738.8118
+        },
+        {
+          "lap": 12,
+          "time": 815.6977
+        },
+        {
+          "lap": 13,
+          "time": 913.9683
+        },
+        {
+          "lap": 14,
+          "time": 974.5021
+        },
+        {
+          "lap": 15,
+          "time": 1037.0553
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 1037.0553,
+        "elapsed": 1037.0667,
+        "s": 25977.772,
+        "lateral": 3.1873,
+        "speed": 36.5865,
+        "damage": 0.1596,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 40,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-16",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 25977.772,
+        "lateral": 3.1873,
+        "speed": 36.5865,
+        "damage": 0.1596,
+        "completedLaps": 15,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 40,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-16",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-2",
+      "name": "Toyota Corolla",
+      "number": 102,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 20,
+      "classPosition": 10,
+      "result": "DNF",
+      "completedLaps": 6,
+      "finishTime": null,
+      "wreckTime": 413.4167,
+      "wreckReason": "Front left wheel assembly destroyed",
+      "physicallyWreckedAfterFinish": false,
+      "wheelComponents": [
+        {
+          "id": "FL",
+          "label": "Front left",
+          "side": -1,
+          "axle": 1,
+          "suspensionDamage": 1,
+          "suspensionStatus": "broken",
+          "tire": "blown",
+          "pressure": 0,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "destroyed",
+          "lastImpactTime": 413.416666666455
+        },
+        {
+          "id": "FR",
+          "label": "Front right",
+          "side": 1,
+          "axle": 1,
+          "suspensionDamage": 0.22636464051884164,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 309.88333333321583
+        },
+        {
+          "id": "RL",
+          "label": "Rear left",
+          "side": -1,
+          "axle": -1,
+          "suspensionDamage": 0.10719306413177473,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 312.44999999988016
+        },
+        {
+          "id": "RR",
+          "label": "Rear right",
+          "side": 1,
+          "axle": -1,
+          "suspensionDamage": 0.22283804031467552,
+          "suspensionStatus": "worn",
+          "tire": "intact",
+          "pressure": 1,
+          "leakRate": 0,
+          "bend": 0,
+          "assembly": "intact",
+          "lastImpactTime": 310.0083333332157
+        }
+      ],
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      },
+      "handling": {
+        "gripFactor": 0.3891824870840864,
+        "steeringFactor": 0.49436042550347076,
+        "brakingFactor": 0.4532703191276031,
+        "accelerationFactor": 0.6721802127517355,
+        "topSpeedFactor": 0.5974575053365305,
+        "limpSpeed": 18,
+        "pull": -2.1739517396170274,
+        "blownTires": 1,
+        "maxSuspensionDamage": 1,
+        "averageSuspensionDamage": 0.38909893624132297,
+        "minPressure": 0,
+        "averageBend": 0,
+        "vibrationFactor": 0,
+        "brokenSuspensions": 1,
+        "puncturedTires": 0
+      },
+      "assignedPitBay": "bay-04",
+      "damage": 1,
+      "potholeHitsAtTermination": 25,
+      "potholeHitsAtFieldCompletion": 25,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 265.4167,
+          "visitsBefore": 0,
+          "damageAtStart": 0.2047,
+          "s": 6823.0456,
+          "lateral": -30.4949,
+          "endedAt": 270.4167,
+          "damageAtEnd": 0.0795,
+          "netDamageChangeDuringVisit": -0.1252,
+          "outcome": "service-completed",
+          "message": "All four tires replaced. Other repairs partial; engine condition 100%.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 64.3173
+        },
+        {
+          "lap": 2,
+          "time": 127.6385
+        },
+        {
+          "lap": 3,
+          "time": 186.6949
+        },
+        {
+          "lap": 4,
+          "time": 281.2701
+        },
+        {
+          "lap": 5,
+          "time": 348.0927
+        },
+        {
+          "lap": 6,
+          "time": 408.6132
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "DNF",
+        "time": 413.4167,
+        "elapsed": 413.4167,
+        "s": 10514.7926,
+        "lateral": 0,
+        "speed": 0,
+        "damage": 1,
+        "completedLaps": 6,
+        "finished": false,
+        "wrecked": true,
+        "potholeHits": 25,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-04",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "finalSnapshot": {
+        "elapsed": 1037.0667,
+        "s": 10514.7926,
+        "lateral": 0,
+        "speed": 0,
+        "damage": 1,
+        "completedLaps": 6,
+        "finished": false,
+        "wrecked": true,
+        "potholeHits": 25,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false,
+        "pitRoute": "none",
+        "assignedBay": "bay-04",
+        "pitMergeCommitted": true,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        }
+      },
+      "secondsSinceLastForwardProgress": 623.65
+    }
+  ],
+  "timeline": [
+    {
+      "carId": "civilian-2",
+      "classId": "civilian",
+      "player": false,
+      "result": "DNF",
+      "time": 413.4167,
+      "elapsed": 413.4167,
+      "s": 10514.7926,
+      "lateral": 0,
+      "speed": 0,
+      "damage": 1,
+      "completedLaps": 6,
+      "finished": false,
+      "wrecked": true,
+      "potholeHits": 25,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-04",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-6",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 835.4279,
+      "elapsed": 835.4333,
+      "s": 25977.376,
+      "lateral": -29.5102,
+      "speed": 3.4212,
+      "damage": 0.4301,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 48,
+      "pitState": "none",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "enter-stall",
+      "assignedBay": "bay-11",
+      "pitMergeCommitted": false,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-8",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 847.9077,
+      "elapsed": 847.9167,
+      "s": 25977.7246,
+      "lateral": 9.6999,
+      "speed": 40.8946,
+      "damage": 0.2699,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 42,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-15",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-1",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 897.7944,
+      "elapsed": 897.8,
+      "s": 25977.6404,
+      "lateral": 8.5361,
+      "speed": 50.8995,
+      "damage": 0.174,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 49,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-01",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-1",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 913.2803,
+      "elapsed": 913.2833,
+      "s": 25977.5059,
+      "lateral": 8.4961,
+      "speed": 49.77,
+      "damage": 0.1759,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 40,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-02",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-5",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 928.6481,
+      "elapsed": 928.65,
+      "s": 25977.4284,
+      "lateral": 9.79,
+      "speed": 37.6407,
+      "damage": 0.3132,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 41,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-10",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-6",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 931.0523,
+      "elapsed": 931.0667,
+      "s": 25977.9293,
+      "lateral": 9.7976,
+      "speed": 39.8974,
+      "damage": 0.3119,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 44,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-12",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-7",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 944.3723,
+      "elapsed": 944.3833,
+      "s": 25977.7683,
+      "lateral": 0.0193,
+      "speed": 37.2069,
+      "damage": 0.203,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 68,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-13",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-10",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 949.229,
+      "elapsed": 949.2333,
+      "s": 25977.5637,
+      "lateral": 8.4916,
+      "speed": 47.977,
+      "damage": 0.1619,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 42,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-20",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-5",
+      "classId": "stock",
+      "player": true,
+      "result": "FINISHED",
+      "time": 958.0021,
+      "elapsed": 958.0167,
+      "s": 25977.5188,
+      "lateral": -20.6465,
+      "speed": 11.0944,
+      "damage": 0.1227,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 65,
+      "pitState": "complete",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "through-exit",
+      "assignedBay": "bay-09",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-2",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 961.21,
+      "elapsed": 961.2167,
+      "s": 25977.4629,
+      "lateral": -20.5,
+      "speed": 15.9496,
+      "damage": 0.1878,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 68,
+      "pitState": "complete",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "through-exit",
+      "assignedBay": "bay-03",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-4",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 961.9931,
+      "elapsed": 962,
+      "s": 25977.5798,
+      "lateral": 1.9559,
+      "speed": 32.4651,
+      "damage": 0.1895,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 49,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-08",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-7",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 982.821,
+      "elapsed": 982.8333,
+      "s": 25977.7647,
+      "lateral": 1.9636,
+      "speed": 32.9975,
+      "damage": 0.2057,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 56,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-14",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-3",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 992.6378,
+      "elapsed": 992.65,
+      "s": 25977.5525,
+      "lateral": -20.5,
+      "speed": 15.9565,
+      "damage": 0.1071,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 72,
+      "pitState": "complete",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "through-exit",
+      "assignedBay": "bay-05",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-10",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1000.3045,
+      "elapsed": 1000.3167,
+      "s": 25977.81,
+      "lateral": 1.9489,
+      "speed": 37.2338,
+      "damage": 0.2007,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 90,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-19",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-4",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1002.6981,
+      "elapsed": 1002.7,
+      "s": 25977.459,
+      "lateral": 8.5342,
+      "speed": 52.3644,
+      "damage": 0.1864,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 82,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-07",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "stock-9",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1009.6585,
+      "elapsed": 1009.6667,
+      "s": 25977.4874,
+      "lateral": -20.5,
+      "speed": 15.9382,
+      "damage": 0.3409,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 78,
+      "pitState": "none",
+      "inPit": true,
+      "pitTarget": true,
+      "pitRoute": "approach",
+      "assignedBay": "bay-17",
+      "pitMergeCommitted": false,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-3",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1030.1306,
+      "elapsed": 1030.1333,
+      "s": 25977.478,
+      "lateral": 8.4568,
+      "speed": 43.9618,
+      "damage": 0.1707,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 50,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-06",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-9",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1036.5343,
+      "elapsed": 1036.55,
+      "s": 25977.7068,
+      "lateral": 8.4079,
+      "speed": 22.2681,
+      "damage": 0.2337,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 56,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-18",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    },
+    {
+      "carId": "civilian-8",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 1037.0553,
+      "elapsed": 1037.0667,
+      "s": 25977.772,
+      "lateral": 3.1873,
+      "speed": 36.5865,
+      "damage": 0.1596,
+      "completedLaps": 15,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 40,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false,
+      "pitRoute": "none",
+      "assignedBay": "bay-16",
+      "pitMergeCommitted": true,
+      "engine": {
+        "heat": 0,
+        "wear": 0,
+        "status": "normal",
+        "grassDrivingSeconds": 0,
+        "cooling": false,
+        "heatRate": 0
+      }
+    }
+  ],
+  "verificationBoundary": "Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series."
+}

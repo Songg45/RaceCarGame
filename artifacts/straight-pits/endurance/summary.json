@@ -1,0 +1,148 @@
+{
+  "seed": 20261112,
+  "simulationSourceSha256": "1e063005838c42596a67b95c3a2e300a1cbec10c4eab6d2e9802e89fd199a5d6",
+  "catalogSourceSha256": "5a8b98405c23fd6fbc9c3757d88649802cfcfd352944014a66c5913456a39ad8",
+  "results": [
+    {
+      "scenario": {
+        "name": "Easy",
+        "slug": "easy-10",
+        "difficulty": 0,
+        "laps": 10
+      },
+      "options": {
+        "trackId": "bristol",
+        "playerClass": "stock",
+        "vehicleId": "civic",
+        "seed": 20261112,
+        "laps": 10,
+        "difficulty": 0
+      },
+      "simulationSourceSha256": "1e063005838c42596a67b95c3a2e300a1cbec10c4eab6d2e9802e89fd199a5d6",
+      "catalogSourceSha256": "5a8b98405c23fd6fbc9c3757d88649802cfcfd352944014a66c5913456a39ad8",
+      "trackLengthMeters": 1731.82381824,
+      "trackMiles": 1.0761054306848008,
+      "fixedStepSeconds": 0.016666666666666666,
+      "raceComplete": true,
+      "terminationReason": "all-cars-finished-or-wrecked",
+      "simulatedRaceSeconds": 586.0167,
+      "simulatedCountdownSeconds": 3,
+      "harnessWallSeconds": 5.7503,
+      "frames": 35341,
+      "potholes": 6,
+      "finished": 20,
+      "dnf": 0,
+      "stillRunning": 0,
+      "collisionCount": 65,
+      "crossClassCollisions": 21,
+      "totalPotholeHits": 674,
+      "pitServiceStarts": 29,
+      "completedPitServices": 29,
+      "destroyedDuringService": 0,
+      "verificationBoundary": "Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series.",
+      "player": {
+        "result": "FINISHED",
+        "completedLaps": 10,
+        "classPosition": 6,
+        "overallPosition": 6,
+        "finishTime": 466.2892,
+        "wreckTime": null,
+        "wreckReason": ""
+      }
+    },
+    {
+      "scenario": {
+        "name": "Medium",
+        "slug": "medium-15",
+        "difficulty": 50,
+        "laps": 15
+      },
+      "options": {
+        "trackId": "bristol",
+        "playerClass": "stock",
+        "vehicleId": "civic",
+        "seed": 20261112,
+        "laps": 15,
+        "difficulty": 50
+      },
+      "simulationSourceSha256": "1e063005838c42596a67b95c3a2e300a1cbec10c4eab6d2e9802e89fd199a5d6",
+      "catalogSourceSha256": "5a8b98405c23fd6fbc9c3757d88649802cfcfd352944014a66c5913456a39ad8",
+      "trackLengthMeters": 1731.82381824,
+      "trackMiles": 1.0761054306848008,
+      "fixedStepSeconds": 0.016666666666666666,
+      "raceComplete": true,
+      "terminationReason": "all-cars-finished-or-wrecked",
+      "simulatedRaceSeconds": 796.4333,
+      "simulatedCountdownSeconds": 3,
+      "harnessWallSeconds": 7.0094,
+      "frames": 47966,
+      "potholes": 68,
+      "finished": 0,
+      "dnf": 20,
+      "stillRunning": 0,
+      "collisionCount": 145,
+      "crossClassCollisions": 96,
+      "totalPotholeHits": 2709,
+      "pitServiceStarts": 65,
+      "completedPitServices": 65,
+      "destroyedDuringService": 0,
+      "verificationBoundary": "Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series.",
+      "player": {
+        "result": "DNF",
+        "completedLaps": 5,
+        "classPosition": 1,
+        "overallPosition": 2,
+        "finishTime": null,
+        "wreckTime": 796.4333,
+        "wreckReason": "Pothole damage"
+      }
+    },
+    {
+      "scenario": {
+        "name": "Extreme",
+        "slug": "extreme-20",
+        "difficulty": 100,
+        "laps": 20
+      },
+      "options": {
+        "trackId": "bristol",
+        "playerClass": "stock",
+        "vehicleId": "civic",
+        "seed": 20261112,
+        "laps": 20,
+        "difficulty": 100
+      },
+      "simulationSourceSha256": "1e063005838c42596a67b95c3a2e300a1cbec10c4eab6d2e9802e89fd199a5d6",
+      "catalogSourceSha256": "5a8b98405c23fd6fbc9c3757d88649802cfcfd352944014a66c5913456a39ad8",
+      "trackLengthMeters": 1731.82381824,
+      "trackMiles": 1.0761054306848008,
+      "fixedStepSeconds": 0.016666666666666666,
+      "raceComplete": true,
+      "terminationReason": "all-cars-finished-or-wrecked",
+      "simulatedRaceSeconds": 129.6,
+      "simulatedCountdownSeconds": 3,
+      "harnessWallSeconds": 1.3456,
+      "frames": 7956,
+      "potholes": 151,
+      "finished": 0,
+      "dnf": 20,
+      "stillRunning": 0,
+      "collisionCount": 86,
+      "crossClassCollisions": 44,
+      "totalPotholeHits": 812,
+      "pitServiceStarts": 0,
+      "completedPitServices": 0,
+      "destroyedDuringService": 0,
+      "verificationBoundary": "Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series.",
+      "player": {
+        "result": "DNF",
+        "completedLaps": 0,
+        "classPosition": 7,
+        "overallPosition": 12,
+        "finishTime": null,
+        "wreckTime": 46.1417,
+        "wreckReason": "Pothole damage"
+      }
+    }
+  ]
+}

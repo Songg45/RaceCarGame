@@ -1,0 +1,31 @@
+node_modules/
+dist/
+dist-play/
+.dist-play-staging/
+dist-candidate/
+.dist-candidate-staging/
+.DS_Store
+*.log
+test-results/
+.env
+.env.*
+!.env.example
+
+# Keep deterministic fixtures/reports; leave screenshots, process state and
+# generated diagnostic logs local to the machine that produced them.
+artifacts/**
+!artifacts/**/
+!artifacts/**/QA-REPORT.md
+!artifacts/**/ENDURANCE-REPORT.md
+!artifacts/**/VISIBLE-WATCH-RECORD.md
+!artifacts/**/OPENING-COMPARISON.md
+!artifacts/**/endurance/*.json
+!artifacts/manual-pits-avoidance/extreme-opening-baseline.json
+!artifacts/manual-pits-avoidance/extreme-opening-after.json
+!artifacts/manual-pits-avoidance/opening-comparison.json
+!artifacts/manual-pits-avoidance/parking-verification.json
+!artifacts/manual-pits-avoidance/browser-manual-pits.json
+!artifacts/straight-pits/parking-verification.json
+!artifacts/straight-pits/browser-straight-pits.json
+!artifacts/wheel-damage/browser-wheel-verification.json
+!artifacts/browser-verification.json

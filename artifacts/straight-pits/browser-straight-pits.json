@@ -1,0 +1,1452 @@
+{
+  "passed": true,
+  "baseURL": "http://127.0.0.1:4174/",
+  "checks": [
+    {
+      "check": "Expanded game distance and complete pit row fit a straight home stretch",
+      "trackInfo": {
+        "length": 1731.82381824,
+        "miles": 1.0761054306848008,
+        "referenceMiles": 0.533,
+        "straight": 600,
+        "entry": -250,
+        "exit": 250
+      }
+    },
+    {
+      "check": "Declared photo fixture initialized before driving",
+      "setup": {
+        "serviceSeconds": 600,
+        "initial": [
+          {
+            "id": "stock-1",
+            "s": -360,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-1",
+            "s": -360,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-2",
+            "s": -373,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-2",
+            "s": -373,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-3",
+            "s": -386,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-3",
+            "s": -386,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-4",
+            "s": -399,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-4",
+            "s": -399,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-5",
+            "s": -412,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-5",
+            "s": -412,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-6",
+            "s": -425,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-6",
+            "s": -425,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-7",
+            "s": -438,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-7",
+            "s": -438,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-8",
+            "s": -451,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-8",
+            "s": -451,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-9",
+            "s": -464,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-9",
+            "s": -464,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-10",
+            "s": -477,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-10",
+            "s": -477,
+            "lateral": 3.2
+          }
+        ],
+        "boundary": "All cars begin on the racing surface before the entrance during countdown. Only initial poses/body damage and an extended600-second service fixture are set. The live watch controller stays paused while ordinary1/60 engine ticks and AI controls are accelerated for the photo. No later positions/headings are injected; this is not a real-time watch."
+      }
+    },
+    {
+      "check": "All20 physically arrive centered/aligned in their own straight bays without service snapping; graphics match actual poses",
+      "setup": {
+        "serviceSeconds": 600,
+        "initial": [
+          {
+            "id": "stock-1",
+            "s": -360,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-1",
+            "s": -360,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-2",
+            "s": -373,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-2",
+            "s": -373,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-3",
+            "s": -386,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-3",
+            "s": -386,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-4",
+            "s": -399,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-4",
+            "s": -399,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-5",
+            "s": -412,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-5",
+            "s": -412,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-6",
+            "s": -425,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-6",
+            "s": -425,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-7",
+            "s": -438,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-7",
+            "s": -438,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-8",
+            "s": -451,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-8",
+            "s": -451,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-9",
+            "s": -464,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-9",
+            "s": -464,
+            "lateral": 3.2
+          },
+          {
+            "id": "stock-10",
+            "s": -477,
+            "lateral": -3.2
+          },
+          {
+            "id": "civilian-10",
+            "s": -477,
+            "lateral": 3.2
+          }
+        ],
+        "boundary": "All cars begin on the racing surface before the entrance during countdown. Only initial poses/body damage and an extended600-second service fixture are set. The live watch controller stays paused while ordinary1/60 engine ticks and AI controls are accelerated for the photo. No later positions/headings are injected; this is not a real-time watch."
+      },
+      "physicalRun": {
+        "allServicing": true,
+        "elapsed": 188.48333333332624,
+        "cars": [
+          {
+            "id": "stock-1",
+            "s": 1579.5739329629214,
+            "lateral": -30.495983803916975,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24988527707864705,
+              "lateral": -0.004016196083025392,
+              "heading": -0.0000744178191476711
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-1",
+            "s": 1595.574895326015,
+            "lateral": -30.4958552003258,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2489229139850977,
+              "lateral": -0.004144799674200783,
+              "heading": -0.00007304500048727084
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-2",
+            "s": -120.24985789445282,
+            "lateral": -30.496022547969073,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24985789445281625,
+              "lateral": -0.003977452030927253,
+              "heading": -0.0000739320269025189
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-2",
+            "s": -104.24911004666444,
+            "lateral": -30.496013864496724,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24911004666455483,
+              "lateral": -0.003986135503275534,
+              "heading": -0.00005930610911106765
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-3",
+            "s": -88.24929848177959,
+            "lateral": -30.510715280522074,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24929848177953318,
+              "lateral": 0.010715280522074266,
+              "heading": -0.000073904868903498
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-3",
+            "s": 1659.574417257964,
+            "lateral": -30.49590648184756,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2494009820361498,
+              "lateral": -0.004093518152441078,
+              "heading": -0.00006414880468345784
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-4",
+            "s": -56.249149097272394,
+            "lateral": -30.508121568645453,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24914909727249324,
+              "lateral": 0.008121568645453436,
+              "heading": -0.0000738975483657611
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-4",
+            "s": -40.24908078299538,
+            "lateral": -30.495907619381324,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24908078299540648,
+              "lateral": -0.004092380618676117,
+              "heading": -0.00006671475906807365
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-5",
+            "s": -24.249346287553397,
+            "lateral": -30.50373612750056,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2493462875536352,
+              "lateral": 0.0037361275005594052,
+              "heading": -0.00007229653351690187
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-5",
+            "s": -8.249334400002171,
+            "lateral": -30.49590630907892,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24933440000222618,
+              "lateral": -0.004093690921081361,
+              "heading": -0.0000651721198766012
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-6",
+            "s": 7.750799596213257,
+            "lateral": -30.496024186877047,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24920040378674457,
+              "lateral": -0.003975813122952587,
+              "heading": -0.00007390010494660229
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-6",
+            "s": 23.750446021001203,
+            "lateral": -30.49605647971421,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24955397899884701,
+              "lateral": -0.003943520285790925,
+              "heading": -0.00006329748255296794
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-7",
+            "s": 39.75087063125238,
+            "lateral": -30.496024369668895,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24912936874761726,
+              "lateral": -0.003975630331105151,
+              "heading": -0.00007389655352806438
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-7",
+            "s": 55.75075262908253,
+            "lateral": -30.495926963302672,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24924737091760107,
+              "lateral": -0.0040730366973278365,
+              "heading": -0.00006696393373007167
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-8",
+            "s": 71.75088761729981,
+            "lateral": -30.523348001487594,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2491123827003321,
+              "lateral": 0.023348001487594416,
+              "heading": -0.00007389569173193422
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-8",
+            "s": 1819.5742674556693,
+            "lateral": -30.495785060399925,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24955078433049493,
+              "lateral": -0.00421493960007524,
+              "heading": -0.000059782346774897905
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-9",
+            "s": 103.75106074327807,
+            "lateral": -30.495862938367935,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2489392567217692,
+              "lateral": -0.004137061632064842,
+              "heading": -0.00007658633361254715
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-9",
+            "s": 119.75004704529503,
+            "lateral": -30.496076156225705,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.2499529547048951,
+              "lateral": -0.0039238437742952215,
+              "heading": -0.00005873933507577247
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "stock-10",
+            "s": 135.7503724759206,
+            "lateral": -30.495843293111914,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24962752407918742,
+              "lateral": -0.004156706888085893,
+              "heading": -0.00007615673125401232
+            },
+            "wrecked": false,
+            "reason": ""
+          },
+          {
+            "id": "civilian-10",
+            "s": 151.7501776108514,
+            "lateral": -30.49597420109276,
+            "speed": 0,
+            "route": "service",
+            "pitState": "servicing",
+            "error": {
+              "longitudinal": 0.24982238914844856,
+              "lateral": -0.00402579890723942,
+              "heading": -0.00006849058691840303
+            },
+            "wrecked": false,
+            "reason": ""
+          }
+        ]
+      },
+      "arrivals": [
+        {
+          "id": "stock-1",
+          "classId": "stock",
+          "bay": 1,
+          "time": 25.324999999999203,
+          "error": {
+            "longitudinal": 0.2492087522887232,
+            "lateral": -0.0039758343058657886,
+            "heading": -0.00007390051675758015
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-2",
+          "classId": "stock",
+          "bay": 3,
+          "time": 30.12499999999893,
+          "error": {
+            "longitudinal": 0.24985789445281625,
+            "lateral": -0.003977452030927253,
+            "heading": -0.0000739320269025189
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-3",
+          "classId": "stock",
+          "bay": 5,
+          "time": 34.76666666666534,
+          "error": {
+            "longitudinal": 0.24929848177953318,
+            "lateral": -0.003976057998016813,
+            "heading": -0.000073904868903498
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-2",
+          "classId": "civilian",
+          "bay": 4,
+          "time": 38.70833333333178,
+          "error": {
+            "longitudinal": 0.24911004666455483,
+            "lateral": -0.003986135503275534,
+            "heading": -0.00005930610911106765
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-4",
+          "classId": "stock",
+          "bay": 7,
+          "time": 39.40833333333174,
+          "error": {
+            "longitudinal": 0.24914909727249324,
+            "lateral": -0.00397568155538508,
+            "heading": -0.0000738975483657611
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-5",
+          "classId": "stock",
+          "bay": 9,
+          "time": 44.058333333331476,
+          "error": {
+            "longitudinal": 0.2493462875536352,
+            "lateral": -0.0038882100617136928,
+            "heading": -0.00007229653351690187
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-7",
+          "classId": "stock",
+          "bay": 13,
+          "time": 50.7083333333311,
+          "error": {
+            "longitudinal": 0.24912936874761726,
+            "lateral": -0.003975630331105151,
+            "heading": -0.00007389655352806438
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-4",
+          "classId": "civilian",
+          "bay": 8,
+          "time": 52.98333333333097,
+          "error": {
+            "longitudinal": 0.24908078299540648,
+            "lateral": -0.004092380618676117,
+            "heading": -0.00006671475906807365
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-5",
+          "classId": "civilian",
+          "bay": 10,
+          "time": 55.40833333333083,
+          "error": {
+            "longitudinal": 0.24933440000222618,
+            "lateral": -0.004093690921081361,
+            "heading": -0.0000651721198766012
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-8",
+          "classId": "stock",
+          "bay": 15,
+          "time": 58.00833333333068,
+          "error": {
+            "longitudinal": 0.2491123827003321,
+            "lateral": -0.003975585944974824,
+            "heading": -0.00007389569173193422
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-9",
+          "classId": "civilian",
+          "bay": 18,
+          "time": 59.28333333333061,
+          "error": {
+            "longitudinal": 0.2499529547048951,
+            "lateral": -0.0039238437742952215,
+            "heading": -0.00005873933507577247
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-7",
+          "classId": "civilian",
+          "bay": 14,
+          "time": 59.474999999997266,
+          "error": {
+            "longitudinal": 0.24924737091760107,
+            "lateral": -0.0040730366973278365,
+            "heading": -0.00006696393373007167
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-6",
+          "classId": "stock",
+          "bay": 11,
+          "time": 62.3999999999971,
+          "error": {
+            "longitudinal": 0.24920040378674457,
+            "lateral": -0.003975813122952587,
+            "heading": -0.00007390010494660229
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-10",
+          "classId": "stock",
+          "bay": 19,
+          "time": 62.50833333333043,
+          "error": {
+            "longitudinal": 0.24962752407918742,
+            "lateral": -0.004156706888085893,
+            "heading": -0.00007615673125401232
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-10",
+          "classId": "civilian",
+          "bay": 20,
+          "time": 66.30833333333217,
+          "error": {
+            "longitudinal": 0.24982238914844856,
+            "lateral": -0.00402579890723942,
+            "heading": -0.00006849058691840303
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-6",
+          "classId": "civilian",
+          "bay": 12,
+          "time": 67.39166666666637,
+          "error": {
+            "longitudinal": 0.24955397899884701,
+            "lateral": -0.003943520285790925,
+            "heading": -0.00006329748255296794
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-9",
+          "classId": "stock",
+          "bay": 17,
+          "time": 71.05833333333595,
+          "error": {
+            "longitudinal": 0.2489392567217692,
+            "lateral": -0.004137061632064842,
+            "heading": -0.00007658633361254715
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-1",
+          "classId": "civilian",
+          "bay": 2,
+          "time": 118.15833333337343,
+          "error": {
+            "longitudinal": 0.2489229139850977,
+            "lateral": -0.004144799674200783,
+            "heading": -0.00007304500048727084
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-3",
+          "classId": "civilian",
+          "bay": 6,
+          "time": 148.34166666669609,
+          "error": {
+            "longitudinal": 0.2494009820361498,
+            "lateral": -0.004093518152441078,
+            "heading": -0.00006414880468345784
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "civilian-8",
+          "classId": "civilian",
+          "bay": 16,
+          "time": 156.54166666668863,
+          "error": {
+            "longitudinal": 0.24955078433049493,
+            "lateral": -0.00421493960007524,
+            "heading": -0.000059782346774897905
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        },
+        {
+          "id": "stock-1",
+          "classId": "stock",
+          "bay": 1,
+          "time": 188.48333333332624,
+          "error": {
+            "longitudinal": 0.24988527707864705,
+            "lateral": -0.004016196083025392,
+            "heading": -0.0000744178191476711
+          },
+          "centered": true,
+          "wholeChassisInside": true,
+          "speed": 0,
+          "positionShift": 0,
+          "headingShift": 0
+        }
+      ],
+      "visuals": [
+        {
+          "id": "stock-1",
+          "center": {
+            "x": -152,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": -152.24988527707865,
+            "z": 54.146405722984724
+          },
+          "carPosition": {
+            "x": -152.24988527707865,
+            "z": 54.146405722984724
+          }
+        },
+        {
+          "id": "civilian-1",
+          "center": {
+            "x": -136,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.6,
+          "outlineWidth": 2.7199999999999998,
+          "bodyLength": 4.8,
+          "bodyWidth": 1.92,
+          "meshPosition": {
+            "x": -136.2489229139851,
+            "z": 54.146534326575896
+          },
+          "carPosition": {
+            "x": -136.2489229139851,
+            "z": 54.146534326575896
+          }
+        },
+        {
+          "id": "stock-2",
+          "center": {
+            "x": -120,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": -120.24985789445282,
+            "z": 54.14636697893262
+          },
+          "carPosition": {
+            "x": -120.24985789445282,
+            "z": 54.14636697893262
+          }
+        },
+        {
+          "id": "civilian-2",
+          "center": {
+            "x": -104,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.3999999999999995,
+          "outlineWidth": 2.6,
+          "bodyLength": 4.6,
+          "bodyWidth": 1.8,
+          "meshPosition": {
+            "x": -104.24911004666455,
+            "z": 54.14637566240497
+          },
+          "carPosition": {
+            "x": -104.24911004666455,
+            "z": 54.14637566240497
+          }
+        },
+        {
+          "id": "stock-3",
+          "center": {
+            "x": -88,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": -88.24929848177953,
+            "z": 54.13167424637962
+          },
+          "carPosition": {
+            "x": -88.24929848177953,
+            "z": 54.13167424637962
+          }
+        },
+        {
+          "id": "civilian-3",
+          "center": {
+            "x": -72,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.7,
+          "outlineWidth": 2.64,
+          "bodyLength": 4.9,
+          "bodyWidth": 1.84,
+          "meshPosition": {
+            "x": -72.24940098203615,
+            "z": 54.14648304505414
+          },
+          "carPosition": {
+            "x": -72.24940098203615,
+            "z": 54.14648304505414
+          }
+        },
+        {
+          "id": "stock-4",
+          "center": {
+            "x": -56,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": -56.24914909727249,
+            "z": 54.134267958256245
+          },
+          "carPosition": {
+            "x": -56.24914909727249,
+            "z": 54.134267958256245
+          }
+        },
+        {
+          "id": "civilian-4",
+          "center": {
+            "x": -40,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.7,
+          "outlineWidth": 2.66,
+          "bodyLength": 4.9,
+          "bodyWidth": 1.86,
+          "meshPosition": {
+            "x": -40.24908078299541,
+            "z": 54.14648190752037
+          },
+          "carPosition": {
+            "x": -40.24908078299541,
+            "z": 54.14648190752037
+          }
+        },
+        {
+          "id": "stock-5",
+          "center": {
+            "x": -24,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": -24.249346287553408,
+            "z": 54.138653399401136
+          },
+          "carPosition": {
+            "x": -24.249346287553408,
+            "z": 54.138653399401136
+          }
+        },
+        {
+          "id": "civilian-5",
+          "center": {
+            "x": -8,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.3,
+          "outlineWidth": 2.62,
+          "bodyLength": 4.5,
+          "bodyWidth": 1.82,
+          "meshPosition": {
+            "x": -8.249334400002226,
+            "z": 54.14648321782278
+          },
+          "carPosition": {
+            "x": -8.249334400002226,
+            "z": 54.14648321782278
+          }
+        },
+        {
+          "id": "stock-6",
+          "center": {
+            "x": 8,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": 7.750799596213255,
+            "z": 54.146365340024644
+          },
+          "carPosition": {
+            "x": 7.750799596213255,
+            "z": 54.146365340024644
+          }
+        },
+        {
+          "id": "civilian-6",
+          "center": {
+            "x": 24,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.3,
+          "outlineWidth": 2.6,
+          "bodyLength": 4.5,
+          "bodyWidth": 1.8,
+          "meshPosition": {
+            "x": 23.750446021001153,
+            "z": 54.14633304718748
+          },
+          "carPosition": {
+            "x": 23.750446021001153,
+            "z": 54.14633304718748
+          }
+        },
+        {
+          "id": "stock-7",
+          "center": {
+            "x": 40,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": 39.75087063125238,
+            "z": 54.1463651572328
+          },
+          "carPosition": {
+            "x": 39.75087063125238,
+            "z": 54.1463651572328
+          }
+        },
+        {
+          "id": "civilian-7",
+          "center": {
+            "x": 56,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.1,
+          "outlineWidth": 2.6,
+          "bodyLength": 4.3,
+          "bodyWidth": 1.8,
+          "meshPosition": {
+            "x": 55.7507526290824,
+            "z": 54.14646256359902
+          },
+          "carPosition": {
+            "x": 55.7507526290824,
+            "z": 54.14646256359902
+          }
+        },
+        {
+          "id": "stock-8",
+          "center": {
+            "x": 72,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": 71.75088761729967,
+            "z": 54.119041525414104
+          },
+          "carPosition": {
+            "x": 71.75088761729967,
+            "z": 54.119041525414104
+          }
+        },
+        {
+          "id": "civilian-8",
+          "center": {
+            "x": 88,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 6.3,
+          "outlineWidth": 2.84,
+          "bodyLength": 5.5,
+          "bodyWidth": 2.04,
+          "meshPosition": {
+            "x": 87.7504492156695,
+            "z": 54.14660446650177
+          },
+          "carPosition": {
+            "x": 87.7504492156695,
+            "z": 54.14660446650177
+          }
+        },
+        {
+          "id": "stock-9",
+          "center": {
+            "x": 104,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": 103.75106074327823,
+            "z": 54.14652658853376
+          },
+          "carPosition": {
+            "x": 103.75106074327823,
+            "z": 54.14652658853376
+          }
+        },
+        {
+          "id": "civilian-9",
+          "center": {
+            "x": 120,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.3999999999999995,
+          "outlineWidth": 2.66,
+          "bodyLength": 4.6,
+          "bodyWidth": 1.86,
+          "meshPosition": {
+            "x": 119.7500470452951,
+            "z": 54.14631337067599
+          },
+          "carPosition": {
+            "x": 119.7500470452951,
+            "z": 54.14631337067599
+          }
+        },
+        {
+          "id": "stock-10",
+          "center": {
+            "x": 136,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.8,
+          "bodyLength": 5,
+          "bodyWidth": 2,
+          "meshPosition": {
+            "x": 135.7503724759208,
+            "z": 54.14654623378978
+          },
+          "carPosition": {
+            "x": 135.7503724759208,
+            "z": 54.14654623378978
+          }
+        },
+        {
+          "id": "civilian-10",
+          "center": {
+            "x": 152,
+            "y": 0,
+            "z": 54.142389526901695,
+            "tx": 1,
+            "tz": 0,
+            "nx": 0,
+            "nz": 1,
+            "heading": 1.5707963267948966,
+            "curvature": 0,
+            "banking": 0
+          },
+          "outlineLength": 5.8,
+          "outlineWidth": 2.71,
+          "bodyLength": 5,
+          "bodyWidth": 1.91,
+          "meshPosition": {
+            "x": 151.75017761085155,
+            "z": 54.14641532580893
+          },
+          "carPosition": {
+            "x": 151.75017761085155,
+            "z": 54.14641532580893
+          }
+        }
+      ],
+      "screenshotBoundary": "Accelerated ordinary physics, not real-time watch. Closeup changes the camera only and hides the normal-speed banner. Full-row photo hides HUD only. Cars are paused after actual AI driving;600-second service holds earlier arrivals for the picture. Normal five-second service/exit is verified separately by the60-car engine run."
+    },
+    {
+      "check": "Controlled engine heat/wear HUD fits mobile; cold wear is distinguished from heat; engine-only retirement preserves structural body condition and shape",
+      "mobileLayout": {
+        "bottom": 728,
+        "pedalsTop": 761,
+        "overflow": false
+      },
+      "coldWearWarning": "ENGINE WEAR · NEEDS PIT REPAIR",
+      "burnState": {
+        "damage": 0.35,
+        "engine": {
+          "heat": 0,
+          "wear": 1,
+          "status": "burnt",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "wrecked": true,
+        "bodyScale": 1,
+        "repair": false,
+        "recover": false
+      },
+      "boundary": "Explicit heat/wear fixtures exercise UI only. Natural grass-driving warning/wear/burn timing and permanent failure are separately verified by ordinary engine-drive tests."
+    },
+    {
+      "check": "Controlled no-progress UI fixture offers honest unfinished export and retries the same race; noNext or forcedDNF",
+      "boundary": "Separate fresh race with brake-only AI and an explicit46-second clock advance. Full guard timing is verified independently by normal fixed-step controller tests."
+    }
+  ],
+  "errors": []
+}

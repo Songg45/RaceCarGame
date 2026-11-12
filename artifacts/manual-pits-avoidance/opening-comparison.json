@@ -1,0 +1,308 @@
+{
+  "baselineSource": "1e063005838c42596a67b95c3a2e300a1cbec10c4eab6d2e9802e89fd199a5d6",
+  "afterSource": "b4c16c979d10bf534067f92052a6d0d21a2c50093a1c17d84d9cddcd63947ac8",
+  "layoutUnchanged": true,
+  "equalProgressHitReduction": 0.6324675324675324,
+  "rows": [
+    {
+      "seed": 20261112,
+      "holes": 151,
+      "before30": {
+        "hits": 559,
+        "damage": 14.80103,
+        "retired": 2,
+        "progress": 11028.96322,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 43
+      },
+      "after30": {
+        "hits": 219,
+        "damage": 3.75503,
+        "retired": 0,
+        "progress": 10489.389739999999,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 3
+      },
+      "before60": {
+        "hits": 766,
+        "damage": 19.34727,
+        "retired": 15,
+        "progress": 15448.76739,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 86
+      },
+      "after60": {
+        "hits": 351,
+        "damage": 6.126989999999999,
+        "retired": 0,
+        "progress": 23027.864260000002,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 4
+      },
+      "before10000m": {
+        "elapsed": 25.55,
+        "hits": 494,
+        "damage": 13.67492,
+        "retired": 2,
+        "progress": 10004.157319999998,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 42
+      },
+      "after10000m": {
+        "elapsed": 28.75,
+        "hits": 215,
+        "damage": 3.67415,
+        "retired": 0,
+        "progress": 10001.08366,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 3
+      }
+    },
+    {
+      "seed": 1,
+      "holes": 130,
+      "before30": {
+        "hits": 454,
+        "damage": 12.69553,
+        "retired": 1,
+        "progress": 12048.18767,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 47
+      },
+      "after30": {
+        "hits": 150,
+        "damage": 2.5418200000000004,
+        "retired": 0,
+        "progress": 11643.345099999999,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 0
+      },
+      "before60": {
+        "hits": 723,
+        "damage": 18.009,
+        "retired": 10,
+        "progress": 17765.04465,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 69
+      },
+      "after60": {
+        "hits": 284,
+        "damage": 4.90919,
+        "retired": 0,
+        "progress": 24750.089509999998,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 1
+      },
+      "before10000m": {
+        "elapsed": 22.65,
+        "hits": 373,
+        "damage": 10.80983,
+        "retired": 1,
+        "progress": 10001.47823,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 33
+      },
+      "after10000m": {
+        "elapsed": 26.15,
+        "hits": 124,
+        "damage": 2.06916,
+        "retired": 0,
+        "progress": 10006.49022,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 0
+      }
+    },
+    {
+      "seed": 7,
+      "holes": 88,
+      "before30": {
+        "hits": 282,
+        "damage": 11.42309,
+        "retired": 1,
+        "progress": 15173.06039,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 56
+      },
+      "after30": {
+        "hits": 67,
+        "damage": 1.2843499999999999,
+        "retired": 0,
+        "progress": 13093.080999999998,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 5
+      },
+      "before60": {
+        "hits": 547,
+        "damage": 17.13862,
+        "retired": 8,
+        "progress": 21810.79277,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 77
+      },
+      "after60": {
+        "hits": 165,
+        "damage": 3.03619,
+        "retired": 0,
+        "progress": 26557.14643,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 5
+      },
+      "before10000m": {
+        "elapsed": 16.78333,
+        "hits": 136,
+        "damage": 6.15915,
+        "retired": 1,
+        "progress": 10001.98738,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 22
+      },
+      "after10000m": {
+        "elapsed": 23.23333,
+        "hits": 54,
+        "damage": 1.02736,
+        "retired": 0,
+        "progress": 10002.20415,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 5
+      }
+    },
+    {
+      "seed": 19,
+      "holes": 91,
+      "before30": {
+        "hits": 349,
+        "damage": 12.18883,
+        "retired": 1,
+        "progress": 14283.92974,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 89
+      },
+      "after30": {
+        "hits": 113,
+        "damage": 2.09699,
+        "retired": 0,
+        "progress": 13210.28054,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 1
+      },
+      "before60": {
+        "hits": 571,
+        "damage": 17.45032,
+        "retired": 4,
+        "progress": 22589.966829999998,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 122
+      },
+      "after60": {
+        "hits": 179,
+        "damage": 3.25953,
+        "retired": 0,
+        "progress": 30664.793599999997,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 1
+      },
+      "before10000m": {
+        "elapsed": 18.66667,
+        "hits": 218,
+        "damage": 6.9651499999999995,
+        "retired": 0,
+        "progress": 10005.3886,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 33
+      },
+      "after10000m": {
+        "elapsed": 23.45,
+        "hits": 93,
+        "damage": 1.69416,
+        "retired": 0,
+        "progress": 10005.15489,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 1
+      }
+    },
+    {
+      "seed": 42,
+      "holes": 128,
+      "before30": {
+        "hits": 494,
+        "damage": 14.494720000000001,
+        "retired": 2,
+        "progress": 12820.19145,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 64
+      },
+      "after30": {
+        "hits": 102,
+        "damage": 1.78883,
+        "retired": 0,
+        "progress": 11901.40031,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 3
+      },
+      "before60": {
+        "hits": 671,
+        "damage": 18.769750000000002,
+        "retired": 11,
+        "progress": 16880.31133,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 100
+      },
+      "after60": {
+        "hits": 267,
+        "damage": 4.74803,
+        "retired": 0,
+        "progress": 23685.40579,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 5
+      },
+      "before10000m": {
+        "elapsed": 19.61667,
+        "hits": 319,
+        "damage": 9.92907,
+        "retired": 0,
+        "progress": 10001.451679999998,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 41
+      },
+      "after10000m": {
+        "elapsed": 25.18333,
+        "hits": 80,
+        "damage": 1.43447,
+        "retired": 0,
+        "progress": 10004.385470000001,
+        "grassSeconds": 0,
+        "wallEpisodes": 0,
+        "collisions": 3
+      }
+    }
+  ]
+}

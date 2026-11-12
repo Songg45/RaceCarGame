@@ -1,0 +1,2484 @@
+{
+  "scenario": {
+    "name": "Easy",
+    "slug": "easy-10",
+    "difficulty": 0,
+    "laps": 10
+  },
+  "options": {
+    "trackId": "bristol",
+    "playerClass": "stock",
+    "vehicleId": "civic",
+    "seed": 20261112,
+    "laps": 10,
+    "difficulty": 0
+  },
+  "simulationSourceSha256": "935ff7718b05416421b540cd51ce7724a884cba8110614d161603773552a860f",
+  "fixedStepSeconds": 0.016666666666666666,
+  "raceComplete": true,
+  "terminationReason": "all-cars-finished-or-wrecked",
+  "simulatedRaceSeconds": 291.3333,
+  "simulatedCountdownSeconds": 3,
+  "harnessWallSeconds": 0.8561,
+  "frames": 17660,
+  "potholes": 6,
+  "finished": 20,
+  "dnf": 0,
+  "stillRunning": 0,
+  "collisionCount": 53,
+  "crossClassCollisions": 25,
+  "totalPotholeHits": 242,
+  "pitServiceStarts": 6,
+  "completedPitServices": 6,
+  "destroyedDuringService": 0,
+  "player": {
+    "id": "stock-5",
+    "name": "V8 Stock Car",
+    "number": 88,
+    "classId": "stock",
+    "isPlayer": true,
+    "overallPosition": 7,
+    "classPosition": 7,
+    "result": "FINISHED",
+    "completedLaps": 10,
+    "finishTime": 233.3514,
+    "wreckTime": null,
+    "wreckReason": "",
+    "physicallyWreckedAfterFinish": false,
+    "damage": 0.1755,
+    "potholeHitsAtTermination": 12,
+    "potholeHitsAtFieldCompletion": 16,
+    "pitEntries": 1,
+    "serviceStarts": 1,
+    "serviceOutcomes": [
+      {
+        "startedAt": 158.45,
+        "damageAtStart": 0.4256,
+        "s": 5989.8822,
+        "lateral": -23.4837,
+        "endedAt": 163.45,
+        "damageAtEnd": 0,
+        "netDamageChangeDuringVisit": -0.4256,
+        "outcome": "service-completed",
+        "message": "Perfect repair. Your car is fully restored.",
+        "wrecked": false
+      }
+    ],
+    "lapEvents": [
+      {
+        "lap": 1,
+        "time": 26.3155
+      },
+      {
+        "lap": 2,
+        "time": 47.5699
+      },
+      {
+        "lap": 3,
+        "time": 69.7638
+      },
+      {
+        "lap": 4,
+        "time": 91.236
+      },
+      {
+        "lap": 5,
+        "time": 112.434
+      },
+      {
+        "lap": 6,
+        "time": 134.0134
+      },
+      {
+        "lap": 7,
+        "time": 165.4795
+      },
+      {
+        "lap": 8,
+        "time": 191.1661
+      },
+      {
+        "lap": 9,
+        "time": 212.0807
+      },
+      {
+        "lap": 10,
+        "time": 233.3514
+      }
+    ],
+    "terminalSnapshot": {
+      "result": "FINISHED",
+      "time": 233.3514,
+      "elapsed": 233.3667,
+      "s": 8578.5797,
+      "lateral": 0.2488,
+      "speed": 50.9722,
+      "damage": 0.083,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 12,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    "finalSnapshot": {
+      "elapsed": 291.3333,
+      "s": 10707.6927,
+      "lateral": 7.1178,
+      "speed": 45.989,
+      "damage": 0.1755,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 16,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    "secondsSinceLastForwardProgress": 0
+  },
+  "cars": [
+    {
+      "id": "stock-3",
+      "name": "V8 Stock Car",
+      "number": 24,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 1,
+      "classPosition": 1,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 212.9744,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.3784,
+      "potholeHitsAtTermination": 5,
+      "potholeHitsAtFieldCompletion": 14,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 26.4268
+        },
+        {
+          "lap": 2,
+          "time": 46.7186
+        },
+        {
+          "lap": 3,
+          "time": 66.9769
+        },
+        {
+          "lap": 4,
+          "time": 87.2353
+        },
+        {
+          "lap": 5,
+          "time": 107.4937
+        },
+        {
+          "lap": 6,
+          "time": 127.7521
+        },
+        {
+          "lap": 7,
+          "time": 149.0104
+        },
+        {
+          "lap": 8,
+          "time": 170.313
+        },
+        {
+          "lap": 9,
+          "time": 190.7251
+        },
+        {
+          "lap": 10,
+          "time": 212.9744
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 212.9744,
+        "elapsed": 212.9833,
+        "s": 8578.2565,
+        "lateral": 7.1394,
+        "speed": 50.9159,
+        "damage": 0.1565,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 5,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11351.01,
+        "lateral": 1.955,
+        "speed": 31.7353,
+        "damage": 0.3784,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 14,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-1",
+      "name": "V8 Stock Car",
+      "number": 7,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 2,
+      "classPosition": 2,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 214.4451,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.4028,
+      "potholeHitsAtTermination": 10,
+      "potholeHitsAtFieldCompletion": 14,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 23.6183
+        },
+        {
+          "lap": 2,
+          "time": 43.8022
+        },
+        {
+          "lap": 3,
+          "time": 63.9865
+        },
+        {
+          "lap": 4,
+          "time": 84.1714
+        },
+        {
+          "lap": 5,
+          "time": 104.7173
+        },
+        {
+          "lap": 6,
+          "time": 127.1962
+        },
+        {
+          "lap": 7,
+          "time": 149.445
+        },
+        {
+          "lap": 8,
+          "time": 171.7433
+        },
+        {
+          "lap": 9,
+          "time": 192.1947
+        },
+        {
+          "lap": 10,
+          "time": 214.4451
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 214.4451,
+        "elapsed": 214.45,
+        "s": 8578.0511,
+        "lateral": 7.1394,
+        "speed": 50.9159,
+        "damage": 0.2926,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 10,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11362.0885,
+        "lateral": 0.3651,
+        "speed": 34.6232,
+        "damage": 0.4028,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 14,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-2",
+      "name": "V8 Stock Car",
+      "number": 12,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 3,
+      "classPosition": 3,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 215.0589,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.3082,
+      "potholeHitsAtTermination": 9,
+      "potholeHitsAtFieldCompletion": 12,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 24.6013
+        },
+        {
+          "lap": 2,
+          "time": 45.8715
+        },
+        {
+          "lap": 3,
+          "time": 67.1437
+        },
+        {
+          "lap": 4,
+          "time": 88.416
+        },
+        {
+          "lap": 5,
+          "time": 110.4037
+        },
+        {
+          "lap": 6,
+          "time": 132.7026
+        },
+        {
+          "lap": 7,
+          "time": 154.2253
+        },
+        {
+          "lap": 8,
+          "time": 174.5412
+        },
+        {
+          "lap": 9,
+          "time": 194.8
+        },
+        {
+          "lap": 10,
+          "time": 215.0589
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 215.0589,
+        "elapsed": 215.0667,
+        "s": 8578.1987,
+        "lateral": -5.95,
+        "speed": 50.9159,
+        "damage": 0.2349,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 9,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11350.1813,
+        "lateral": 4.7651,
+        "speed": 34.6129,
+        "damage": 0.3082,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 12,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-8",
+      "name": "V8 Stock Car",
+      "number": 22,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 4,
+      "classPosition": 4,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 215.211,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.3268,
+      "potholeHitsAtTermination": 4,
+      "potholeHitsAtFieldCompletion": 10,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 27.2269
+        },
+        {
+          "lap": 2,
+          "time": 48.4033
+        },
+        {
+          "lap": 3,
+          "time": 68.8511
+        },
+        {
+          "lap": 4,
+          "time": 89.1099
+        },
+        {
+          "lap": 5,
+          "time": 109.4351
+        },
+        {
+          "lap": 6,
+          "time": 129.694
+        },
+        {
+          "lap": 7,
+          "time": 150.3423
+        },
+        {
+          "lap": 8,
+          "time": 171.1846
+        },
+        {
+          "lap": 9,
+          "time": 192.792
+        },
+        {
+          "lap": 10,
+          "time": 215.211
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 215.211,
+        "elapsed": 215.2167,
+        "s": 8578.0619,
+        "lateral": 5.146,
+        "speed": 45.3161,
+        "damage": 0.1789,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 4,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11338.432,
+        "lateral": -5.9493,
+        "speed": 34.6232,
+        "damage": 0.3268,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 10,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-9",
+      "name": "V8 Stock Car",
+      "number": 43,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 5,
+      "classPosition": 5,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 216.8104,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.3463,
+      "potholeHitsAtTermination": 5,
+      "potholeHitsAtFieldCompletion": 10,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 26.8484
+        },
+        {
+          "lap": 2,
+          "time": 47.9363
+        },
+        {
+          "lap": 3,
+          "time": 68.9043
+        },
+        {
+          "lap": 4,
+          "time": 90.1766
+        },
+        {
+          "lap": 5,
+          "time": 111.8805
+        },
+        {
+          "lap": 6,
+          "time": 134.06
+        },
+        {
+          "lap": 7,
+          "time": 155.5581
+        },
+        {
+          "lap": 8,
+          "time": 176.2936
+        },
+        {
+          "lap": 9,
+          "time": 196.552
+        },
+        {
+          "lap": 10,
+          "time": 216.8104
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 216.8104,
+        "elapsed": 216.8167,
+        "s": 8578.1244,
+        "lateral": -5.95,
+        "speed": 50.9159,
+        "damage": 0.2158,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 5,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11287.2324,
+        "lateral": 7.1394,
+        "speed": 34.6232,
+        "damage": 0.3463,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 10,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-4",
+      "name": "V8 Stock Car",
+      "number": 48,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 6,
+      "classPosition": 6,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 218.2203,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.4801,
+      "potholeHitsAtTermination": 9,
+      "potholeHitsAtFieldCompletion": 18,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 25.6214
+        },
+        {
+          "lap": 2,
+          "time": 47.8828
+        },
+        {
+          "lap": 3,
+          "time": 69.5692
+        },
+        {
+          "lap": 4,
+          "time": 91.5418
+        },
+        {
+          "lap": 5,
+          "time": 112.0343
+        },
+        {
+          "lap": 6,
+          "time": 132.2932
+        },
+        {
+          "lap": 7,
+          "time": 153.4512
+        },
+        {
+          "lap": 8,
+          "time": 174.9598
+        },
+        {
+          "lap": 9,
+          "time": 196.018
+        },
+        {
+          "lap": 10,
+          "time": 218.2203
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 218.2203,
+        "elapsed": 218.2333,
+        "s": 8578.4658,
+        "lateral": 7.1394,
+        "speed": 50.9722,
+        "damage": 0.2582,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 9,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 11137.174,
+        "lateral": 7.1394,
+        "speed": 46.0504,
+        "damage": 0.4801,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 18,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-5",
+      "name": "V8 Stock Car",
+      "number": 88,
+      "classId": "stock",
+      "isPlayer": true,
+      "overallPosition": 7,
+      "classPosition": 7,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 233.3514,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.1755,
+      "potholeHitsAtTermination": 12,
+      "potholeHitsAtFieldCompletion": 16,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 158.45,
+          "damageAtStart": 0.4256,
+          "s": 5989.8822,
+          "lateral": -23.4837,
+          "endedAt": 163.45,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.4256,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 26.3155
+        },
+        {
+          "lap": 2,
+          "time": 47.5699
+        },
+        {
+          "lap": 3,
+          "time": 69.7638
+        },
+        {
+          "lap": 4,
+          "time": 91.236
+        },
+        {
+          "lap": 5,
+          "time": 112.434
+        },
+        {
+          "lap": 6,
+          "time": 134.0134
+        },
+        {
+          "lap": 7,
+          "time": 165.4795
+        },
+        {
+          "lap": 8,
+          "time": 191.1661
+        },
+        {
+          "lap": 9,
+          "time": 212.0807
+        },
+        {
+          "lap": 10,
+          "time": 233.3514
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 233.3514,
+        "elapsed": 233.3667,
+        "s": 8578.5797,
+        "lateral": 0.2488,
+        "speed": 50.9722,
+        "damage": 0.083,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 12,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10707.6927,
+        "lateral": 7.1178,
+        "speed": 45.989,
+        "damage": 0.1755,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 16,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-7",
+      "name": "V8 Stock Car",
+      "number": 19,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 8,
+      "classPosition": 8,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 235.0043,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.2293,
+      "potholeHitsAtTermination": 14,
+      "potholeHitsAtFieldCompletion": 20,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 158.5667,
+          "damageAtStart": 0.4919,
+          "s": 5984.9434,
+          "lateral": -23.4491,
+          "endedAt": 163.5667,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.4919,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 27.4276
+        },
+        {
+          "lap": 2,
+          "time": 49.7562
+        },
+        {
+          "lap": 3,
+          "time": 70.1211
+        },
+        {
+          "lap": 4,
+          "time": 91.0535
+        },
+        {
+          "lap": 5,
+          "time": 112.9308
+        },
+        {
+          "lap": 6,
+          "time": 133.9204
+        },
+        {
+          "lap": 7,
+          "time": 166.1488
+        },
+        {
+          "lap": 8,
+          "time": 191.6186
+        },
+        {
+          "lap": 9,
+          "time": 213.2043
+        },
+        {
+          "lap": 10,
+          "time": 235.0043
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 235.0043,
+        "elapsed": 235.0167,
+        "s": 8578.4329,
+        "lateral": 5.9499,
+        "speed": 50.9722,
+        "damage": 0.0814,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 14,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10551.6545,
+        "lateral": 4.5162,
+        "speed": 34.6232,
+        "damage": 0.2293,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 20,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-7",
+      "name": "Volkswagen Golf",
+      "number": 107,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 9,
+      "classPosition": 1,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 235.023,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.0459,
+      "potholeHitsAtTermination": 2,
+      "potholeHitsAtFieldCompletion": 2,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 30.5281
+        },
+        {
+          "lap": 2,
+          "time": 53.2512
+        },
+        {
+          "lap": 3,
+          "time": 75.9707
+        },
+        {
+          "lap": 4,
+          "time": 98.6938
+        },
+        {
+          "lap": 5,
+          "time": 121.4147
+        },
+        {
+          "lap": 6,
+          "time": 144.1364
+        },
+        {
+          "lap": 7,
+          "time": 166.8595
+        },
+        {
+          "lap": 8,
+          "time": 189.579
+        },
+        {
+          "lap": 9,
+          "time": 212.3021
+        },
+        {
+          "lap": 10,
+          "time": 235.023
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 235.023,
+        "elapsed": 235.0333,
+        "s": 8578.2585,
+        "lateral": -5.95,
+        "speed": 44.1967,
+        "damage": 0.0459,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 2,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10503.6018,
+        "lateral": -5.95,
+        "speed": 30.8461,
+        "damage": 0.0459,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 2,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-10",
+      "name": "V8 Stock Car",
+      "number": 9,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 10,
+      "classPosition": 9,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 235.3327,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.0944,
+      "potholeHitsAtTermination": 11,
+      "potholeHitsAtFieldCompletion": 14,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 204.0167,
+          "damageAtStart": 0.4266,
+          "s": 7705.3882,
+          "lateral": -23.4814,
+          "endedAt": 209.0167,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.4266,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 28.574
+        },
+        {
+          "lap": 2,
+          "time": 48.9034
+        },
+        {
+          "lap": 3,
+          "time": 69.8407
+        },
+        {
+          "lap": 4,
+          "time": 90.7176
+        },
+        {
+          "lap": 5,
+          "time": 111.0421
+        },
+        {
+          "lap": 6,
+          "time": 132.3033
+        },
+        {
+          "lap": 7,
+          "time": 154.3668
+        },
+        {
+          "lap": 8,
+          "time": 177.2932
+        },
+        {
+          "lap": 9,
+          "time": 211.0466
+        },
+        {
+          "lap": 10,
+          "time": 235.3327
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 235.3327,
+        "elapsed": 235.3333,
+        "s": 8577.8359,
+        "lateral": 0.2458,
+        "speed": 50.8595,
+        "damage": 0.0199,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 11,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10628.7467,
+        "lateral": 6.7897,
+        "speed": 34.5801,
+        "damage": 0.0944,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 14,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "stock-6",
+      "name": "V8 Stock Car",
+      "number": 3,
+      "classId": "stock",
+      "isPlayer": false,
+      "overallPosition": 11,
+      "classPosition": 10,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 236.1953,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.0282,
+      "potholeHitsAtTermination": 16,
+      "potholeHitsAtFieldCompletion": 17,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 229.6,
+          "damageAtStart": 0.6262,
+          "s": 8568.7329,
+          "lateral": -23.9393,
+          "endedAt": 234.6,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.6262,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 26.8016
+        },
+        {
+          "lap": 2,
+          "time": 49.0954
+        },
+        {
+          "lap": 3,
+          "time": 71.3292
+        },
+        {
+          "lap": 4,
+          "time": 93.6506
+        },
+        {
+          "lap": 5,
+          "time": 115.7934
+        },
+        {
+          "lap": 6,
+          "time": 137.6713
+        },
+        {
+          "lap": 7,
+          "time": 159.934
+        },
+        {
+          "lap": 8,
+          "time": 181.3256
+        },
+        {
+          "lap": 9,
+          "time": 203.0258
+        },
+        {
+          "lap": 10,
+          "time": 236.1953
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 236.1953,
+        "elapsed": 236.2,
+        "s": 8577.8566,
+        "lateral": -23.6489,
+        "speed": 11.2837,
+        "damage": 0,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 16,
+        "pitState": "complete",
+        "inPit": true,
+        "pitTarget": true
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10538.2452,
+        "lateral": 0.4455,
+        "speed": 34.6232,
+        "damage": 0.0282,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 17,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-1",
+      "name": "Ford Mustang",
+      "number": 101,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 12,
+      "classPosition": 2,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 236.796,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.128,
+      "potholeHitsAtTermination": 1,
+      "potholeHitsAtFieldCompletion": 4,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 26.7292
+        },
+        {
+          "lap": 2,
+          "time": 49.5463
+        },
+        {
+          "lap": 3,
+          "time": 73.4059
+        },
+        {
+          "lap": 4,
+          "time": 97.2
+        },
+        {
+          "lap": 5,
+          "time": 120.9964
+        },
+        {
+          "lap": 6,
+          "time": 144.7905
+        },
+        {
+          "lap": 7,
+          "time": 168.2137
+        },
+        {
+          "lap": 8,
+          "time": 191.6683
+        },
+        {
+          "lap": 9,
+          "time": 214.2877
+        },
+        {
+          "lap": 10,
+          "time": 236.796
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 236.796,
+        "elapsed": 236.8,
+        "s": 8577.9896,
+        "lateral": -5.95,
+        "speed": 46.1211,
+        "damage": 0.0633,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 1,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10431.7627,
+        "lateral": -0.4789,
+        "speed": 30.9427,
+        "damage": 0.128,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 4,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-10",
+      "name": "Dodge Charger",
+      "number": 110,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 13,
+      "classPosition": 3,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 242.4529,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.0901,
+      "potholeHitsAtTermination": 4,
+      "potholeHitsAtFieldCompletion": 4,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 32.214
+        },
+        {
+          "lap": 2,
+          "time": 56.225
+        },
+        {
+          "lap": 3,
+          "time": 79.2684
+        },
+        {
+          "lap": 4,
+          "time": 102.1016
+        },
+        {
+          "lap": 5,
+          "time": 124.9348
+        },
+        {
+          "lap": 6,
+          "time": 147.768
+        },
+        {
+          "lap": 7,
+          "time": 170.6012
+        },
+        {
+          "lap": 8,
+          "time": 194.2586
+        },
+        {
+          "lap": 9,
+          "time": 218.2297
+        },
+        {
+          "lap": 10,
+          "time": 242.4529
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 242.4529,
+        "elapsed": 242.4667,
+        "s": 8578.4196,
+        "lateral": 1.955,
+        "speed": 44.741,
+        "damage": 0.0901,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 4,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10151.2631,
+        "lateral": 1.955,
+        "speed": 30.4392,
+        "damage": 0.0901,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 4,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0.0167
+    },
+    {
+      "id": "civilian-6",
+      "name": "Mazda3",
+      "number": 106,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 14,
+      "classPosition": 4,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 246.7404,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.1899,
+      "potholeHitsAtTermination": 7,
+      "potholeHitsAtFieldCompletion": 7,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 30.5907
+        },
+        {
+          "lap": 2,
+          "time": 54.803
+        },
+        {
+          "lap": 3,
+          "time": 79.3363
+        },
+        {
+          "lap": 4,
+          "time": 104.2709
+        },
+        {
+          "lap": 5,
+          "time": 127.2014
+        },
+        {
+          "lap": 6,
+          "time": 150.1351
+        },
+        {
+          "lap": 7,
+          "time": 173.5484
+        },
+        {
+          "lap": 8,
+          "time": 197.9452
+        },
+        {
+          "lap": 9,
+          "time": 222.3437
+        },
+        {
+          "lap": 10,
+          "time": 246.7404
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 246.7404,
+        "elapsed": 246.75,
+        "s": 8578.2116,
+        "lateral": 1.955,
+        "speed": 42.6955,
+        "damage": 0.1899,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 7,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 10000.7935,
+        "lateral": 1.955,
+        "speed": 30.7384,
+        "damage": 0.1899,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 7,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-4",
+      "name": "Honda Accord",
+      "number": 104,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 15,
+      "classPosition": 5,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 250.202,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.2941,
+      "potholeHitsAtTermination": 8,
+      "potholeHitsAtFieldCompletion": 8,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 30.305
+        },
+        {
+          "lap": 2,
+          "time": 55.6299
+        },
+        {
+          "lap": 3,
+          "time": 81.0774
+        },
+        {
+          "lap": 4,
+          "time": 106.1035
+        },
+        {
+          "lap": 5,
+          "time": 131.0339
+        },
+        {
+          "lap": 6,
+          "time": 154.412
+        },
+        {
+          "lap": 7,
+          "time": 178.5632
+        },
+        {
+          "lap": 8,
+          "time": 202.3221
+        },
+        {
+          "lap": 9,
+          "time": 225.8221
+        },
+        {
+          "lap": 10,
+          "time": 250.202
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 250.202,
+        "elapsed": 250.2167,
+        "s": 8578.4308,
+        "lateral": 0.4455,
+        "speed": 42.6595,
+        "damage": 0.2941,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 8,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 9890.1846,
+        "lateral": 0.4455,
+        "speed": 38.2833,
+        "damage": 0.2941,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 8,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-5",
+      "name": "Honda Civic",
+      "number": 105,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 16,
+      "classPosition": 6,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 251.3875,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.2753,
+      "potholeHitsAtTermination": 12,
+      "potholeHitsAtFieldCompletion": 12,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 30.0984
+        },
+        {
+          "lap": 2,
+          "time": 54.4435
+        },
+        {
+          "lap": 3,
+          "time": 79.0645
+        },
+        {
+          "lap": 4,
+          "time": 103.705
+        },
+        {
+          "lap": 5,
+          "time": 128.344
+        },
+        {
+          "lap": 6,
+          "time": 154.0557
+        },
+        {
+          "lap": 7,
+          "time": 179.4428
+        },
+        {
+          "lap": 8,
+          "time": 204.1301
+        },
+        {
+          "lap": 9,
+          "time": 227.7588
+        },
+        {
+          "lap": 10,
+          "time": 251.3875
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 251.3875,
+        "elapsed": 251.4,
+        "s": 8578.2939,
+        "lateral": -5.95,
+        "speed": 39.26,
+        "damage": 0.2753,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 12,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 9890.0567,
+        "lateral": -5.95,
+        "speed": 35.4167,
+        "damage": 0.2753,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 12,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-3",
+      "name": "Toyota Camry",
+      "number": 103,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 17,
+      "classPosition": 7,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 252.7649,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.3376,
+      "potholeHitsAtTermination": 9,
+      "potholeHitsAtFieldCompletion": 10,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 29.6784
+        },
+        {
+          "lap": 2,
+          "time": 54.6498
+        },
+        {
+          "lap": 3,
+          "time": 79.6593
+        },
+        {
+          "lap": 4,
+          "time": 104.1
+        },
+        {
+          "lap": 5,
+          "time": 129.838
+        },
+        {
+          "lap": 6,
+          "time": 154.3166
+        },
+        {
+          "lap": 7,
+          "time": 178.5609
+        },
+        {
+          "lap": 8,
+          "time": 203.1931
+        },
+        {
+          "lap": 9,
+          "time": 227.7827
+        },
+        {
+          "lap": 10,
+          "time": 252.7649
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 252.7649,
+        "elapsed": 252.7667,
+        "s": 8577.8754,
+        "lateral": 1.955,
+        "speed": 41.5337,
+        "damage": 0.3123,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 9,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 9787.42,
+        "lateral": -5.9493,
+        "speed": 30.6221,
+        "damage": 0.3376,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 10,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-9",
+      "name": "Toyota RAV4",
+      "number": 109,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 18,
+      "classPosition": 8,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 264.994,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.2695,
+      "potholeHitsAtTermination": 8,
+      "potholeHitsAtFieldCompletion": 9,
+      "pitEntries": 0,
+      "serviceStarts": 0,
+      "serviceOutcomes": [],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 35.0482
+        },
+        {
+          "lap": 2,
+          "time": 61.209
+        },
+        {
+          "lap": 3,
+          "time": 86.7863
+        },
+        {
+          "lap": 4,
+          "time": 112.4285
+        },
+        {
+          "lap": 5,
+          "time": 138.0844
+        },
+        {
+          "lap": 6,
+          "time": 163.7404
+        },
+        {
+          "lap": 7,
+          "time": 189.3963
+        },
+        {
+          "lap": 8,
+          "time": 215.0512
+        },
+        {
+          "lap": 9,
+          "time": 239.8374
+        },
+        {
+          "lap": 10,
+          "time": 264.994
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 264.994,
+        "elapsed": 265,
+        "s": 8578.0207,
+        "lateral": 1.9372,
+        "speed": 36.4035,
+        "damage": 0.2446,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 8,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 9365.4204,
+        "lateral": 0.4455,
+        "speed": 30.7315,
+        "damage": 0.2695,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 9,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-2",
+      "name": "Toyota Corolla",
+      "number": 102,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 19,
+      "classPosition": 9,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 278.7955,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.049,
+      "potholeHitsAtTermination": 19,
+      "potholeHitsAtFieldCompletion": 20,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 241.7667,
+          "damageAtStart": 0.4779,
+          "s": 7708.4868,
+          "lateral": -23.4917,
+          "endedAt": 246.7667,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.4779,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 31.0719
+        },
+        {
+          "lap": 2,
+          "time": 55.5781
+        },
+        {
+          "lap": 3,
+          "time": 80.6127
+        },
+        {
+          "lap": 4,
+          "time": 105.3052
+        },
+        {
+          "lap": 5,
+          "time": 130.4816
+        },
+        {
+          "lap": 6,
+          "time": 156.9143
+        },
+        {
+          "lap": 7,
+          "time": 183.6133
+        },
+        {
+          "lap": 8,
+          "time": 210.3884
+        },
+        {
+          "lap": 9,
+          "time": 249.1587
+        },
+        {
+          "lap": 10,
+          "time": 278.7955
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 278.7955,
+        "elapsed": 278.8,
+        "s": 8577.9783,
+        "lateral": 7.1394,
+        "speed": 38.8644,
+        "damage": 0.0244,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 19,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 8948.0337,
+        "lateral": -1.1344,
+        "speed": 32.4564,
+        "damage": 0.049,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 20,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    },
+    {
+      "id": "civilian-8",
+      "name": "Ford F-150",
+      "number": 108,
+      "classId": "civilian",
+      "isPlayer": false,
+      "overallPosition": 20,
+      "classPosition": 10,
+      "result": "FINISHED",
+      "completedLaps": 10,
+      "finishTime": 291.3185,
+      "wreckTime": null,
+      "wreckReason": "",
+      "physicallyWreckedAfterFinish": false,
+      "damage": 0.0724,
+      "potholeHitsAtTermination": 21,
+      "potholeHitsAtFieldCompletion": 21,
+      "pitEntries": 1,
+      "serviceStarts": 1,
+      "serviceOutcomes": [
+        {
+          "startedAt": 229.6,
+          "damageAtStart": 0.4779,
+          "s": 6847.9126,
+          "lateral": -23.0401,
+          "endedAt": 234.6,
+          "damageAtEnd": 0,
+          "netDamageChangeDuringVisit": -0.4779,
+          "outcome": "service-completed",
+          "message": "Perfect repair. Your car is fully restored.",
+          "wrecked": false
+        }
+      ],
+      "lapEvents": [
+        {
+          "lap": 1,
+          "time": 33.3099
+        },
+        {
+          "lap": 2,
+          "time": 60.2617
+        },
+        {
+          "lap": 3,
+          "time": 87.5764
+        },
+        {
+          "lap": 4,
+          "time": 114.9872
+        },
+        {
+          "lap": 5,
+          "time": 142.4225
+        },
+        {
+          "lap": 6,
+          "time": 169.9345
+        },
+        {
+          "lap": 7,
+          "time": 197.526
+        },
+        {
+          "lap": 8,
+          "time": 237.6627
+        },
+        {
+          "lap": 9,
+          "time": 266.4858
+        },
+        {
+          "lap": 10,
+          "time": 291.3185
+        }
+      ],
+      "terminalSnapshot": {
+        "result": "FINISHED",
+        "time": 291.3185,
+        "elapsed": 291.3333,
+        "s": 8578.352,
+        "lateral": -5.95,
+        "speed": 36.9141,
+        "damage": 0.0724,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 21,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "finalSnapshot": {
+        "elapsed": 291.3333,
+        "s": 8578.352,
+        "lateral": -5.95,
+        "speed": 36.9141,
+        "damage": 0.0724,
+        "completedLaps": 10,
+        "finished": true,
+        "wrecked": false,
+        "potholeHits": 21,
+        "pitState": "none",
+        "inPit": false,
+        "pitTarget": false
+      },
+      "secondsSinceLastForwardProgress": 0
+    }
+  ],
+  "timeline": [
+    {
+      "carId": "stock-3",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 212.9744,
+      "elapsed": 212.9833,
+      "s": 8578.2565,
+      "lateral": 7.1394,
+      "speed": 50.9159,
+      "damage": 0.1565,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 5,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-1",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 214.4451,
+      "elapsed": 214.45,
+      "s": 8578.0511,
+      "lateral": 7.1394,
+      "speed": 50.9159,
+      "damage": 0.2926,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 10,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-2",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 215.0589,
+      "elapsed": 215.0667,
+      "s": 8578.1987,
+      "lateral": -5.95,
+      "speed": 50.9159,
+      "damage": 0.2349,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 9,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-8",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 215.211,
+      "elapsed": 215.2167,
+      "s": 8578.0619,
+      "lateral": 5.146,
+      "speed": 45.3161,
+      "damage": 0.1789,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 4,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-9",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 216.8104,
+      "elapsed": 216.8167,
+      "s": 8578.1244,
+      "lateral": -5.95,
+      "speed": 50.9159,
+      "damage": 0.2158,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 5,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-4",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 218.2203,
+      "elapsed": 218.2333,
+      "s": 8578.4658,
+      "lateral": 7.1394,
+      "speed": 50.9722,
+      "damage": 0.2582,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 9,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-5",
+      "classId": "stock",
+      "player": true,
+      "result": "FINISHED",
+      "time": 233.3514,
+      "elapsed": 233.3667,
+      "s": 8578.5797,
+      "lateral": 0.2488,
+      "speed": 50.9722,
+      "damage": 0.083,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 12,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-7",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 235.0043,
+      "elapsed": 235.0167,
+      "s": 8578.4329,
+      "lateral": 5.9499,
+      "speed": 50.9722,
+      "damage": 0.0814,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 14,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-7",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 235.023,
+      "elapsed": 235.0333,
+      "s": 8578.2585,
+      "lateral": -5.95,
+      "speed": 44.1967,
+      "damage": 0.0459,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 2,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-10",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 235.3327,
+      "elapsed": 235.3333,
+      "s": 8577.8359,
+      "lateral": 0.2458,
+      "speed": 50.8595,
+      "damage": 0.0199,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 11,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "stock-6",
+      "classId": "stock",
+      "player": false,
+      "result": "FINISHED",
+      "time": 236.1953,
+      "elapsed": 236.2,
+      "s": 8577.8566,
+      "lateral": -23.6489,
+      "speed": 11.2837,
+      "damage": 0,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 16,
+      "pitState": "complete",
+      "inPit": true,
+      "pitTarget": true
+    },
+    {
+      "carId": "civilian-1",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 236.796,
+      "elapsed": 236.8,
+      "s": 8577.9896,
+      "lateral": -5.95,
+      "speed": 46.1211,
+      "damage": 0.0633,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 1,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-10",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 242.4529,
+      "elapsed": 242.4667,
+      "s": 8578.4196,
+      "lateral": 1.955,
+      "speed": 44.741,
+      "damage": 0.0901,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 4,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-6",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 246.7404,
+      "elapsed": 246.75,
+      "s": 8578.2116,
+      "lateral": 1.955,
+      "speed": 42.6955,
+      "damage": 0.1899,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 7,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-4",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 250.202,
+      "elapsed": 250.2167,
+      "s": 8578.4308,
+      "lateral": 0.4455,
+      "speed": 42.6595,
+      "damage": 0.2941,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 8,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-5",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 251.3875,
+      "elapsed": 251.4,
+      "s": 8578.2939,
+      "lateral": -5.95,
+      "speed": 39.26,
+      "damage": 0.2753,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 12,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-3",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 252.7649,
+      "elapsed": 252.7667,
+      "s": 8577.8754,
+      "lateral": 1.955,
+      "speed": 41.5337,
+      "damage": 0.3123,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 9,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-9",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 264.994,
+      "elapsed": 265,
+      "s": 8578.0207,
+      "lateral": 1.9372,
+      "speed": 36.4035,
+      "damage": 0.2446,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 8,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-2",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 278.7955,
+      "elapsed": 278.8,
+      "s": 8577.9783,
+      "lateral": 7.1394,
+      "speed": 38.8644,
+      "damage": 0.0244,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 19,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    },
+    {
+      "carId": "civilian-8",
+      "classId": "civilian",
+      "player": false,
+      "result": "FINISHED",
+      "time": 291.3185,
+      "elapsed": 291.3333,
+      "s": 8578.352,
+      "lateral": -5.95,
+      "speed": 36.9141,
+      "damage": 0.0724,
+      "completedLaps": 10,
+      "finished": true,
+      "wrecked": false,
+      "potholeHits": 21,
+      "pitState": "none",
+      "inPit": false,
+      "pitTarget": false
+    }
+  ],
+  "verificationBoundary": "Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series."
+}

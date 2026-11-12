@@ -1,0 +1,221 @@
+{
+  "baseURL": "http://127.0.0.1:5173",
+  "checks": [
+    {
+      "check": "UI track lap caps and Easy–Extreme slider",
+      "easyHoles": 10,
+      "extremeHoles": 237
+    },
+    {
+      "check": "Controlled visual scenario: chase camera25m before real Extreme pothole for visibility review"
+    },
+    {
+      "check": "Intermediate slider labels agree with engine values:1Moderate,50Hard"
+    },
+    {
+      "check": "Stock player: simultaneous10stock+10street rendered",
+      "state": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 9,
+        "elapsed": 0,
+        "gpuMemory": {
+          "geometries": 799,
+          "textures": 12
+        },
+        "player": {
+          "classId": "stock",
+          "modelId": "stock",
+          "s": -64,
+          "lateral": -3.2,
+          "speed": 0,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "none"
+        }
+      }
+    },
+    {
+      "check": "Real keyboard throttle/screen-leftA/screen-rightD/camera/pause; synthetic blur safety handler",
+      "before": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 9,
+        "elapsed": 0,
+        "gpuMemory": {
+          "geometries": 799,
+          "textures": 12
+        },
+        "player": {
+          "classId": "stock",
+          "modelId": "stock",
+          "s": -64,
+          "lateral": -3.2,
+          "speed": 0,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "none"
+        }
+      },
+      "after": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 9,
+        "elapsed": 3.4999999999999902,
+        "gpuMemory": {
+          "geometries": 801,
+          "textures": 12
+        },
+        "player": {
+          "classId": "stock",
+          "modelId": "stock",
+          "s": -20.961610617750647,
+          "lateral": -3.2,
+          "speed": 24.500060356301283,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "none"
+        }
+      },
+      "projectedLateral": {
+        "screenBeforeLeft": -0.2437683429346595,
+        "screenAfterLeft": -0.4540735247733513,
+        "screenAfterRight": -0.20757562806834784
+      }
+    },
+    {
+      "check": "Civilian player: simultaneous10stock+10street rendered",
+      "state": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 4,
+        "elapsed": 0,
+        "gpuMemory": {
+          "geometries": 574,
+          "textures": 16
+        },
+        "player": {
+          "classId": "civilian",
+          "modelId": "camry",
+          "s": -64,
+          "lateral": 3.2,
+          "speed": 0,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "none"
+        }
+      }
+    },
+    {
+      "check": "Injected pit position, real keyboardE service for full duration, Easy damage0",
+      "state": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 4,
+        "elapsed": 8.116666666666847,
+        "gpuMemory": {
+          "geometries": 640,
+          "textures": 19
+        },
+        "player": {
+          "classId": "civilian",
+          "modelId": "camry",
+          "s": 0,
+          "lateral": -23.5,
+          "speed": 0,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "complete"
+        }
+      }
+    },
+    {
+      "check": "Injected final-line scenario: finish results preserve classification despite later physicalwreck"
+    },
+    {
+      "check": "Injected terminal damage: DNF, stationary persistent wreck, spectate, explicitrestart clears",
+      "wreck": {
+        "state": "finished",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 4,
+        "elapsed": 0.22499999999999998,
+        "gpuMemory": {
+          "geometries": 578,
+          "textures": 16
+        },
+        "player": {
+          "classId": "civilian",
+          "modelId": "camry",
+          "s": -64,
+          "lateral": 3.2,
+          "speed": 0,
+          "damage": 1,
+          "wrecked": true,
+          "pitState": "none"
+        }
+      }
+    },
+    {
+      "check": "390px mobile viewport: no horizontal overflow; real pointer gas control accelerates",
+      "state": {
+        "state": "racing",
+        "count": 20,
+        "stock": 10,
+        "civilian": 10,
+        "meshes": 20,
+        "difficulty": 0,
+        "potholes": 6,
+        "elapsed": 1.60833333333333,
+        "gpuMemory": {
+          "geometries": 555,
+          "textures": 14
+        },
+        "player": {
+          "classId": "civilian",
+          "modelId": "camry",
+          "s": -58.449084764623514,
+          "lateral": 3.2,
+          "speed": 6.612455985793308,
+          "damage": 0,
+          "wrecked": false,
+          "pitState": "none"
+        }
+      }
+    },
+    {
+      "check": "Same-track GPUtexturecount remainsstable across3explicitrestarts",
+      "textureCounts": [
+        14,
+        14,
+        14,
+        14
+      ]
+    }
+  ],
+  "errors": [],
+  "verificationBoundary": "Short real-input browser drives; pit and DNF deliberately injected; complete3lap runs separately exercised in pureengine tests."
+}
