@@ -84,6 +84,7 @@ The series uses seed `20261112` for reproducibility. Current guaranteed-tire res
 npm test
 node tests/straight-pits.mjs --output=artifacts/manual-pits-avoidance
 node tests/browser-manual-pits.mjs
+node tests/browser-guaranteed-tires.mjs
 node tests/extreme-opening.mjs
 node tests/compare-extreme-opening.mjs
 node tests/endurance.mjs --scenario=easy-10
@@ -97,7 +98,7 @@ The engine suite exercises exact field sizes, lap limits/counting, collision mom
 
 Browser checks use real keyboard and pointer input for short drives, setup controls, camera, pause, and mobile controls. Targeted pit-service and retirement UI scenarios deliberately inject a starting position or damage; these are distinct from completing a race manually in the browser.
 
-The latest guaranteed-tire change passed **55 focused service/component/pit tests plus 5 watch-controller tests**. These include both classes at four difficulty levels, forced Extreme crew mistakes, permanent wrecks, and fresh tires taking damage on later road impacts. Refreshed independent full races ended Easy **20 FIN / 0 DNF**, Medium **19 FIN / 1 DNF**, and Extreme **0 FIN / 20 DNF**; the complete watch controller matches all 60 classifications. See [the latest tire-service QA report](artifacts/guaranteed-pit-tires/QA-REPORT.md) and [current endurance report](artifacts/guaranteed-pit-tires/endurance/ENDURANCE-REPORT.md) for scope and current browser status.
+The latest guaranteed-tire change passed **55 focused service/component/pit tests plus 5 watch-controller tests**, followed by **one desktop/mobile browser scenario with zero JavaScript/console errors**. Tests include both classes at four difficulty levels, forced Extreme crew mistakes, permanent wrecks, and fresh tires taking damage on later road impacts. In the browser, an actual E tap and normal five-second service restored all four tires while the forced crew mistake worsened non-tire damage; all four 100% pressures and the outcome message remained readable. Refreshed independent full races ended Easy **20 FIN / 0 DNF**, Medium **19 FIN / 1 DNF**, and Extreme **0 FIN / 20 DNF**; the complete watch controller matches all 60 classifications. See [the latest tire-service QA report](artifacts/guaranteed-pit-tires/QA-REPORT.md) and [current endurance report](artifacts/guaranteed-pit-tires/endurance/ENDURANCE-REPORT.md) for scope and evidence boundaries.
 
 The preceding practical-pit and predictive-avoidance acceptance passed **93 engine/controller tests** and **3 browser checks with zero JavaScript/console errors**. Both classes physically drove into an off-center stop with W/S and completed normal five-second service after a single E tap; a separate service-button click also passed. Normal five-second AI parking checks covered **60 actual visits**, twenty per circuit, with mixed body/component damage, full-chassis containment, and no position/yaw snapping. Across five unchanged Extreme layouts, wheel impacts fell **63.25% at equal distance traveled**, with contacts falling from **171 to 12** and no grass or wall exposure. See [that revision's QA report](artifacts/manual-pits-avoidance/QA-REPORT.md) and [opening comparison](artifacts/manual-pits-avoidance/OPENING-COMPARISON.md) for its recorded evidence and explicit fixture boundaries.
 

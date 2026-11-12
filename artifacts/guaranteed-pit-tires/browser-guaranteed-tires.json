@@ -1,0 +1,368 @@
+{
+  "passed": true,
+  "baseURL": "http://127.0.0.1:4174/",
+  "checks": [
+    {
+      "check": "Completed Extreme crew-mistake service guarantees four new tires while preserving other repair risk and readable HUD",
+      "help": "Pothole-riddled track. Every completed pit stop replaces all four tires. Other repairs can worsen damage. Wrecks stay on track.",
+      "before": {
+        "elapsed": 0.09166666666666666,
+        "state": "none",
+        "remaining": 0,
+        "visits": 0,
+        "position": [
+          -25.5,
+          -29.9,
+          0.08
+        ],
+        "damage": 0.35,
+        "engine": {
+          "heat": 0.09633333333333328,
+          "wear": 0.25,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": true,
+          "heatRate": -0.04000000000000059
+        },
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "punctured",
+            "pressure": 0.5481666666666669,
+            "leakRate": 0.02,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "intact",
+            "pressure": 0.45,
+            "leakRate": 0,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "punctured",
+            "pressure": 0.6463333333333338,
+            "leakRate": 0.04,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "handling": {
+          "gripFactor": 0.4541242963500001,
+          "steeringFactor": 0.6575,
+          "brakingFactor": 0.6022250000000001,
+          "accelerationFactor": 0.65334375,
+          "topSpeedFactor": 0.5366214976816718,
+          "limpSpeed": 24,
+          "pull": -1.57225,
+          "blownTires": 1,
+          "maxSuspensionDamage": 0.3,
+          "averageSuspensionDamage": 0.3,
+          "minPressure": 0,
+          "averageBend": 0.2,
+          "vibrationFactor": 0.19999999999999998,
+          "brokenSuspensions": 0,
+          "puncturedTires": 2
+        },
+        "message": ""
+      },
+      "acceptance": {
+        "elapsed": 0.16666666666666666,
+        "before": [
+          -25.5,
+          -29.9,
+          0.08
+        ],
+        "after": [
+          -25.5,
+          -29.9,
+          0.08
+        ]
+      },
+      "after": {
+        "elapsed": 5.183333333333381,
+        "state": "complete",
+        "remaining": 0,
+        "visits": 1,
+        "position": [
+          -25.5,
+          -29.9,
+          0.08
+        ],
+        "damage": 0.43,
+        "engine": {
+          "heat": 0.027333333333333328,
+          "wear": 0.298,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": true,
+          "heatRate": -0.040000000000000174
+        },
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.38,
+            "suspensionStatus": "worn",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0.248,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0.3,
+            "suspensionStatus": "worn",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0.2,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "handling": {
+          "gripFactor": 0.7619104,
+          "steeringFactor": 0.7545,
+          "brakingFactor": 0.8180000000000001,
+          "accelerationFactor": 0.7020731699999999,
+          "topSpeedFactor": 0.6939097055017921,
+          "limpSpeed": null,
+          "pull": -0.0736,
+          "blownTires": 0,
+          "maxSuspensionDamage": 0.38,
+          "averageSuspensionDamage": 0.32,
+          "minPressure": 1,
+          "averageBend": 0.21200000000000002,
+          "vibrationFactor": 0.2228,
+          "brokenSuspensions": 0,
+          "puncturedTires": 0
+        },
+        "message": "All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+        "repairEvent": {
+          "type": "repair",
+          "text": "All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+          "time": 5.166666666666713,
+          "id": "repair-stock-5--5.167",
+          "carId": "stock-5",
+          "tiresReplaced": [
+            "FL",
+            "FR",
+            "RL",
+            "RR"
+          ]
+        }
+      },
+      "desktop": {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "message": {
+          "text": "All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+          "visible": true,
+          "rect": {
+            "left": 314.46875,
+            "top": 105,
+            "right": 1051.53125,
+            "bottom": 144.390625,
+            "width": 737.0625,
+            "height": 39.390625
+          },
+          "clientWidth": 735,
+          "scrollWidth": 735
+        },
+        "pit": {
+          "text": "BAY 09 · #88 · All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+          "rect": {
+            "left": 46,
+            "top": 593.8125,
+            "right": 240,
+            "bottom": 641.8125,
+            "width": 194,
+            "height": 48
+          },
+          "clientWidth": 194,
+          "scrollWidth": 194,
+          "clientHeight": 48,
+          "scrollHeight": 48
+        },
+        "cells": [
+          {
+            "text": "FL100%SUSP 38%",
+            "label": "Front left: pressure 100%, susp 38%, bent 25%"
+          },
+          {
+            "text": "FR100%SUSP 30%",
+            "label": "Front right: pressure 100%, susp 30%, bent 20%"
+          },
+          {
+            "text": "RL100%SUSP 30%",
+            "label": "Rear left: pressure 100%, susp 30%, bent 20%"
+          },
+          {
+            "text": "RR100%SUSP 30%",
+            "label": "Rear right: pressure 100%, susp 30%, bent 20%"
+          }
+        ],
+        "touch": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0
+        },
+        "telemetry": {
+          "left": 27,
+          "top": 268.734375,
+          "right": 257,
+          "bottom": 688,
+          "width": 230,
+          "height": 419.265625
+        }
+      },
+      "mobile": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "message": {
+          "text": "All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+          "visible": true,
+          "rect": {
+            "left": 14,
+            "top": 117,
+            "right": 211,
+            "bottom": 168.5625,
+            "width": 197,
+            "height": 51.5625
+          },
+          "clientWidth": 195,
+          "scrollWidth": 195
+        },
+        "pit": {
+          "text": "BAY 09 · #88 · All four tires replaced. Crew mistake: body damage +8%; front left wheel rim and suspension damaged; engine condition lost 5 points (70% remains).",
+          "rect": {
+            "left": 28,
+            "top": 634.609375,
+            "right": 162,
+            "bottom": 686.609375,
+            "width": 134,
+            "height": 52
+          },
+          "clientWidth": 134,
+          "scrollWidth": 134,
+          "clientHeight": 52,
+          "scrollHeight": 53
+        },
+        "cells": [
+          {
+            "text": "FL100%SUSP 38%",
+            "label": "Front left: pressure 100%, susp 38%, bent 25%"
+          },
+          {
+            "text": "FR100%SUSP 30%",
+            "label": "Front right: pressure 100%, susp 30%, bent 20%"
+          },
+          {
+            "text": "RL100%SUSP 30%",
+            "label": "Rear left: pressure 100%, susp 30%, bent 20%"
+          },
+          {
+            "text": "RR100%SUSP 30%",
+            "label": "Rear right: pressure 100%, susp 30%, bent 20%"
+          }
+        ],
+        "touch": {
+          "left": 14,
+          "top": 761,
+          "right": 376,
+          "bottom": 826,
+          "width": 362,
+          "height": 65
+        },
+        "telemetry": {
+          "left": 14,
+          "top": 364.015625,
+          "right": 174,
+          "bottom": 728,
+          "width": 160,
+          "height": 363.984375
+        }
+      },
+      "boundary": "Declared initial in-bay mixed tire/body/rim/suspension/engine damage; other traffic isolated and crew RNG forced to the bad branch. Actual short E keypress starts ordinary real-time five-second service. No direct repair call, simulated-time acceleration, or later component/pose injection."
+    }
+  ],
+  "errors": []
+}

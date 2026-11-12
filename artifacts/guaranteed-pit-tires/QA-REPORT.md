@@ -21,10 +21,16 @@ node --test --test-concurrency=1 tests/guaranteed-pit-tires.test.js tests/wheel-
 node --test --test-concurrency=1 tests/watch-series.test.js
 ```
 
-[Focused test log](focused.stdout.log), [final watch log](watch-final.stdout.log), and [preserved obsolete-fixture mismatch](watch-compatibility.stdout.log).
+Local run logs are retained as `focused.stdout.log`, `watch-final.stdout.log`, and `watch-compatibility.stdout.log`; the last preserves the obsolete-fixture mismatch before the expected results were refreshed.
 
 The endurance recorder now identifies completed visits from the engine's completed-visit counter rather than parsing repair-message wording. This accommodates the new explicit tire message and correctly distinguishes a completed catastrophic repair from an interrupted service.
 
-Browser status: the presentation employee is preparing one isolated Extreme crew-mistake acceptance, using a declared mixed-tire in-bay fixture, an actual E keypress, and normal five-second service. It will inspect desktop/mobile tire pressures, retained non-tire damage, and the readable repair message. The previously accepted manual driving geometry and five-seed avoidance checks were not rerun for this narrow service change.
+**The isolated browser scenario passed with zero JavaScript/console errors**, using a declared Extreme mixed-tire in-bay fixture and a forced bad-crew outcome. An actual short E keypress started ordinary real-time five-second service. No direct repair call, accelerated clock, or later component/position injection was used.
+
+All four tires ended intact at 100% pressure with zero leaks. The same completed service increased body damage from 35% to 43%, engine wear from 25% to 29.8%, front-left suspension damage from 30% to 38%, and front-left rim bend from 20% to 24.8%. The vehicle's position and heading stayed unchanged. The repair event identified all four tire replacements, and the visible message began **All four tires replaced. Crew mistake:** before explaining the remaining damage.
+
+Desktop and mobile captures confirmed readable wrapped outcome text, four visible 100% pressure readings, retained suspension/rim warnings, and clear mobile pedals. [Machine-readable browser evidence](browser-guaranteed-tires.json). Screenshots are retained locally as `extreme-four-fresh-tires-other-damage-desktop.png` and `extreme-four-fresh-tires-other-damage-mobile.png`. The supervisor visually accepted the result and authorized exact-byte promotion. The isolated browser closed, and a host process check found zero owned browser/harness processes.
+
+This was a controlled repair-outcome UI scenario, not a naturally occurring failure during a full browser race. Both classes and all selected difficulties were covered by the engine tests. The previously accepted manual driving geometry and five-seed avoidance checks were not rerun for this narrow service change.
 
 Simulation SHA-256: `83e9f4356811dc653e2a63d310f9324db8df51df9f3a9a22adb36d1ede6da6c8`. All application source is frozen; no GPU/browser work ran alongside the CPU checks.
