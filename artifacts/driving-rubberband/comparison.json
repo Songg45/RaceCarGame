@@ -1,0 +1,28 @@
+{
+  "accepted": true,
+  "engineChanged": false,
+  "browserErrors": [],
+  "matchedReplay": {
+    "boundary": "Identical recorded baseline poses and frame intervals; elapsed greater than 8 seconds; renderer-only replay, not a newly simulated race.",
+    "samples": 220,
+    "beforeMaximumVerticalScreenStepPixels": 4.148546499989834,
+    "afterMaximumVerticalScreenStepPixels": 8.952838470577262e-13,
+    "beforeCameraGapStepMinMeters": -0.137702905927675,
+    "beforeCameraGapStepMaxMeters": 0.52802501477673,
+    "afterCameraGapRangeMeters": 0
+  },
+  "freshKeyboardDrives": {
+    "boundary": "Actual held W with ordinary timing; clear road uses declared initial isolation; Extreme uses the ordinary grid and hazards.",
+    "clearRoadMaximumVerticalScreenStepPixels": 1.7905676941154525e-12,
+    "extremeGridMaximumVerticalScreenStepPixels": 1.9610979506978765e-12,
+    "backwardPlayerDistanceFrames": 0
+  },
+  "collisionFixture": {
+    "physicalDistanceCorrectionMeters": -0.8795156250001925,
+    "renderedMeshMatchesPhysicalPosition": true
+  },
+  "cameraChecksPassed": ["chase", "hood", "overhead", "fixed pit overview", "pause", "turn", "recovery", "collision", "spectator focus", "new race"],
+  "ownedBrowserProcessesAfterRun": 0,
+  "sourceSha256": "33b7a01838efacb57443316442cd8643ff369f37c6c3c03eddeea74a955038ea",
+  "buildSha256": "25c03d402ca9156876cd38fa7f3d1648fd0fd7faca0a578122b95d769f8e873c"
+}

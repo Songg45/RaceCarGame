@@ -46,6 +46,8 @@ npm run preview
 
 Rendering uses device-pixel ratio 1, reduced shadow-map resolution, and a 60-frame-per-second cap. The garage and paused race redraw only when needed; hiding the tab stops frame scheduling and pauses a live race. If the browser loses its graphics context, the game keeps the race state and shows an explicit recovery screen. Continue after graphics recover; skipped wall time is not simulated as a catch-up burst.
 
+Follow cameras move with the car's current position while smoothing their relative offset and viewing direction. This prevents uneven frame timing from making the car appear to surge forwards and backwards relative to the camera on a clear road. The fixed pit overview stays anchored to the pit lane. This rendering change does not alter driving physics or collision responses.
+
 ## Driving
 
 Choose **Stock car** or **Street car**, select one of the four street roles when driving a street car, then choose a circuit, lap count, and difficulty and select **Take the grid**. Both fields launch together after a three-second countdown. The ten street entrants retain familiar model appearances, but cars within a role share the same performance specification; model appearance is not another performance choice. The Dodge Charger belongs to Sports / Muscle.
@@ -95,6 +97,8 @@ If no active driver makes meaningful forward progress for 45 simulated seconds a
 The series uses seed `20261112` for reproducibility. The four-street-class revision's independent runs finished with all twenty entrants completing Easy and Medium; all twenty retired on Extreme, with the leader reaching 13 of its 20 scheduled laps. Its results are recorded separately in [the current endurance report](artifacts/street-classes/endurance/ENDURANCE-REPORT.md). The [previous guaranteed-tire report](artifacts/guaranteed-pit-tires/endurance/ENDURANCE-REPORT.md), [original endurance report](artifacts/endurance/ENDURANCE-REPORT.md), [actual original visible-watch record](artifacts/endurance/VISIBLE-WATCH-RECORD.md), [intermediate wheel/pit revision](artifacts/wheel-damage/endurance/ENDURANCE-REPORT.md), [expanded-straight revision](artifacts/straight-pits/endurance/ENDURANCE-REPORT.md), and [predictive-avoidance revision](artifacts/manual-pits-avoidance/endurance/ENDURANCE-REPORT.md) remain preserved as historical evidence. Their different outcomes belong to different physics revisions. A race ending through complete attrition is recorded as such.
 
 ## Verification
+
+The follow-camera correction passed its matched browser comparison and transition checks with **zero reported browser errors**. On the same recorded clear-road movement, the largest vertical screen-position jump fell from **4.15 pixels to less than 0.000001 pixel**; fresh real-keyboard clear-road and Extreme-grid checks also kept the tracked car stable. Camera modes, pause, turns, recovery, collisions, focus changes, and new races passed. A deliberate collision still moved the car backwards in the simulation and its displayed position matched, preserving physical contact response. The engine and catalog are unchanged from the verified street-class revision below. This fixes camera-relative surging; it does not claim to eliminate GPU/frame-rate stalls. The exact accepted build was promoted to stable play on November 13, 2026, with HTTP and current/prior asset hashes verified; existing user tabs were left untouched. See the [camera QA report](artifacts/driving-rubberband/QA-REPORT.md) and [measured comparison](artifacts/driving-rubberband/comparison.json).
 
 ```sh
 npm test

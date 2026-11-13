@@ -1,0 +1,35 @@
+[
+  {
+    "scenario": "clear-straight",
+    "window": "elapsed >8 seconds",
+    "samples": 220,
+    "cameraGapDecreases": 179,
+    "cameraGapIncreases": 40,
+    "gapStepMinMeters": -0.1377029059276751,
+    "gapStepMaxMeters": 0.5280250147767305,
+    "maximumVerticalScreenStepPixels": 4.148546499989834,
+    "playerCollisionCorrections": 0
+  },
+  {
+    "scenario": "normal-grid-easy",
+    "window": "elapsed >8 seconds",
+    "samples": 222,
+    "cameraGapDecreases": 180,
+    "cameraGapIncreases": 41,
+    "gapStepMinMeters": -0.26793238267111974,
+    "gapStepMaxMeters": 0.5071955453252599,
+    "maximumVerticalScreenStepPixels": 4.045846006688031,
+    "playerCollisionCorrections": 0
+  },
+  {
+    "scenario": "normal-grid-extreme",
+    "window": "elapsed >8 seconds",
+    "samples": 222,
+    "cameraGapDecreases": 181,
+    "cameraGapIncreases": 40,
+    "gapStepMinMeters": -0.15125423278567496,
+    "gapStepMaxMeters": 0.3765050423342018,
+    "maximumVerticalScreenStepPixels": 3.791568189663508,
+    "playerCollisionCorrections": 0
+  }
+]

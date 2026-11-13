@@ -77,6 +77,7 @@ export class RaceRenderer {
     this.carGroup = new THREE.Group(); this.scene.add(this.carGroup);
     this.carMeshes = new Map(); this.mode = 'chase'; this.cameraReady = false;
     this.lookAt = new THREE.Vector3(); this.desiredLook = new THREE.Vector3();
+    this.focusPosition = new THREE.Vector3(); this.focusDisplacement = new THREE.Vector3();
     this.resizeObserver = new ResizeObserver(() => this.resize()); this.resizeObserver.observe(container);
     this.resize();
   }
@@ -446,6 +447,15 @@ export class RaceRenderer {
     } else this.bayMarker.visible = false;
     if (this.focusCarId !== focusCar.id) { this.focusCarId = focusCar.id; this.cameraReady = false; }
     const player = focusCar, p = sampleTrack(this.track, player.s, player.lateral);
+    // Carry the follow rig with the same pose used by the car mesh. Damping
+    // world-space translation made its distance lag and pulse with frame timing;
+    // only the camera's relative offset and viewing direction should settle.
+    if (this.cameraReady && !menu && this.mode !== 'pit') {
+      this.focusDisplacement.set(p.x, p.y, p.z).sub(this.focusPosition);
+      this.camera.position.add(this.focusDisplacement);
+      this.lookAt.add(this.focusDisplacement);
+    }
+    this.focusPosition.set(p.x, p.y, p.z);
     const target = new THREE.Vector3();
     if (menu) {
       target.set(p.x - p.tx * 27 + p.nx * 23, p.y + 19, p.z - p.tz * 27 + p.nz * 23);
