@@ -32,19 +32,30 @@ export const TRACKS = Object.freeze([
     'https://www.nascar.com/news-media/2026/04/11/cup-series-2026-bristol-what-to-watch-food-city-500-preview/'),
 ]);
 
-// Approximate game tuning, not manufacturer performance specifications.
-export const ROAD_CARS = Object.freeze([
-  { id: 'civic', name: 'Honda Civic', body: 'sedan', maxSpeed: 51, acceleration: 4.8, braking: 9.4, grip: 0.99, mass: 1360, color: '#52b8da', length: 4.5, width: 1.82 },
-  { id: 'corolla', name: 'Toyota Corolla', body: 'sedan', maxSpeed: 48, acceleration: 4.2, braking: 8.8, grip: 0.94, mass: 1390, color: '#e8ded0', length: 4.6, width: 1.80 },
-  { id: 'camry', name: 'Toyota Camry', body: 'sedan', maxSpeed: 54, acceleration: 4.6, braking: 9.1, grip: 0.98, mass: 1580, color: '#a7adbb', length: 4.9, width: 1.84 },
-  { id: 'accord', name: 'Honda Accord', body: 'sedan', maxSpeed: 55, acceleration: 5.0, braking: 9.3, grip: 1.0, mass: 1550, color: '#3670c2', length: 4.9, width: 1.86 },
-  { id: 'mustang', name: 'Ford Mustang', body: 'coupe', maxSpeed: 65, acceleration: 6.1, braking: 10.0, grip: 1.08, mass: 1730, color: '#f2bc45', length: 4.8, width: 1.92 },
-  { id: 'mazda3', name: 'Mazda3', body: 'hatchback', maxSpeed: 53, acceleration: 4.8, braking: 9.7, grip: 1.05, mass: 1430, color: '#b93846', length: 4.5, width: 1.80 },
-  { id: 'golf', name: 'Volkswagen Golf', body: 'hatchback', maxSpeed: 54, acceleration: 5.2, braking: 9.8, grip: 1.06, mass: 1410, color: '#d9e7e7', length: 4.3, width: 1.80 },
-  { id: 'f150', name: 'Ford F-150', body: 'pickup', maxSpeed: 46, acceleration: 3.9, braking: 8.0, grip: 0.86, mass: 2250, color: '#6c8c80', length: 5.5, width: 2.04 },
-  { id: 'rav4', name: 'Toyota RAV4', body: 'suv', maxSpeed: 47, acceleration: 4.2, braking: 8.4, grip: 0.91, mass: 1720, color: '#ec8157', length: 4.6, width: 1.86 },
-  { id: 'charger', name: 'Dodge Charger', body: 'sedan', maxSpeed: 61, acceleration: 5.6, braking: 9.5, grip: 1.02, mass: 1930, color: '#8d7ac7', length: 5.0, width: 1.91 },
+// All role values are arcade tuning, not manufacturer or mechanical claims.
+export const TRUCK_SAFE_SPEED = 15 * 0.44704;
+export const STREET_CLASSES = Object.freeze([
+  { id: 'sports', name: 'Sports / Muscle', speedRank: 1, protectionLabel: 'Most vulnerable', potholeFactor: 1.25, description: 'Fastest street class. Powerful acceleration, vulnerable tires and running gear.', maxSpeed: 65, acceleration: 6.1, braking: 10, grip: 1.04, mass: 1770, length: 4.9, width: 1.94, body: 'coupe', color: '#f2bc45', representativeId: 'mustang' },
+  { id: 'sedan', name: 'Sedan / Compact', speedRank: 2, protectionLabel: 'Balanced protection', potholeFactor: 1, description: 'Second fastest. Predictable handling and strong braking.', maxSpeed: 55, acceleration: 4.8, braking: 10.4, grip: 1.09, mass: 1500, length: 4.6, width: 1.84, body: 'sedan', color: '#52b8da', representativeId: 'civic' },
+  { id: 'suv', name: 'SUV / Van', speedRank: 3, protectionLabel: 'Strong protection', potholeFactor: 0.70, description: 'Durable utility class. Stopped mobile repairs recharge at pit stops; service-time contact disables the ability.', maxSpeed: 47, acceleration: 4.2, braking: 8.4, grip: 0.92, mass: 1800, length: 4.8, width: 1.98, body: 'suv', color: '#ec8157', representativeId: 'rav4' },
+  { id: 'truck', name: 'Truck', speedRank: 4, protectionLabel: 'Toughest · protected below 15 mph', potholeFactor: 0.45, description: 'Slowest and toughest. Fully protected from new pothole impacts below 15 mph.', maxSpeed: 44, acceleration: 3.9, braking: 8, grip: 0.86, mass: 2250, length: 5.5, width: 2.04, body: 'pickup', color: '#6c8c80', representativeId: 'f150' },
 ].map(Object.freeze));
+export const getStreetClass = (id) => STREET_CLASSES.find((entry) => entry.id === id) || STREET_CLASSES[1];
+
+// Ten familiar visual identities remain on the grid, but each role has one
+// shared performance/physical specification. A sedan-shaped Charger is Sports.
+export const ROAD_CARS = Object.freeze([
+  { id: 'civic', name: 'Honda Civic', streetClassId: 'sedan', body: 'sedan', color: '#52b8da' },
+  { id: 'corolla', name: 'Toyota Corolla', streetClassId: 'sedan', body: 'sedan', color: '#e8ded0' },
+  { id: 'camry', name: 'Toyota Camry', streetClassId: 'sedan', body: 'sedan', color: '#a7adbb' },
+  { id: 'accord', name: 'Honda Accord', streetClassId: 'sedan', body: 'sedan', color: '#3670c2' },
+  { id: 'mustang', name: 'Ford Mustang', streetClassId: 'sports', body: 'coupe', color: '#f2bc45' },
+  { id: 'mazda3', name: 'Mazda3', streetClassId: 'sedan', body: 'hatchback', color: '#b93846' },
+  { id: 'golf', name: 'Volkswagen Golf', streetClassId: 'sedan', body: 'hatchback', color: '#d9e7e7' },
+  { id: 'f150', name: 'Ford F-150', streetClassId: 'truck', body: 'pickup', color: '#6c8c80' },
+  { id: 'rav4', name: 'Toyota RAV4', streetClassId: 'suv', body: 'suv', color: '#ec8157' },
+  { id: 'charger', name: 'Dodge Charger', streetClassId: 'sports', body: 'sedan', color: '#8d7ac7' },
+].map((model) => Object.freeze({ ...getStreetClass(model.streetClassId), ...model, streetClassName: getStreetClass(model.streetClassId).name })));
 
 export const STOCK_CAR = Object.freeze({
   id: 'stock', name: 'V8 Stock Car', body: 'stock', maxSpeed: 89, acceleration: 7.2,

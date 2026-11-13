@@ -87,8 +87,40 @@ test('ongoing legitimate pit service does not trigger the watch no-progress guar
   assert.equal(sim.raceComplete, false);
 });
 
-test('complete watch controller matches the independent guaranteed-tire revision endurance', async () => {
-  const independent = await Promise.all(['easy-10', 'medium-15', 'extreme-20'].map(slug => readFile(new URL(`../artifacts/guaranteed-pit-tires/endurance/${slug}.json`, import.meta.url), 'utf8').then(JSON.parse)));
+test('roadside service near the no-progress limit completes or aborts without masking a later genuine stall', () => {
+  for (const outcome of ['complete', 'drive-abort']) {
+    const watch = new WatchSeries({ seed: 20261112 });
+    advance(watch, 3.1);
+    const sim = watch.simulation, suv = sim.cars.find(car => car.streetClassId === 'suv');
+    assert.ok(suv, 'mixed road roster must include an SUV');
+    sim.potholes = []; sim.potholeBuckets.clear();
+    sim.cars.forEach((car, index) => Object.assign(car, { s: -12 - index * 13, lateral: index % 2 ? 3.2 : -3.2, speed: 0, lateralVelocity: 0, headingOffset: 0 }));
+    Object.assign(suv, { s: sim.track.length / 2, lateral: -sim.track.width / 2 - 6, damage: 0.25 });
+    sim.aiControl = () => ({ throttle: 0, brake: 1, steer: 0 });
+    for (let frame = 0; frame < 60 * 46 && watch.snapshot.noProgressSeconds < 44; frame += 1) watch.update(STEP);
+    assert.equal(watch.phase, 'racing');
+    assert.ok(watch.snapshot.noProgressSeconds >= 44);
+    assert.equal(sim.requestMobileRepair(suv), true);
+    if (outcome === 'complete') {
+      advance(watch, 15.1);
+      assert.equal(suv.mobileRepair.completed, 1);
+    } else {
+      advance(watch, 1);
+      assert.equal(sim.cancelMobileRepair(suv, 'Controlled abort for the watchdog lifecycle check.'), true);
+      assert.equal(suv.mobileRepair.state === 'active', false);
+      assert.equal(suv.mobileRepair.completed, 0);
+    }
+    assert.equal(watch.phase, 'racing', 'legitimate roadside work must not trigger a premature stall');
+    assert.equal(sim.raceComplete, false);
+    advance(watch, 46);
+    assert.equal(watch.phase, 'stalled', 'spent/finished/cancelled roadside service must not suppress future no-progress detection');
+    assert.equal(sim.raceComplete, false);
+    assert.ok(sim.cars.every(car => !car.finished && !car.wrecked));
+  }
+});
+
+test('complete watch controller matches the independent street-class revision endurance', async () => {
+  const independent = await Promise.all(['easy-10', 'medium-15', 'extreme-20'].map(slug => readFile(new URL(`../artifacts/street-classes/endurance/${slug}.json`, import.meta.url), 'utf8').then(JSON.parse)));
   const watch = new WatchSeries({ seed: 20261112 });
   let observedPlayerTerminalBeforeWholeField = false;
   let observedIntermission = false;
@@ -127,6 +159,10 @@ test('complete watch controller matches the independent guaranteed-tire revision
       assert.equal(car.completedLaps, baseline.completedLaps);
       assert.equal(car.classPosition, baseline.classPosition);
       assert.equal(car.wreckReason, baseline.wreckReason);
+      assert.equal(car.streetClassId, baseline.streetClassId);
+      if (car.mobileRepair) {
+        for (const field of ['state', 'charges', 'disabled', 'attempts', 'completed']) assert.equal(car.mobileRepair[field], baseline.mobileRepair[field], `${car.id} roadside ${field}`);
+      }
       if (car.finishTime !== null) assert.ok(Math.abs(car.finishTime - baseline.finishTime) < 0.0001);
     }
   }

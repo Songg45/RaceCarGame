@@ -1,4 +1,5 @@
-import { getTrack, getRoadCar, ROAD_CARS, STOCK_CAR, STOCK_COLORS } from './catalog.js';
+import { getTrack, getRoadCar, getStreetClass, ROAD_CARS, STOCK_CAR, STOCK_COLORS, TRUCK_SAFE_SPEED } from './catalog.js';
+export { TRUCK_SAFE_SPEED } from './catalog.js';
 
 const STEP = 1 / 120;
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
@@ -19,8 +20,22 @@ export const ENGINE_LIMITS = Object.freeze({
   pavedCoolingRate: 0.04, grassIdleCoolingRate: 0.01,
 });
 
+export const MOBILE_REPAIR_RULES = Object.freeze({
+  duration: 15, stopSpeed: 0.05, lateralStopSpeed: 0.05,
+  lengthPadding: 3, widthPadding: 2.6,
+  collisionBody: 0.25, collisionBodyDifficulty: 0.10,
+  collisionEngine: 0.20, collisionEngineDifficulty: 0.10,
+  collisionBend: 0.35, collisionBendDifficulty: 0.20,
+  collisionSuspension: 0.35, collisionSuspensionDifficulty: 0.25,
+});
+
+export function isPotholeProtected(car, speed = car.speed) {
+  return (car.streetClassId || car.spec?.streetClassId) === 'truck' && speed < TRUCK_SAFE_SPEED;
+}
+
 /** Tuning probabilities, not real-world failure statistics. One roll per wheel impact. */
-export function potholeRisk(hole, speed, wheel = {}) {
+export function potholeRisk(hole, speed, wheel = {}, vehicle = {}) {
+  if (vehicle.streetClassId === 'truck' && speed < TRUCK_SAFE_SPEED) return { blowoutChance: 0, assemblyChance: 0, suspensionBreakChance: 0, bentWheelChance: 0, punctureChance: 0 };
   const size = clamp((Number(hole.radius) - 0.45) / 1.9, 0, 1.7);
   const velocity = clamp(Math.max(0, speed) / 60, 0, 1.7);
   const severity = 0.65 + clamp(Number(hole.severity) || 0, 0, 0.4) * 4;
@@ -30,7 +45,13 @@ export function potholeRisk(hole, speed, wheel = {}) {
   const suspensionBreakChance = clamp((0.001 + 0.025 * size ** 2) * velocity ** 1.5 * severity * wear, 0, 0.14);
   const bentWheelChance = clamp((0.006 + 0.07 * size ** 2) * velocity ** 1.2 * severity * wear, 0, 0.16);
   const punctureChance = wheel.tire !== 'intact' && wheel.tire !== undefined ? 0 : clamp((0.025 + 0.15 * size ** 1.4) * velocity ** 0.7 * severity, 0, 0.18);
-  return { blowoutChance, assemblyChance, suspensionBreakChance, bentWheelChance, punctureChance };
+  const risks = { blowoutChance, assemblyChance, suspensionBreakChance, bentWheelChance, punctureChance };
+  if (!vehicle.streetClassId) return risks; // Stock tuning remains independent.
+  const total = Object.values(risks).reduce((sum, chance) => sum + chance, 0);
+  // Scale the probability of any failure, preserving the relative failure mix
+  // and leaving room for a strict resilience ordering even at saturated wear.
+  const adjusted = 1 - (1 - Math.min(total, 0.98)) ** vehicle.potholeFactor;
+  return Object.fromEntries(Object.entries(risks).map(([kind, chance]) => [kind, total ? chance / total * adjusted : 0]));
 }
 
 /** World-space stadium oval, measured from the middle of the front straight. */
@@ -117,7 +138,8 @@ export class RaceSimulation {
       this.potholeBuckets.get(bucket).push(hole);
     }
     this.cars = [];
-    const selected = getRoadCar(options.vehicleId);
+    const selected = getRoadCar(options.streetClassId ? getStreetClass(options.streetClassId).representativeId : options.vehicleId);
+    this.streetClassId = selected.streetClassId;
     // The player's chosen road model takes the fifth grid slot; all ten models
     // remain represented exactly once, and the player is one of the twenty cars.
     const roads = [...ROAD_CARS];
@@ -137,12 +159,14 @@ export class RaceSimulation {
     // Legacy single-player aliases; service validation always uses the car's
     // assigned bay, while rendering uses the full bays array and through lane.
     this.pit.bayS = playerBay.s; this.pit.lateral = playerBay.lateral;
-    for (const car of this.cars) { this.updateHandling(car); this.updateWorld(car); this.updatePitInfo(car); }
+    for (const car of this.cars) { this.updateHandling(car); this.updateWorld(car); this.updatePitInfo(car); this.updateMobileRepairInfo(car); }
   }
 
   makeCar(classId, spec, row, lateral, color) {
     return {
       id: `${classId}-${row + 1}`, classId, modelId: spec.id, name: spec.name,
+      streetClassId: classId === 'civilian' ? spec.streetClassId : null,
+      streetClassName: classId === 'civilian' ? spec.streetClassName : null,
       body: spec.body, color, number: classId === 'stock' ? [7, 12, 24, 48, 88, 3, 19, 22, 43, 9][row] : row + 101,
       isPlayer: classId === this.playerClass && row === 4,
       spec, s: -12 - row * 13, lateral, speed: 0, lateralVelocity: 0,
@@ -163,11 +187,15 @@ export class RaceSimulation {
       handling: null, vibration: 0, hazardRolls: 0, tireBlowouts: 0, wheelAssemblyFailures: 0,
       aiStuckTime: 0, aiEscapeTime: 0, aiEscapeLane: lateral,
       aiHazardPlan: null,
+      potholeProtected: false,
+      mobileRepair: { supported: classId === 'civilian' && spec.streetClassId === 'suv', charges: classId === 'civilian' && spec.streetClassId === 'suv' ? 1 : 0, disabled: false, disabledReason: '', used: false, state: classId === 'civilian' && spec.streetClassId === 'suv' ? 'ready' : 'unavailable', available: false, remaining: 0, duration: MOBILE_REPAIR_RULES.duration, area: null, reason: '', attempts: 0, completed: 0, penaltyApplied: false, aiTarget: null },
       holeContacts: new Map(),
     };
   }
 
   getPitBay(car) { return this.pit.bays.find((bay) => bay.carId === car.id); }
+
+  isPotholeProtected(car, speed = car.speed) { return isPotholeProtected(car, speed); }
 
   wheelContactPosition(car, wheel) {
     const angle = -car.headingOffset;
@@ -177,6 +205,7 @@ export class RaceSimulation {
   }
 
   updateHandling(car) {
+    car.potholeProtected = isPotholeProtected(car);
     const wheels = car.wheels;
     for (const wheel of wheels) {
       wheel.suspensionStatus = wheel.suspensionDamage >= 0.85 ? 'broken' : wheel.suspensionDamage > 0.01 ? 'worn' : 'healthy';
@@ -277,18 +306,25 @@ export class RaceSimulation {
         const touches = longitudinal * longitudinal + lateral * lateral < (hole.radius + 0.18) ** 2;
         const contactId = `${hole.id}:${wheel.id}`;
         if (!touches) { car.holeContacts.delete(contactId); continue; }
-        if (car.holeContacts.has(contactId)) continue;
+        if (car.holeContacts.has(contactId) && car.holeContacts.get(contactId)?.protected !== true) continue;
+        if (isPotholeProtected(car)) {
+          // Protected overlap is not a consumed damaging hit. If the driver
+          // accelerates above the limit while still in this crater, one normal
+          // impact occurs, then the usual no-reroll bookkeeping takes over.
+          car.holeContacts.set(contactId, { protected: true });
+          continue;
+        }
         // A stationary wheel does not keep trying the same hazard roll. The
         // contact is released only after this wheel physically exits the hole.
         car.holeContacts.set(contactId, this.elapsed);
         if (car.speed < 0.5) continue;
         const impactSpeed = car.speed;
-        const risk = potholeRisk(hole, impactSpeed, wheel);
+        const risk = potholeRisk(hole, impactSpeed, wheel, car.spec);
         const roll = this.random();
         car.hazardRolls += 1;
         car.potholeHits += 1;
         wheel.lastImpactTime = this.elapsed;
-        const impact = hole.severity * (0.35 + impactSpeed / 70) + 0.012 * (impactSpeed / 60) ** 2;
+        const impact = (hole.severity * (0.35 + impactSpeed / 70) + 0.012 * (impactSpeed / 60) ** 2) * (car.spec.potholeFactor ?? 1);
         // Separate wheel impacts share the body load, but wear the wheel that
         // actually crossed the crater. A broad hole can strike both axles.
         car.damage = clamp(car.damage + impact * 0.32, 0, 1);
@@ -326,6 +362,183 @@ export class RaceSimulation {
     }
   }
 
+  needsRepair(car) {
+    return car.damage > 0 || car.engine.wear > 0 || car.engine.heat > 0 || car.wheels.some((wheel) => wheel.suspensionDamage > 0 || wheel.tire !== 'intact' || wheel.pressure < 1 || wheel.bend > 0);
+  }
+
+  carFootprint(car) {
+    return { s: car.s, lateral: car.lateral, headingOffset: car.headingOffset, length: car.spec.length, width: car.spec.width };
+  }
+
+  footprintsOverlap(first, second, margin = 0) {
+    const a = -(first.headingOffset || 0), b = -(second.headingOffset || 0);
+    const forwardA = [Math.cos(a), Math.sin(a)], sideA = [-Math.sin(a), Math.cos(a)];
+    const forwardB = [Math.cos(b), Math.sin(b)], sideB = [-Math.sin(b), Math.cos(b)];
+    const delta = [this.relativeDistance(second.s - first.s), second.lateral - first.lateral];
+    const dot = (u, v) => u[0] * v[0] + u[1] * v[1];
+    for (const axis of [forwardA, sideA, forwardB, sideB]) {
+      const radiusA = Math.abs(dot(axis, forwardA)) * first.length / 2 + Math.abs(dot(axis, sideA)) * first.width / 2;
+      const radiusB = Math.abs(dot(axis, forwardB)) * second.length / 2 + Math.abs(dot(axis, sideB)) * second.width / 2;
+      if (Math.abs(dot(delta, axis)) > radiusA + radiusB + margin) return false;
+    }
+    return true;
+  }
+
+  getMobileRepairArea(car) {
+    return { ...this.carFootprint(car), carId: car.id, length: car.spec.length + MOBILE_REPAIR_RULES.lengthPadding, width: car.spec.width + MOBILE_REPAIR_RULES.widthPadding };
+  }
+
+  mobileRepairAreaClear(car, area = this.getMobileRepairArea(car)) {
+    const angle = area.headingOffset || 0;
+    const halfWidth = Math.abs(Math.cos(angle)) * area.width / 2 + Math.abs(Math.sin(angle)) * area.length / 2;
+    if (area.lateral + halfWidth > -this.track.width / 2 - 0.5) return false;
+    const throughLane = { s: (this.pit.entryS + this.pit.exitS) / 2, lateral: this.pit.throughLateral, length: this.pit.exitS - this.pit.entryS, width: this.pit.throughWidth, headingOffset: 0 };
+    if (this.footprintsOverlap(area, throughLane, 0.25)) return false;
+    if (this.pit.bays.some((bay) => this.footprintsOverlap(area, { ...bay, headingOffset: 0 }, 0.25))) return false;
+    return this.cars.every((other) => other === car || !this.footprintsOverlap(area, other.mobileRepair?.state === 'active' ? other.mobileRepair.area : this.carFootprint(other), 0.25));
+  }
+
+  updateMobileRepairInfo(car) {
+    const mobile = car.mobileRepair;
+    mobile.used = mobile.charges === 0;
+    mobile.chargeAvailable = mobile.charges > 0 && !mobile.disabled;
+    mobile.available = false;
+    if (!mobile.supported || mobile.state === 'active') return;
+    if (mobile.disabled) { mobile.reason = mobile.disabledReason; return; }
+    if (car.wrecked || car.finished) { mobile.reason = 'A terminal or finished car cannot receive mobile repair.'; return; }
+    if (!mobile.charges) { mobile.reason = 'Charge spent. Complete a pit stop to recharge.'; return; }
+    if (car.pitState === 'servicing') { mobile.reason = 'Finish the current pit service first.'; return; }
+    if (!this.needsRepair(car)) { mobile.reason = 'No repairs needed.'; return; }
+    if (car.speed > MOBILE_REPAIR_RULES.stopSpeed || Math.abs(car.lateralVelocity) > MOBILE_REPAIR_RULES.lateralStopSpeed) { mobile.reason = 'Stop completely before deploying the repair area.'; return; }
+    if (!this.mobileRepairAreaClear(car)) { mobile.reason = 'Pull clear of the racing lane, pit through lane, bays and traffic.'; return; }
+    mobile.reason = 'Ready. Deploy for 15 seconds; contact causes severe damage and disables the ability.';
+    mobile.available = true;
+  }
+
+  requestMobileRepair(car = this.player) {
+    if (this.state === 'paused' || this.state === 'countdown' || this.raceComplete) return false;
+    this.updateMobileRepairInfo(car);
+    const mobile = car.mobileRepair;
+    if (!mobile.available || mobile.state === 'active' || car.wheels.some((wheel) => wheel.assembly === 'destroyed') || car.engine.wear >= 1) return false;
+    mobile.charges = 0; mobile.used = true; mobile.chargeAvailable = false;
+    mobile.state = 'active'; mobile.available = false; mobile.remaining = MOBILE_REPAIR_RULES.duration;
+    mobile.area = this.getMobileRepairArea(car); mobile.attempts += 1; mobile.penaltyApplied = false;
+    mobile.aiTarget = null; mobile.reason = ''; mobile.message = 'Mobile repair active. Remain stopped and protect the crew area.';
+    car.speed = 0; car.lateralVelocity = 0;
+    car.pitTarget = false; car.pitExiting = false; car.pitRoute = 'none';
+    this.addEvent('mobile', mobile.message, { carId: car.id, kind: 'mobile-repair-started' });
+    return true;
+  }
+
+  cancelMobileRepair(car, reason = 'Movement interrupted the repair.', collision = false, contactCarId = null) {
+    const mobile = car.mobileRepair;
+    if (mobile.state !== 'active') return false;
+    mobile.state = 'cancelled'; mobile.area = null; mobile.remaining = 0; mobile.available = false;
+    mobile.aiTarget = null; mobile.charges = 0; mobile.used = true; mobile.chargeAvailable = false;
+    mobile.reason = reason;
+    if (collision) {
+      mobile.disabled = true; mobile.disabledReason = 'Contact interrupted mobile repair. Ability disabled for this race.';
+      if (!mobile.penaltyApplied) {
+        mobile.penaltyApplied = true;
+        const difficulty = this.difficultyLevel / 100, rules = MOBILE_REPAIR_RULES;
+        const penalty = { body: rules.collisionBody + rules.collisionBodyDifficulty * difficulty, engine: rules.collisionEngine + rules.collisionEngineDifficulty * difficulty, bend: rules.collisionBend + rules.collisionBendDifficulty * difficulty, suspension: rules.collisionSuspension + rules.collisionSuspensionDifficulty * difficulty };
+        car.damage = clamp(car.damage + penalty.body, 0, 1);
+        car.engine.wear = clamp(car.engine.wear + penalty.engine, 0, 1);
+        const corner = car.wheels.find((wheel) => wheel.id === 'FL');
+        corner.bend = clamp(corner.bend + penalty.bend, 0, 1);
+        corner.suspensionDamage = clamp(corner.suspensionDamage + penalty.suspension, 0, 1);
+        mobile.message = `Crew-interruption penalty: body +${Math.round(penalty.body * 100)}%, engine wear +${Math.round(penalty.engine * 100)}%, front-left rim and suspension damaged. Mobile repair disabled for this race.`;
+        car.repairMessage = mobile.message;
+        this.updateHandling(car);
+        if (car.engine.wear < 1) this.updateEngine(car, { throttle: 0 }, 0);
+        this.addEvent('mobile', mobile.message, { carId: car.id, kind: 'mobile-crew-collision', contactCarId, penalty });
+        if (car.engine.wear >= 1) { car.engine.status = 'burnt'; this.wreckCar(car, 'Mobile crew collision destroyed the engine', { preserveBody: true }); }
+        else if (car.damage >= 1) this.wreckCar(car, 'Mobile crew collision damage');
+      }
+    } else {
+      mobile.message = `${reason} No repair granted. Complete a pit stop to recharge.`;
+      this.addEvent('mobile', mobile.message, { carId: car.id, kind: 'mobile-repair-cancelled' });
+    }
+    return true;
+  }
+
+  resolveMobileRepairContacts() {
+    for (const owner of this.cars) {
+      if (owner.mobileRepair.state !== 'active') continue;
+      const other = this.cars.find((car) => car !== owner && this.footprintsOverlap(owner.mobileRepair.area, this.carFootprint(car)));
+      if (other) this.cancelMobileRepair(owner, 'Vehicle contact with the deployed repair area.', true, other.id);
+    }
+  }
+
+  completeMobileRepair(car) {
+    const mobile = car.mobileRepair;
+    if (this.state === 'paused' || this.state === 'countdown' || mobile.state !== 'active' || mobile.remaining > 0.00001 || car.wrecked || mobile.disabled) return false;
+    mobile.state = 'complete'; mobile.area = null; mobile.remaining = 0; mobile.completed += 1;
+    this.applyRepairOutcome(car, 'mobile');
+    mobile.message = car.repairMessage;
+    car.targetLateral = -this.track.width / 2 + 3;
+    car.aiTimer = 0;
+    this.updateMobileRepairInfo(car);
+    return true;
+  }
+
+  trafficObjects(car) {
+    return this.cars.filter((other) => other !== car).map((other) => {
+      const area = other.mobileRepair.state === 'active' ? other.mobileRepair.area : null;
+      return area ? { ...other, s: area.s, lateral: area.lateral, headingOffset: area.headingOffset, speed: 0, lateralVelocity: 0, spec: { ...other.spec, length: area.length, width: area.width } } : other;
+    });
+  }
+
+  mobileRepairControl(car) {
+    const mobile = car.mobileRepair;
+    if (!mobile.supported || !mobile.charges || mobile.disabled || car.finished || car.wrecked || car.pitState === 'servicing') { mobile.aiTarget = null; return null; }
+    const localS = this.relativeDistance(car.s), area = this.getMobileRepairArea(car);
+    const firstBay = this.pit.bays[0].s - this.pit.bayLength / 2;
+    const lastBay = this.pit.bays[this.pit.bays.length - 1].s + this.pit.bayLength / 2;
+    const onClearApron = localS > this.pit.entryS + area.length / 2 + 6 && localS < firstBay - area.length / 2 - 15 || localS > lastBay + area.length / 2 + 15 && localS < this.pit.exitS - area.length / 2 - 15;
+    const outsidePit = localS < this.pit.entryS - 30 || localS > this.pit.exitS + 30;
+    if (!mobile.aiTarget) {
+      if (onClearApron) mobile.aiTarget = { kind: 'apron', lateral: this.pit.innerLateral + area.width / 2 + 0.5 };
+      else if (outsidePit) mobile.aiTarget = { kind: 'infield', lateral: -this.track.width / 2 - 6.5 };
+      else return null;
+    }
+    if (mobile.aiTarget.kind === 'apron' && !onClearApron || mobile.aiTarget.kind === 'infield' && !outsidePit) {
+      mobile.aiTarget = null;
+      return null;
+    }
+    const goal = mobile.aiTarget.lateral;
+    // Brake on the road first. Pulling a damaged car into the grass at racing
+    // speed spends its entire braking distance off-road before it can stop.
+    let targetSpeed = car.speed > 12 ? 10 : 6;
+    car.targetLateral = car.speed > 12 ? car.lateral : goal;
+    const crossing = this.trafficObjects(car).find((other) => {
+      const gap = this.relativeDistance(other.s - car.s);
+      const left = Math.min(car.lateral, car.targetLateral) - (car.spec.width + other.spec.width) / 2 - 0.4;
+      const right = Math.max(car.lateral, car.targetLateral) + (car.spec.width + other.spec.width) / 2 + 0.4;
+      return gap > -8 && gap < 22 && other.lateral > left && other.lateral < right;
+    });
+    if (crossing) {
+      car.targetLateral = car.lateral;
+      targetSpeed = Math.min(targetSpeed, Math.max(0, crossing.speed - 2));
+      // A permanent obstruction should not make the mobile approach a second
+      // stopped obstacle; let the ordinary path planner pass it before retrying.
+      if (crossing.wrecked || crossing.mobileRepair.state === 'active' || crossing.stationaryTime > 2.5) {
+        mobile.aiTarget = null; mobile.aiRetryAt = this.elapsed + 4;
+        return null;
+      }
+    }
+    this.updateMobileRepairInfo(car);
+    if (this.mobileRepairAreaClear(car)) targetSpeed = 0;
+    const steering = this.steeringDynamics(car);
+    const correction = steering.disturbance / Math.max(0.05, steering.authority);
+    return {
+      throttle: clamp((targetSpeed - car.speed) * 0.7, 0, 1),
+      brake: clamp((car.speed - targetSpeed) * 0.7, 0, 1),
+      steer: clamp((car.targetLateral - car.lateral) * 0.7 - car.lateralVelocity * 0.25 - correction, -1, 1),
+      mobileRepair: mobile.available,
+    };
+  }
+
   updatePitInfo(car) {
     const localS = this.relativeDistance(car.s);
     const bay = this.getPitBay(car);
@@ -343,8 +556,8 @@ export class RaceSimulation {
     const parking = this.pit.parkingTolerance, tolerance = this.pit.serviceTolerance;
     car.pitCentered = car.pitInBay && Math.abs(car.pitCenterError.longitudinal) <= parking.longitudinal && Math.abs(car.pitCenterError.lateral) <= parking.lateral && Math.abs(angle) <= parking.heading;
     car.pitServicePoseValid = car.pitInBay && Math.abs(angle) <= tolerance.heading;
-    const needsRepair = car.damage > 0 || car.engine.wear > 0 || car.engine.heat > 0 || car.wheels.some((wheel) => wheel.suspensionDamage > 0 || wheel.tire !== 'intact' || wheel.pressure < 1 || wheel.bend > 0);
-    car.pitAvailable = !car.wrecked && !car.finished && needsRepair && car.pitServicePoseValid && car.speed <= tolerance.speed && Math.abs(car.lateralVelocity) <= tolerance.lateralSpeed && !car.pitVisitLocked && car.pitState !== 'servicing' && !car.wheels.some((wheel) => wheel.assembly === 'destroyed');
+    const needsRepair = this.needsRepair(car) || car.mobileRepair.supported && !car.mobileRepair.disabled && car.mobileRepair.charges === 0;
+    car.pitAvailable = !car.wrecked && !car.finished && car.mobileRepair.state !== 'active' && needsRepair && car.pitServicePoseValid && car.speed <= tolerance.speed && Math.abs(car.lateralVelocity) <= tolerance.lateralSpeed && !car.pitVisitLocked && car.pitState !== 'servicing' && !car.wheels.some((wheel) => wheel.assembly === 'destroyed');
   }
 
   requestPitService(car = this.player) {
@@ -366,6 +579,21 @@ export class RaceSimulation {
 
   completePitService(car) {
     if (car.wrecked || car.pitState !== 'servicing' || !car.pitServicePoseValid || car.wheels.some((wheel) => wheel.assembly === 'destroyed')) return;
+    car.pitState = 'complete';
+    car.pitExiting = car.pitTarget;
+    car.pitRoute = car.pitTarget ? 'exit-stall' : 'none';
+    car.pitMergeCommitted = false;
+    car.pitVisits += 1;
+    car.pitRemaining = 0;
+    car.pitAvailable = false;
+    this.applyRepairOutcome(car, 'pit');
+    if (!car.wrecked && car.mobileRepair.supported && !car.mobileRepair.disabled) {
+      Object.assign(car.mobileRepair, { charges: 1, used: false, chargeAvailable: true, state: 'ready', reason: '', area: null, aiTarget: null, message: 'Mobile repair charge restored by completed pit service.' });
+    }
+    this.updateMobileRepairInfo(car);
+  }
+
+  applyRepairOutcome(car, source = 'pit') {
     const before = car.damage;
     const engineWearBefore = car.engine.wear;
     const difficulty = this.difficultyLevel / 100;
@@ -411,25 +639,20 @@ export class RaceSimulation {
       replaced.push(wheel.id);
     }
     this.updateHandling(car);
-    car.pitState = 'complete';
-    car.pitExiting = car.pitTarget;
-    car.pitRoute = car.pitTarget ? 'exit-stall' : 'none';
-    car.pitMergeCommitted = false;
-    car.pitVisits += 1;
-    car.pitRemaining = 0;
-    car.pitAvailable = false;
-    this.addEvent('repair', car.repairMessage, { carId: car.id, tiresReplaced: replaced });
+    if (source === 'mobile') car.repairMessage = `Mobile repair completed. ${car.repairMessage}`;
+    this.addEvent('repair', car.repairMessage, { carId: car.id, source, kind: source === 'mobile' ? 'mobile-repair-completed' : 'pit-repair-completed', tiresReplaced: replaced });
     if (car.engine.wear >= 1) {
       car.engine.status = 'burnt';
-      this.wreckCar(car, 'Pit crew failure destroyed the engine', { preserveBody: true });
+      this.wreckCar(car, `${source === 'mobile' ? 'Mobile' : 'Pit'} crew failure destroyed the engine`, { preserveBody: true });
     } else {
       this.updateEngine(car, { throttle: 0 }, 0);
-      if (car.damage >= 1) this.wreckCar(car, 'Pit crew repair failure');
+      if (car.damage >= 1) this.wreckCar(car, `${source === 'mobile' ? 'Mobile' : 'Pit'} crew repair failure`);
     }
   }
 
   wreckCar(car, reason = 'Crash damage', options = {}) {
     if (car.wrecked) return;
+    if (car.mobileRepair.state === 'active') this.cancelMobileRepair(car, 'The car became a terminal wreck.');
     if (!options.preserveBody) car.damage = 1;
     car.wrecked = true;
     car.status = car.finished ? 'finished' : 'wrecked';
@@ -455,6 +678,7 @@ export class RaceSimulation {
       brake: clamp(Number(input.brake) || 0, 0, 1),
       steer: clamp(Number(input.steer) || 0, -1, 1),
       service: Boolean(input.service),
+      mobileRepair: Boolean(input.mobileRepair),
     };
     while (this.accumulator >= STEP) {
       this.tick(STEP, controls);
@@ -469,6 +693,7 @@ export class RaceSimulation {
       return;
     }
     this.elapsed += dt;
+    this.resolveMobileRepairContacts();
     for (const car of this.cars) {
       car.previousS = car.s;
       if (car.wrecked) { car.speed = 0; car.lateralVelocity = 0; continue; }
@@ -482,6 +707,19 @@ export class RaceSimulation {
       car.wallCooldown = Math.max(0, car.wallCooldown - dt);
       car.collisionFlash = Math.max(0, car.collisionFlash - dt);
       this.updatePitInfo(car);
+      this.updateMobileRepairInfo(car);
+      if (car.mobileRepair.state === 'active') {
+        const area = car.mobileRepair.area;
+        const moved = car.speed > MOBILE_REPAIR_RULES.stopSpeed || Math.abs(car.lateralVelocity) > MOBILE_REPAIR_RULES.lateralStopSpeed || Math.abs(this.relativeDistance(car.s - area.s)) > 0.01 || Math.abs(car.lateral - area.lateral) > 0.01;
+        const drivingInput = car.isPlayer && !car.finished && input.throttle > 0.05 && input.brake < 0.8;
+        if (moved || drivingInput) this.cancelMobileRepair(car, 'Movement interrupted mobile repair.');
+        else {
+          car.speed = 0; car.lateralVelocity = 0;
+          this.updateEngine(car, { throttle: 0 }, dt);
+          car.mobileRepair.remaining = Math.max(0, car.mobileRepair.remaining - dt);
+          continue;
+        }
+      }
       if (car.pitState === 'servicing') {
         this.updateEngine(car, { throttle: 0 }, dt);
         if (!car.pitServicePoseValid) {
@@ -496,24 +734,39 @@ export class RaceSimulation {
       }
       const control = car.isPlayer && !car.finished ? input : this.aiControl(car, dt);
       if (control.service && this.requestPitService(car)) continue;
+      if (control.mobileRepair && this.requestMobileRepair(car)) continue;
       this.moveCar(car, control, dt);
       this.hitPotholes(car);
     }
+    // Both checks precede completion: a contact on the last service tick must
+    // cancel and penalize the attempt, never grant a repair first.
+    this.resolveMobileRepairContacts();
     this.resolveCollisions();
+    this.resolveMobileRepairContacts();
     for (const car of this.cars) {
+      if (car.mobileRepair.state === 'active' && car.mobileRepair.remaining <= 0.00001) this.completeMobileRepair(car);
       this.countLaps(car, dt);
       this.updateHandling(car);
       this.updateWorld(car);
+      this.updateMobileRepairInfo(car);
     }
     this.raceComplete = this.cars.every((car) => car.finished || car.wrecked);
   }
 
   aiControl(car, dt) {
     const handling = this.updateHandling(car);
+    if (car.mobileRepair.state === 'active') return { throttle: 0, brake: 1, steer: 0 };
     car.aiStuckTime = car.speed < 0.5 && !car.pitTarget ? car.aiStuckTime + dt : 0;
     car.aiEscapeTime = Math.max(0, car.aiEscapeTime - dt);
     const pitS = this.relativeDistance(car.s);
-    const needsPit = car.damage > 0.42 || car.engine.wear > 0.2 || car.engine.heat > 0.7 || handling.blownTires || handling.brokenSuspensions || handling.maxSuspensionDamage > 0.6 || handling.averageBend > 0.22 || handling.minPressure < 0.78;
+    const needsMechanicalRepair = car.damage > 0.42 || car.engine.wear > 0.2 || car.engine.heat > 0.7 || handling.blownTires || handling.brokenSuspensions || handling.maxSuspensionDamage > 0.6 || handling.averageBend > 0.22 || handling.minPressure < 0.78;
+    const needsRecharge = car.mobileRepair.supported && !car.mobileRepair.disabled && !car.mobileRepair.charges;
+    const needsPit = needsMechanicalRepair || needsRecharge;
+    const nearPitEntrance = pitS > this.pit.entryS - Math.max(260, car.speed * 10) && pitS < this.pit.entryS + 20;
+    if (!car.pitTarget && !nearPitEntrance && needsMechanicalRepair && this.elapsed >= (car.mobileRepair.aiRetryAt || 0)) {
+      const mobileInput = this.mobileRepairControl(car);
+      if (mobileInput) return mobileInput;
+    }
     if (!car.finished && needsPit && !car.pitVisitLocked && pitS > this.pit.entryS - 140 && pitS < this.pit.entryS + 20 && !car.pitTarget) {
       car.pitTarget = true; car.pitRoute = 'approach'; car.pitMergeCommitted = false;
     }
@@ -575,7 +828,9 @@ export class RaceSimulation {
     const horizon = clamp(planningSpeed * 2.6 + planningSpeed ** 2 / (2 * braking) * 0.35, 65, 190);
     const laneLimit = this.track.width / 2 - car.spec.width / 2 - 0.8;
     const buckets = new Set();
-    let bucketPosition = mod(car.s - 8, this.track.length), remaining = horizon + 16;
+    const maximumRadius = this.potholes.reduce((largest, hole) => Math.max(largest, hole.radius), 0);
+    const rearScan = Math.max(8, car.spec.length / 2 + maximumRadius + 0.5);
+    let bucketPosition = mod(car.s - rearScan, this.track.length), remaining = rearScan + horizon + maximumRadius + 0.5;
     while (remaining >= 0) {
       const bucket = Math.floor(bucketPosition / 40);
       buckets.add(bucket);
@@ -588,10 +843,10 @@ export class RaceSimulation {
     const hazards = [];
     for (const bucket of buckets) for (const hole of this.potholeBuckets.get(bucket) || []) {
       const gap = this.relativeDistance(hole.s - car.s);
-      if (gap > -car.spec.length / 2 && gap < horizon) hazards.push({ hole, gap });
+      if (gap > -car.spec.length / 2 - hole.radius - 0.35 && gap < horizon + hole.radius) hazards.push({ hole, gap });
     }
     hazards.sort((a, b) => a.gap - b.gap);
-    const traffic = this.cars.filter((other) => other !== car && this.relativeDistance(other.s - car.s) > -35 && this.relativeDistance(other.s - car.s) < horizon + 40);
+    const traffic = this.trafficObjects(car).filter((other) => this.relativeDistance(other.s - car.s) > -35 && this.relativeDistance(other.s - car.s) < horizon + 40);
     const laneCandidates = [clamp(car.targetLateral, -laneLimit, laneLimit), clamp(car.lateral, -laneLimit, laneLimit)];
     for (let index = 0; index <= 10; index += 1) laneCandidates.push(-laneLimit + index * laneLimit / 5);
     for (const { hole } of hazards.slice(0, 3)) {
@@ -648,7 +903,10 @@ export class RaceSimulation {
         }
         if (overlap <= 0) continue;
         risk += overlap * (20 + 120 * (1 - clamp(gap / horizon, 0, 1)) ** 2) * (1 + hole.severity * 3);
-        if (impactS === null) { impactS = car.s + Math.max(0, gap - hole.radius); impactSpeed = clamp(20 - hole.radius * 3.2, 8, 18); }
+        if (impactS === null) {
+          impactS = car.s + Math.max(0, gap - hole.radius);
+          impactSpeed = car.streetClassId === 'truck' ? TRUCK_SAFE_SPEED - 0.7 : clamp(20 - hole.radius * 3.2, 8, 18);
+        }
       }
       const leader = traffic.reduce((nearest, other) => {
         const gap = this.relativeDistance(other.s - car.s);
@@ -772,9 +1030,9 @@ export class RaceSimulation {
     // its apron adjoins that same road, so both remain physically available.
     const inside = onPitPaving ? this.pit.innerLateral : -this.track.width / 2 + 0.5;
     const outside = this.track.width / 2 - 0.5;
-    const obstacles = this.cars.filter((other) => {
+    const obstacles = this.trafficObjects(car).filter((other) => {
       const gap = this.relativeDistance(other.s - car.s);
-      const stationaryObstacle = other.wrecked || other.stationaryTime > 2.5 && other.pitState !== 'servicing';
+      const stationaryObstacle = other.mobileRepair.state === 'active' || other.wrecked || other.stationaryTime > 2.5 && other.pitState !== 'servicing';
       return other !== car && stationaryObstacle && gap > -8 && gap < 70 && other.lateral > inside && other.lateral < outside;
     });
     if (car.pitBypassLateral !== null && car.s < car.pitBypassUntilS && car.pitBypassLateral - car.spec.width / 2 >= inside && car.pitBypassLateral + car.spec.width / 2 <= outside && !obstacles.some((other) => Math.abs(other.lateral - car.pitBypassLateral) < (other.spec.width + car.spec.width) / 2 + 0.45)) return car.pitBypassLateral;
@@ -1035,6 +1293,7 @@ export class RaceSimulation {
   recoverPlayer() {
     if (this.state !== 'racing' || this.player.finished || this.player.wrecked || this.player.pitState === 'servicing') return false;
     const car = this.player;
+    if (car.mobileRepair.state === 'active') this.cancelMobileRepair(car, 'Recovery interrupted mobile repair.');
     const candidates = [-0.28, 0.28, -0.65, 0.65, 0].map((ratio) => ratio * this.track.width / 2);
     const safe = candidates.find((lane) => this.cars.every((other) => other === car || Math.abs(this.relativeDistance(other.s - car.s)) > 9 || Math.abs(other.lateral - lane) > 2.5));
     if (safe === undefined) return false;

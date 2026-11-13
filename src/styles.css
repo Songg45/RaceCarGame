@@ -29,3 +29,65 @@
 @media(max-height:500px) and (min-width:600px){.watching .engine-condition{margin:4px 0}.watching .engine-condition>small{font-size:5px;margin-top:2px}.watching .engine-meter{margin-top:3px}}
 @media(max-width:760px){.wheel-cell{padding:4px 5px}.wheel-cell small{font-size:6px}.wheel-cell b{font-size:8px}.wheel-cell span{font-size:7px}.handling-details summary{font-size:6px}}
 @media(max-height:500px) and (min-width:600px){.wheel-grid{grid-template-columns:repeat(4,1fr)}.wheel-cell{padding:3px}.wheel-cell>div{display:block}.wheel-cell b{font-size:7px}.wheel-cell span{display:block;font-size:6px}.wheel-cell small{font-size:5px}.watching .wheel-cell>div{display:block}.watching .wheel-cell small{font-size:5px}.handling-details>div{max-height:40px}}
+
+/* Four Street roles share one race classification. */
+.street-choice-label{font-size:8px;font-weight:700;letter-spacing:1.3px;color:#b0c2be;margin:13px 0 8px}
+.street-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.street-card{padding:10px;text-align:left;border:1px solid #71827a55;border-radius:4px;background:#10242ee8;min-width:0;color:#b8cecf}
+.street-card:hover{background:#20363c;border-color:#b8cb975f}
+.street-card.selected{border-color:var(--acid);background:#3b472ae8;color:#e8f3d7}
+.street-card-heading{display:flex;align-items:center;gap:4px;margin-bottom:7px;min-height:30px}
+.street-card-heading strong{font-size:12px;line-height:1.2;flex:1;color:#edf1e6}
+.role-silhouette{width:48px;height:30px;flex-shrink:0}
+.role-rating{display:flex;justify-content:space-between;align-items:center;margin-top:4px;gap:5px}
+.role-rating>span{font-size:6px;letter-spacing:.65px;color:#bcc9c0}
+.role-rating>b{display:flex;gap:3px}
+.role-rating i{width:12px;height:4px;border-radius:1px;background:#73887b44}
+.role-rating i.filled{background:#7fc5bc}.street-card.selected .role-rating i.filled{background:var(--acid)}
+.street-card>small{display:block;min-height:21px;font-size:7px;line-height:1.45;margin-top:8px;color:#c1cdbd}
+.street-role-help{font-size:10px;line-height:1.5;color:#bccdc1;margin:9px 0 0}
+.vehicle-label{display:block;font-size:8px;color:#9ca9ad;letter-spacing:1.5px;margin-bottom:5px}
+.vehicle-row #vehicle-name{font-size:12px;font-weight:600}
+.street-selection .vehicle-row{margin:10px 0 16px;padding:9px 0}
+.street-selection .setup-panel h1{font-size:45px;margin:10px 0}
+.street-selection .intro{margin-bottom:15px;font-size:11px}
+
+.truck-protection{margin:8px 0;padding:7px 8px;border:1px solid #b9a37566;background:#b49e4420;border-radius:3px}
+.truck-protection strong{display:block;font-size:8px;line-height:1.4;color:#e9c386;letter-spacing:.3px}
+.truck-protection span{display:block;font-size:7px;color:#c5cdc2;margin-top:4px;line-height:1.4}
+.truck-protection.active{border-color:#7cceb575;background:#71b69420}
+.truck-protection.active strong{color:#a1edcb}
+.roadside-panel{margin:8px 0;padding:8px;border:1px solid #6ba99c66;border-radius:3px;background:#102b2cd9}
+.roadside-heading{display:flex;justify-content:space-between;gap:5px;font-size:7px;letter-spacing:.3px;color:#9ebeb4}
+.roadside-heading strong{color:#b4e9c7;font-size:8px;white-space:nowrap}
+.roadside-panel p{font-size:8px;line-height:1.45;margin:6px 0;color:#c7d6c9;max-height:58px;overflow:auto}
+.roadside-button{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-height:36px;padding:8px 5px;background:#a6d7af;color:#152d25;border:1px solid #b5e5b5;border-radius:3px;font-size:8px;font-weight:800;letter-spacing:.45px}
+.roadside-button:disabled{opacity:.65;background:#29433e;color:#c4d6cb;border-color:#8da79c44;cursor:default}
+.roadside-button kbd{font:700 8px Barlow,Arial,sans-serif;border:1px solid #18392a66;border-radius:2px;padding:2px 4px}
+.roadside-panel>small{display:block;font-size:7px;line-height:1.45;color:#efbe8c;margin-top:6px}
+.roadside-panel.active{border-color:#e8b467;background:#343126e8}
+.roadside-panel.active .roadside-heading strong{color:#ffe0a1}
+.roadside-panel.disabled{border-color:#dd806777;background:#412b28b8}
+.roadside-panel.disabled .roadside-heading strong{color:#f0a28c}
+.roadside-progress{height:4px;background:#8d8b673b;margin-top:7px;overflow:hidden;border-radius:2px}
+.roadside-progress i{display:block;height:100%;width:0;background:#e6d884}
+.roadside-panel.compact{padding:6px}.roadside-panel.compact>small{display:none}.roadside-panel.compact p{max-height:28px;margin-bottom:0}
+.has-mobile-repair .telemetry{width:250px}.has-mobile-repair .speed-row>strong{font-size:58px}.has-mobile-repair .speed-row b{font-size:23px}
+.has-mobile-repair .speed-rule{margin:5px 0 8px}.has-mobile-repair .wheel-condition{margin:6px 0}.has-mobile-repair .handling-details{margin-top:4px}
+.watching #roadside{display:none!important}
+@media(max-width:760px){
+  .street-card{padding:9px}.street-card-heading strong{font-size:12px}.street-role-help{font-size:9px}
+  .has-mobile-repair .telemetry{width:172px;padding:9px 11px}.has-mobile-repair .speed-row>strong{font-size:43px}.has-mobile-repair .speed-row b{font-size:18px}
+  .has-mobile-repair .speed-rule{display:none}.has-mobile-repair .condition-row{margin-top:7px}.has-mobile-repair .engine-condition{margin:6px 0}
+  .roadside-panel{padding:6px;margin:6px 0}.roadside-heading{font-size:6px;letter-spacing:0}.roadside-heading strong{font-size:7px}
+  .roadside-panel p{font-size:7px;max-height:43px;margin:5px 0}.roadside-panel>small{font-size:6px;margin-top:5px}
+  .roadside-button{min-height:44px;font-size:7px;padding:7px 3px;letter-spacing:0}
+  .truck-protection{padding:6px}.truck-protection strong{font-size:7px}.truck-protection span{font-size:6px}
+}
+@media(max-width:440px){.has-mobile-repair .telemetry{width:160px}.street-selection .setup-panel h1{font-size:41px}}
+@media(max-height:500px) and (min-width:600px){
+  .has-mobile-repair .telemetry{width:165px;padding:8px 10px}.has-mobile-repair .speed-row>strong{font-size:39px}
+  .has-mobile-repair .roadside-panel{position:fixed;top:80px;left:200px;right:195px;margin:0;background:#122d2df5;max-height:calc(100dvh - 165px);overflow:auto;padding:8px}
+  .has-mobile-repair.watching .roadside-panel{left:250px}.roadside-panel p{max-height:35px}.roadside-button{min-height:32px}
+  .street-selection .setup-panel h1{font-size:35px}
+}

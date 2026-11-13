@@ -1,0 +1,1885 @@
+{
+  "passed": true,
+  "baseURL": "http://127.0.0.1:4174/",
+  "sourceSha256": "51f015e71d3d1157f1ef38025d5bb89bfd0f212877e31fefe3a4008e6012760f",
+  "buildSha256": "6d2f61e2f8162195cb5a772616544d023207d3d49ead1e9c3df170360bcb0815",
+  "checks": [
+    {
+      "check": "Four actual role cards replace the model dropdown; every grid still has10stock+10Street",
+      "selectedRoles": [
+        {
+          "selected": "sedan",
+          "stock": 10,
+          "street": 10
+        },
+        {
+          "selected": "sports",
+          "stock": 10,
+          "street": 10
+        },
+        {
+          "selected": "suv",
+          "stock": 10,
+          "street": 10
+        },
+        {
+          "selected": "truck",
+          "stock": 10,
+          "street": 10
+        }
+      ]
+    },
+    {
+      "check": "Truck HUD uses actual below15mph protection, not rounded speedometer logic",
+      "thresholds": [
+        {
+          "actualSpeed": 6.660896,
+          "protected": true,
+          "text": "POTHOLE PROTECTION ACTIVE14.9 MPH · ACTIVE BELOW 15 MPH"
+        },
+        {
+          "actualSpeed": 6.7056,
+          "protected": false,
+          "text": "POTHOLE PROTECTION OFF15.0 MPH · ACTIVE BELOW 15 MPH"
+        }
+      ],
+      "boundary": "Two declared speed fixtures while the simulation is paused prevent coasting across the threshold. Pause overlay hidden only for the screenshots."
+    },
+    {
+      "check": "RealM starts15s service; exactcrew area and two mechanics animate from simulation time; P and controlledvisibility freeze; completion spends charge",
+      "initial": {
+        "s": 865.91190912,
+        "lateral": -17.5,
+        "role": "suv",
+        "available": true,
+        "charges": 1
+      },
+      "started": {
+        "elapsed": 0.09166666666666666,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 15,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": false,
+          "elapsed": 0,
+          "area": null,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": 0,
+          "borderScale": [
+            1,
+            1,
+            1
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0,
+                1.536
+              ],
+              "arms": [
+                0,
+                0
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                0,
+                -1.536
+              ],
+              "arms": [
+                0,
+                0
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 133
+      },
+      "animated1": {
+        "elapsed": 0.8583333333333327,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 14.233333333333377,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": true,
+          "elapsed": 0.7666666666666231,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.011185578182652109,
+                1.536
+              ],
+              "arms": [
+                -0.8403333160936705,
+                -0.9183929313720394
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.01118557818265211,
+                -1.536
+              ],
+              "arms": [
+                -0.5596666839063295,
+                -0.48160706862796054
+              ]
+            }
+          ],
+          "hood": -1.08
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 165
+      },
+      "animated2": {
+        "elapsed": 1.1499999999999984,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 13.941666666666727,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": true,
+          "elapsed": 1.0583333333332732,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                -0.0005010169906129228,
+                1.536
+              ],
+              "arms": [
+                -0.8841088209139274,
+                -0.6981341232829239
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                0.000501016990612921,
+                -1.536
+              ],
+              "arms": [
+                -0.5158911790860725,
+                -0.701865876717076
+              ]
+            }
+          ],
+          "hood": -1.08
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 178
+      },
+      "paused": {
+        "elapsed": 1.1499999999999984,
+        "state": "paused",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 13.941666666666727,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": true,
+          "elapsed": 1.0583333333332732,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                -0.0005010169906129228,
+                1.536
+              ],
+              "arms": [
+                -0.8841088209139274,
+                -0.6981341232829239
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                0.000501016990612921,
+                -1.536
+              ],
+              "arms": [
+                -0.5158911790860725,
+                -0.701865876717076
+              ]
+            }
+          ],
+          "hood": -1.08
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 178
+      },
+      "stillPaused": {
+        "elapsed": 1.1499999999999984,
+        "state": "paused",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 13.941666666666727,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": true,
+          "elapsed": 1.0583333333332732,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                -0.0005010169906129228,
+                1.536
+              ],
+              "arms": [
+                -0.8841088209139274,
+                -0.6981341232829239
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                0.000501016990612921,
+                -1.536
+              ],
+              "arms": [
+                -0.5158911790860725,
+                -0.701865876717076
+              ]
+            }
+          ],
+          "hood": -1.08
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 178
+      },
+      "hidden": {
+        "elapsed": 1.1499999999999984,
+        "remaining": 13.941666666666727,
+        "draws": 178
+      },
+      "completed": {
+        "elapsed": 15.14999999999978,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "complete",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Charge spent. Complete a pit stop to recharge.",
+          "attempts": 1,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair completed. All four tires replaced. Perfect repair: body, engine, wheels and suspension fully restored."
+        },
+        "pitState": "none",
+        "pitVisits": 0,
+        "crew": {
+          "visible": false,
+          "elapsed": 14.991666666666456,
+          "area": null,
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.012562589239413429,
+                1.536
+              ],
+              "arms": [
+                -0.7936848569887547,
+                -0.5831185993510359
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.012562589239413455,
+                -1.536
+              ],
+              "arms": [
+                -0.6063151430112459,
+                -0.8168814006489646
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 781
+      },
+      "mobileActive": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "telemetry": {
+          "left": 14,
+          "top": 328.75,
+          "right": 174,
+          "bottom": 728,
+          "width": 160,
+          "height": 399.25
+        },
+        "ability": {
+          "left": 27,
+          "top": 560.34375,
+          "right": 163,
+          "bottom": 690,
+          "width": 136,
+          "height": 129.65625
+        },
+        "button": {
+          "left": 34,
+          "top": 616.625,
+          "right": 156,
+          "bottom": 660.625,
+          "width": 122,
+          "height": 44
+        },
+        "touch": {
+          "left": 14,
+          "top": 761,
+          "right": 376,
+          "bottom": 826,
+          "width": 362,
+          "height": 65
+        },
+        "charge": "13.6s",
+        "warning": "CONTACT CAUSES SEVERE DAMAGE + CREW LOSS"
+      },
+      "boundary": "Declared initial repairable SUV on clear backstraight infield and isolated other cars. No subsequent repair or time injection. RealM and ordinary realtime updates perform service. Hidden behavior uses the real visibility handler with a declared document.hidden override, not a native tab-background claim."
+    },
+    {
+      "check": "Ordinary five-second pit service restores a spent roadside charge",
+      "pit1": {
+        "bay": 10,
+        "available": true,
+        "pose": [
+          -9.2,
+          -30,
+          0.05
+        ]
+      },
+      "pitStart": {
+        "elapsed": 15.26666666666644,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          -9.2,
+          -30,
+          0.05
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "complete",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Charge spent. Complete a pit stop to recharge.",
+          "attempts": 1,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair completed. All four tires replaced. Perfect repair: body, engine, wheels and suspension fully restored."
+        },
+        "pitState": "servicing",
+        "pitVisits": 0,
+        "crew": {
+          "visible": false,
+          "elapsed": 14.991666666666456,
+          "area": null,
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.012562589239413429,
+                1.536
+              ],
+              "arms": [
+                -0.7936848569887547,
+                -0.5831185993510359
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.012562589239413455,
+                -1.536
+              ],
+              "arms": [
+                -0.6063151430112459,
+                -0.8168814006489646
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          -9.200000000000045,
+          0.03,
+          54.642389526901695
+        ],
+        "heading": 1.5707963267948966,
+        "draws": 786
+      },
+      "recharged": {
+        "elapsed": 20.349999999999486,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          -9.2,
+          -30,
+          0.05
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 1,
+          "disabled": false,
+          "disabledReason": "",
+          "used": false,
+          "state": "ready",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "No repairs needed.",
+          "attempts": 1,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": true,
+          "message": "Mobile repair charge restored by completed pit service."
+        },
+        "pitState": "complete",
+        "pitVisits": 1,
+        "crew": {
+          "visible": false,
+          "elapsed": 14.991666666666456,
+          "area": null,
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.012562589239413429,
+                1.536
+              ],
+              "arms": [
+                -0.7936848569887547,
+                -0.5831185993510359
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.012562589239413455,
+                -1.536
+              ],
+              "arms": [
+                -0.6063151430112459,
+                -0.8168814006489646
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          -9.200000000000045,
+          0.03,
+          54.642389526901695
+        ],
+        "heading": 1.5707963267948966,
+        "draws": 1003
+      },
+      "boundary": "Declared initial pose in assigned bay. ActualE and full normal service; no charge mutation."
+    },
+    {
+      "check": "Mobilebutton works; crew-only contact applies severe penalty/no partial repairs and permanently disables ability even after fullEasy pit repair",
+      "secondFixture": {
+        "s": 865.91190912,
+        "lateral": -17.5,
+        "role": "suv",
+        "available": true,
+        "charges": 1
+      },
+      "beforeContact": {
+        "elapsed": 20.908333333332788,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.24,
+        "engine": {
+          "heat": 0,
+          "wear": 0.12,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "punctured",
+            "pressure": 0.5948333333333339,
+            "leakRate": 0.01,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 14.558333333333358,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 2,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 1,
+        "crew": {
+          "visible": true,
+          "elapsed": 0.44166666666664156,
+          "area": {
+            "s": 865.91190912,
+            "lateral": -17.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.014549157949390032,
+                1.536
+              ],
+              "arms": [
+                -0.5232158733656551,
+                -0.7146720515491031
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.014549157949390032,
+                -1.536
+              ],
+              "arms": [
+                -0.8767841266343448,
+                -0.6853279484508968
+              ]
+            }
+          ],
+          "hood": -0.7949999999999549
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 1027
+      },
+      "contact": {
+        "ownerId": "civilian-5",
+        "otherId": "stock-1",
+        "area": {
+          "s": 865.91190912,
+          "lateral": -17.5,
+          "headingOffset": 0,
+          "length": 7.8,
+          "width": 4.58,
+          "carId": "civilian-5"
+        },
+        "carOverlap": false,
+        "crewOverlap": true
+      },
+      "lost": {
+        "elapsed": 20.983333333332784,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0.49,
+        "engine": {
+          "heat": 0,
+          "wear": 0.32,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          865.91190912,
+          -17.5,
+          0
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.55,
+            "suspensionStatus": "worn",
+            "tire": "punctured",
+            "pressure": 0.594083333333334,
+            "leakRate": 0.01,
+            "bend": 0.44999999999999996,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": true,
+          "disabledReason": "Contact interrupted mobile repair. Ability disabled for this race.",
+          "used": true,
+          "state": "cancelled",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Contact interrupted mobile repair. Ability disabled for this race.",
+          "attempts": 2,
+          "completed": 1,
+          "penaltyApplied": true,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Crew-interruption penalty: body +25%, engine wear +20%, front-left rim and suspension damaged. Mobile repair disabled for this race."
+        },
+        "pitState": "none",
+        "pitVisits": 1,
+        "crew": {
+          "visible": false,
+          "elapsed": 0.44166666666664156,
+          "area": null,
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.014549157949390032,
+                1.536
+              ],
+              "arms": [
+                -0.5232158733656551,
+                -0.7146720515491031
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.014549157949390032,
+                -1.536
+              ],
+              "arms": [
+                -0.8767841266343448,
+                -0.6853279484508968
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          0,
+          0.03,
+          -67.1423895269017
+        ],
+        "heading": -1.5707963267948966,
+        "draws": 1030
+      },
+      "mobileLost": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "telemetry": {
+          "left": 14,
+          "top": 339.75,
+          "right": 174,
+          "bottom": 728,
+          "width": 160,
+          "height": 388.25
+        },
+        "ability": {
+          "left": 27,
+          "top": 571.34375,
+          "right": 163,
+          "bottom": 690,
+          "width": 136,
+          "height": 118.65625
+        },
+        "button": {
+          "left": 34,
+          "top": 616.625,
+          "right": 156,
+          "bottom": 660.625,
+          "width": 122,
+          "height": 44
+        },
+        "touch": {
+          "left": 14,
+          "top": 761,
+          "right": 376,
+          "bottom": 826,
+          "width": 362,
+          "height": 65
+        },
+        "charge": "CREW LOST",
+        "warning": "Pit service still works; the roadside crew will not return this race."
+      },
+      "pit2": {
+        "bay": 10,
+        "available": true,
+        "pose": [
+          -9.2,
+          -30,
+          0.05
+        ]
+      },
+      "disabledAfterPit": {
+        "elapsed": 26.07499999999916,
+        "state": "racing",
+        "role": "suv",
+        "speed": 0,
+        "damage": 0,
+        "engine": {
+          "heat": 0,
+          "wear": 0,
+          "status": "normal",
+          "grassDrivingSeconds": 0,
+          "cooling": false,
+          "heatRate": 0
+        },
+        "position": [
+          -9.2,
+          -30,
+          0.05
+        ],
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": true,
+          "disabledReason": "Contact interrupted mobile repair. Ability disabled for this race.",
+          "used": true,
+          "state": "cancelled",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Contact interrupted mobile repair. Ability disabled for this race.",
+          "attempts": 2,
+          "completed": 1,
+          "penaltyApplied": true,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Crew-interruption penalty: body +25%, engine wear +20%, front-left rim and suspension damaged. Mobile repair disabled for this race."
+        },
+        "pitState": "complete",
+        "pitVisits": 2,
+        "crew": {
+          "visible": false,
+          "elapsed": 0.44166666666664156,
+          "area": null,
+          "position": [
+            0,
+            0.03,
+            -67.1423895269017
+          ],
+          "rotation": -1.5707963267948966,
+          "borderScale": [
+            4.58,
+            1,
+            7.8
+          ],
+          "mechanics": [
+            {
+              "position": [
+                1.5899999999999999,
+                0.014549157949390032,
+                1.536
+              ],
+              "arms": [
+                -0.5232158733656551,
+                -0.7146720515491031
+              ]
+            },
+            {
+              "position": [
+                1.5899999999999999,
+                -0.014549157949390032,
+                -1.536
+              ],
+              "arms": [
+                -0.8767841266343448,
+                -0.6853279484508968
+              ]
+            }
+          ],
+          "hood": 0
+        },
+        "worldPosition": [
+          -9.200000000000045,
+          0.03,
+          54.642389526901695
+        ],
+        "heading": 1.5707963267948966,
+        "draws": 1250
+      },
+      "boundary": "Second declared repairable off-road pose; actualbutton starts service. A declared stationary vehicle contact overlaps only the fixed crew rectangle, not the SUV chassis, with normal contact cooldown deliberately high. Ordinary nexttick applies penalty. Final declared bay pose uses actualE and full5s repair; disabled flag never injected."
+    }
+  ],
+  "errors": []
+}

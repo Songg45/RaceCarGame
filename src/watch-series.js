@@ -8,6 +8,7 @@ export const WATCH_PLAN = Object.freeze([
 
 const STEP = 1 / 60;
 const copy = value => JSON.parse(JSON.stringify(value));
+const serviceActive = car => car.pitState === 'servicing' || car.mobileRepair?.state === 'active';
 
 /** Runs the same driver inputs and physics as a manual race, in real time. */
 export class WatchSeries {
@@ -48,7 +49,7 @@ export class WatchSeries {
     this.accumulator += elapsed;
     const sim = this.simulation;
     while (this.accumulator + 1e-9 >= STEP && !sim.raceComplete) {
-      const serviceWasActive = sim.cars.some(car => !car.finished && !car.wrecked && car.pitState === 'servicing');
+      const serviceWasActive = sim.cars.some(car => !car.finished && !car.wrecked && serviceActive(car));
       this.input = sim.state === 'racing' && !sim.player.finished && !sim.player.wrecked ? sim.aiControl(sim.player, STEP) : {};
       sim.update(STEP, this.input);
       this.accumulator -= STEP;
@@ -106,7 +107,7 @@ export class WatchSeries {
       const previous = this.progressMarkers.get(car.id) ?? car.s;
       if (car.s - previous >= .1 - 1e-9) { this.progressMarkers.set(car.id, car.s); progressed = true; }
     }
-    if (progressed || serviceWasActive || active.some(car => car.pitState === 'servicing')) this.lastProgressAt = sim.elapsed;
+    if (progressed || serviceWasActive || active.some(serviceActive)) this.lastProgressAt = sim.elapsed;
     this.noProgressSeconds = sim.elapsed - this.lastProgressAt;
     if (this.noProgressSeconds < 45 - 1e-7) return false;
     this.stall = { run: this.index + 1, detectedAt: new Date().toISOString(), simulatedSeconds: sim.elapsed, noProgressSeconds: this.noProgressSeconds, minimumForwardProgressMeters: .1, unfinishedCars: active.length, retryAt: null, message: 'Traffic stalled: race unfinished and paused for review.' };
@@ -131,12 +132,17 @@ export class WatchSeries {
       overallPosition: index + 1,
       classPosition: sim.getStandings(car.classId).findIndex(other => other.id === car.id) + 1,
       id: car.id, number: car.number, name: car.name, classId: car.classId, isPlayer: car.isPlayer,
+      streetClassId: car.streetClassId || null,
       status: car.finished ? 'finished' : car.wrecked ? 'DNF' : 'racing',
       completedLaps: car.completedLaps, finishTime: car.finishTime, bestLap: car.bestLap,
       damage: car.damage, wrecked: car.wrecked, wreckTime: car.wreckTime, wreckReason: car.wreckReason, potholeHits: car.potholeHits,
       assignedBayId: car.assignedBayId, pitBayNumber: car.pitBayNumber,
       wheels: (car.wheels || []).map(wheel => ({ ...wheel })), handling: { ...car.handling },
       engine: car.engine ? { ...car.engine } : null,
+      mobileRepair: car.mobileRepair?.supported ? { state: car.mobileRepair.state, charges: car.mobileRepair.charges ?? 0,
+        disabled: Boolean(car.mobileRepair.disabled), disabledReason: car.mobileRepair.disabledReason || '',
+        attempts: car.mobileRepair.attempts ?? 0, completed: car.mobileRepair.completed ?? 0,
+        penaltyApplied: Boolean(car.mobileRepair.penaltyApplied) } : null,
     }));
     const finishers = standings.filter(car => car.status === 'finished').length;
     return {

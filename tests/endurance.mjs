@@ -18,7 +18,7 @@ assert.ok(!selectedScenario || scenarios.some(scenario => scenario.slug === sele
 // Preserve the actually watched baseline. New component/pit physics writes a
 // separate revision; callers may choose another new directory explicitly.
 const requestedOutput = process.argv.find(argument => argument.startsWith('--output='))?.slice('--output='.length);
-const outputDir = requestedOutput ? pathToFileURL(`${resolve(requestedOutput)}/`) : new URL('../artifacts/guaranteed-pit-tires/endurance/', import.meta.url);
+const outputDir = requestedOutput ? pathToFileURL(`${resolve(requestedOutput)}/`) : new URL('../artifacts/street-classes/endurance/', import.meta.url);
 const preservedBaseline = fileURLToPath(new URL('../artifacts/endurance/', import.meta.url)).toLowerCase().replace(/[\\/]$/, '');
 assert.notEqual(fileURLToPath(outputDir).toLowerCase().replace(/[\\/]$/, ''), preservedBaseline, 'The actually watched baseline directory is preserved; choose a new output directory.');
 const previousWheelRevision = fileURLToPath(new URL('../artifacts/wheel-damage/endurance/', import.meta.url)).toLowerCase().replace(/[\\/]$/, '');
@@ -27,17 +27,26 @@ const previousStraightRevision = fileURLToPath(new URL('../artifacts/straight-pi
 assert.notEqual(fileURLToPath(outputDir).toLowerCase().replace(/[\\/]$/, ''), previousStraightRevision, 'The accepted straight-pit revision is historical; choose a new output directory.');
 const previousAvoidanceRevision = fileURLToPath(new URL('../artifacts/manual-pits-avoidance/endurance/', import.meta.url)).toLowerCase().replace(/[\\/]$/, '');
 assert.notEqual(fileURLToPath(outputDir).toLowerCase().replace(/[\\/]$/, ''), previousAvoidanceRevision, 'The accepted avoidance revision is historical; choose a new output directory.');
+const previousTireRevision = fileURLToPath(new URL('../artifacts/guaranteed-pit-tires/endurance/', import.meta.url)).toLowerCase().replace(/[\\/]$/, '');
+assert.notEqual(fileURLToPath(outputDir).toLowerCase().replace(/[\\/]$/, ''), previousTireRevision, 'The accepted guaranteed-tire revision is historical; choose a new output directory.');
 await mkdir(outputDir, { recursive: true });
 const sourceHash = createHash('sha256').update(await readFile(new URL('../src/simulation.js', import.meta.url))).digest('hex');
 const catalogHash = createHash('sha256').update(await readFile(new URL('../src/catalog.js', import.meta.url))).digest('hex');
 const results = [];
 const rounded = value => Number.isFinite(value) ? Number(value.toFixed(4)) : value;
+const mobileSnapshot = car => car.mobileRepair ? {
+  supported: car.mobileRepair.supported, state: car.mobileRepair.state,
+  charges: car.mobileRepair.charges, disabled: car.mobileRepair.disabled,
+  attempts: car.mobileRepair.attempts, completed: car.mobileRepair.completed,
+  remaining: rounded(car.mobileRepair.remaining), reason: car.mobileRepair.reason,
+} : null;
 const snapshot = (sim, car) => ({
   elapsed: rounded(sim.elapsed), s: rounded(car.s), lateral: rounded(car.lateral), speed: rounded(car.speed),
   damage: rounded(car.damage), completedLaps: car.completedLaps, finished: car.finished, wrecked: car.wrecked,
   potholeHits: car.potholeHits, pitState: car.pitState, inPit: car.inPit, pitTarget: car.pitTarget,
   pitRoute: car.pitRoute, assignedBay: car.assignedBayId, pitMergeCommitted: car.pitMergeCommitted,
   engine: car.engine ? { ...car.engine } : null,
+  streetClassId: car.streetClassId ?? null, mobileRepair: mobileSnapshot(car),
 });
 
 for (const scenario of scenarios.filter(item => !selectedScenario || item.slug === selectedScenario)) {
@@ -51,6 +60,7 @@ for (const scenario of scenarios.filter(item => !selectedScenario || item.slug =
     pitEntries: 0, serviceStarts: 0, serviceOutcomes: [], terminal: null,
     lastPitState: car.pitState, lastInPit: car.inPit, activeService: null,
     progressS: car.s, lastProgressAt: 0, lapEvents: [], previousLaps: 0,
+    mobileTransitions: [], lastMobileState: JSON.stringify(mobileSnapshot(car)),
   }]));
   const timeline = [];
   let nextCheckpoint = 60, frames = 0, stopReason = 'all-cars-finished-or-wrecked';
@@ -64,6 +74,12 @@ for (const scenario of scenarios.filter(item => !selectedScenario || item.slug =
     frames += 1;
     for (const car of sim.cars) {
       const metric = metrics.get(car.id);
+      const mobile = mobileSnapshot(car);
+      const mobileState = JSON.stringify(mobile && { ...mobile, remaining: 0 });
+      if (mobileState !== metric.lastMobileState) {
+        metric.mobileTransitions.push({ elapsed: rounded(sim.elapsed), ...mobile });
+        metric.lastMobileState = mobileState;
+      }
       for (const field of ['s', 'lateral', 'speed', 'damage']) assert.ok(Number.isFinite(car[field]), `${car.id} non-finite ${field}`);
       if (!metric.lastInPit && car.inPit) metric.pitEntries += 1;
       if (metric.lastPitState !== 'servicing' && car.pitState === 'servicing') {
@@ -88,7 +104,7 @@ for (const scenario of scenarios.filter(item => !selectedScenario || item.slug =
         metric.terminal = { result: car.finished ? 'FINISHED' : 'DNF', time: rounded(car.finished ? car.finishTime : car.wreckTime), ...snapshot(sim, car) };
         timeline.push({ carId: car.id, classId: car.classId, player: car.isPlayer, ...metric.terminal });
       }
-      if (car.s > metric.progressS + 0.5 || car.pitState === 'servicing') {
+      if (car.s > metric.progressS + 0.5 || car.pitState === 'servicing' || car.mobileRepair?.state === 'active') {
         metric.progressS = Math.max(metric.progressS, car.s);
         metric.lastProgressAt = sim.elapsed;
       }
@@ -109,6 +125,8 @@ for (const scenario of scenarios.filter(item => !selectedScenario || item.slug =
     const metric = metrics.get(car.id);
     return {
       id: car.id, name: car.name, number: car.number, classId: car.classId, isPlayer: car.isPlayer,
+      streetClassId: car.streetClassId ?? null, streetClassName: car.streetClassName ?? null,
+      mobileRepair: mobileSnapshot(car), mobileTransitions: metric.mobileTransitions,
       overallPosition: index + 1, classPosition: sim.getStandings(car.classId).findIndex(item => item.id === car.id) + 1,
       result: car.finished ? 'FINISHED' : car.wrecked ? 'DNF' : 'RUNNING', completedLaps: car.completedLaps,
       finishTime: rounded(car.finishTime), wreckTime: rounded(car.wreckTime), wreckReason: car.wreckReason,
@@ -136,6 +154,9 @@ for (const scenario of scenarios.filter(item => !selectedScenario || item.slug =
     pitServiceStarts: cars.reduce((sum, car) => sum + car.serviceStarts, 0),
     completedPitServices: cars.flatMap(car => car.serviceOutcomes).filter(outcome => outcome.outcome === 'service-completed').length,
     destroyedDuringService: cars.flatMap(car => car.serviceOutcomes).filter(outcome => outcome.outcome === 'destroyed-during-service').length,
+    mobileAttempts: cars.reduce((sum, car) => sum + (car.mobileRepair?.attempts ?? 0), 0),
+    completedMobileRepairs: cars.reduce((sum, car) => sum + (car.mobileRepair?.completed ?? 0), 0),
+    collisionDisabledMobileCrews: cars.filter(car => car.mobileRepair?.disabled).length,
     player: cars.find(car => car.isPlayer), cars, timeline,
     verificationBoundary: 'Fast headless engine endurance; untouched normal grid; ordinary fixed-step updates with AI controls; no position/lap/damage/time injection. Separate from the normal-speed visible watch series.',
   };
@@ -164,7 +185,7 @@ if (selectedScenario) {
 await writeFile(new URL('summary.json', outputDir), JSON.stringify({ seed: SEED, simulationSourceSha256: sourceHash, catalogSourceSha256: catalogHash, results: results.map(({ cars, timeline, player, ...result }) => ({ ...result, player: { result: player.result, completedLaps: player.completedLaps, classPosition: player.classPosition, overallPosition: player.overallPosition, finishTime: player.finishTime, wreckTime: player.wreckTime, wreckReason: player.wreckReason } })) }, null, 2));
 const elapsedLabel = seconds => `${Math.floor(seconds / 60)}:${(seconds % 60).toFixed(2).padStart(5, '0')}`;
 const report = [
-  '# Autonomous race endurance report — guaranteed four-tire service', '',
+  '# Autonomous race endurance report — four street classes and roadside repair', '',
   'Run each scenario serially: `node tests/endurance.mjs --scenario=easy-10`, then `--scenario=medium-15`, then `--scenario=extreme-20`.', '',
   '**This report covers fast, independent engine runs. The normal-speed visible browser watch series is a separate run and must be observed separately.**', '',
   `All scenarios used the unmodified 20-car starting grid, Thunder Bowl (Bristol inspired), stock player #88, seed **${SEED}**, and fixed 1/60-second updates. Medium means slider **50**, the midpoint. All movement, damage, laps, pit visits, and retirement events came from ordinary engine updates and AI controls; no positions, laps, damage, clocks, or random state were injected.`, '',
@@ -175,6 +196,9 @@ const report = [
   '| Scenario | Contacts | Cross-class contacts | Pothole impacts | Service starts | Completed services | Destroyed during service |',
   '| --- | ---: | ---: | ---: | ---: | ---: | ---: |',
   ...results.map(result => `| ${result.scenario.name} | ${result.collisionCount} | ${result.crossClassCollisions} | ${result.totalPotholeHits} | ${result.pitServiceStarts} | ${result.completedPitServices} | ${result.destroyedDuringService} |`), '',
+  '| Scenario | Roadside attempts | Completed roadside repairs | Crews permanently disabled by contact |',
+  '| --- | ---: | ---: | ---: |',
+  ...results.map(result => `| ${result.scenario.name} | ${result.mobileAttempts} | ${result.completedMobileRepairs} | ${result.collisionDisabledMobileCrews} |`), '',
   'Contact and pothole totals run until the whole field terminates, including coasting after an individual finish. The JSON separates each car\'s terminal snapshot from its final field-completion snapshot. Pit damage deltas are net changes between service start and end: another car may collide with a car during service. The recorded repair message reports the crew outcome. A wreck during unfinished service is not counted as a completed repair.', '',
   '## Full classifications', '',
   ...results.flatMap(result => [

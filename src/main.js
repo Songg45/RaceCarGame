@@ -1,6 +1,6 @@
 import './styles.css';
 import { RaceSimulation, sampleTrack, ENGINE_LIMITS } from './simulation.js';
-import { TRACKS, ROAD_CARS, STOCK_CAR } from './catalog.js';
+import { TRACKS, STREET_CLASSES, STOCK_CAR, getStreetClass, TRUCK_SAFE_SPEED } from './catalog.js';
 import { RaceRenderer } from './renderer.js';
 import { WatchSeries } from './watch-series.js';
 
@@ -9,11 +9,22 @@ const mph = (speed = 0) => Math.round(speed * 2.236936);
 const time = (seconds) => seconds == null || !Number.isFinite(seconds) ? '—' : `${Math.floor(seconds / 60)}:${(seconds % 60).toFixed(2).padStart(5, '0')}`;
 const safe = (text) => String(text ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const difficultyName = (value) => value === 0 ? 'Easy' : value < 40 ? 'Moderate' : value < 80 ? 'Hard' : 'Extreme';
-let config = { trackId: TRACKS[0].id, playerClass: 'stock', vehicleId: ROAD_CARS[0].id, laps: 3, difficulty: 0 };
+let config = { trackId: TRACKS[0].id, playerClass: 'stock', streetClassId: 'sedan', laps: 3, difficulty: 0 };
 let sim, view, inMenu = true, boardClass = 'stock', resultsShown = false, spectating = false, lastUI = 0, lastEvent = '', eventTimeout;
 let watch = null, lastWatchReport = null, watchPhase = '', pausedForVisibility = false;
 let wakeFrame = () => {}, suspendFrames = () => {}, graphicsPausedRace = false;
 const keys = new Set(), touch = { throttle: 0, brake: 0, steer: 0, service: false };
+const streetPresentation = {
+  sedan: { speed: 3, protection: 2, perk: 'Balanced handling · Strong brakes', outline: 'M8 31L23 26L33 15H62L76 28L91 32V43H8Z', cabin: 'M31 26L38 19H60L69 26Z', help: 'A balanced everyday car with dependable steering and braking.' },
+  sports: { speed: 4, protection: 1, perk: 'Maximum pace · Most vulnerable', outline: 'M6 34L29 28L43 20H63L78 30L93 34V43H6Z', cabin: 'M38 28L47 23H61L69 28Z', help: 'The fastest Street role, including sports and muscle cars. Potholes punish it hardest.' },
+  suv: { speed: 2, protection: 3, perk: 'Roadside crew · 15-second repair', outline: 'M8 25L20 11H68L81 27L91 30V43H8Z', cabin: 'M21 24L27 15H65L73 24Z', help: 'Stop clear of traffic for a 15-second roadside repair. Pit stops recharge it; contact during repair causes severe damage and loses the crew for the race.' },
+  truck: { speed: 1, protection: 4, perk: 'Pothole immunity below 15 MPH', outline: 'M8 18H37L48 29H92V43H8Z', cabin: 'M15 22H34L40 29H15Z', help: 'The slowest, toughest Street role. Potholes cause no new damage or slowdown below 15 MPH; collisions and engine wear still matter.' },
+};
+const rating = value => Array.from({ length: 4 }, (_, index) => `<i class="${index < value ? 'filled' : ''}"></i>`).join('');
+const streetCards = ['sedan', 'sports', 'suv', 'truck'].map(id => {
+  const role = STREET_CLASSES.find(item => item.id === id), display = streetPresentation[id];
+  return `<button class="street-card ${id === config.streetClassId ? 'selected' : ''}" data-street-role="${id}" aria-pressed="${id === config.streetClassId}" aria-label="${safe(role.name)}. Speed ${display.speed} of 4. Pothole protection ${display.protection} of 4. ${safe(display.perk)}"><div class="street-card-heading"><strong>${safe(role.name)}</strong><svg viewBox="0 0 100 54" class="role-silhouette" aria-hidden="true" focusable="false"><path d="${display.outline}" fill="currentColor"/><path d="${display.cabin}" fill="#152a35"/><circle cx="25" cy="42" r="8" fill="#12212b"/><circle cx="76" cy="42" r="8" fill="#12212b"/><circle cx="25" cy="42" r="4" fill="#aebebc"/><circle cx="76" cy="42" r="4" fill="#aebebc"/></svg></div><div class="role-rating"><span>SPEED</span><b aria-hidden="true">${rating(display.speed)}</b></div><div class="role-rating"><span>PROTECTION</span><b aria-hidden="true">${rating(display.protection)}</b></div><small>${display.perk}</small></button>`;
+}).join('');
 
 $('#app').innerHTML = `
   <div id="world"></div>
@@ -29,7 +40,8 @@ $('#app').innerHTML = `
       <button class="class-choice selected" data-class="stock" aria-pressed="true"><span class="car-icon stock-icon">▰</span><strong>Stock car</strong><small>POWER. PRECISION.</small><span class="choice-dot"></span></button>
       <button class="class-choice" data-class="civilian" aria-pressed="false"><span class="car-icon road-icon">▰</span><strong>Street car</strong><small>EVERYDAY. ALL OUT.</small><span class="choice-dot"></span></button>
     </div>
-    <div class="vehicle-row"><div><label for="vehicle">YOUR MACHINE</label><select id="vehicle" aria-label="Choose civilian car">${ROAD_CARS.map(c => `<option value="${safe(c.id)}">${safe(c.name)}</option>`).join('')}</select><strong id="stock-name">V8 Stock Car · #07</strong></div><div class="vehicle-speed"><strong id="vehicle-speed">200</strong><small>TOP MPH*</small></div></div>
+    <div id="street-choices" class="street-choices hidden"><div class="street-choice-label">FOUR ROLES · ONE STREET RACE</div><div id="street-cards" class="street-cards" role="group" aria-label="Choose your Street role">${streetCards}</div><p id="street-role-help" class="street-role-help"></p></div>
+    <div class="vehicle-row"><div><span class="vehicle-label">YOUR MACHINE</span><strong id="vehicle-name">V8 Stock Car · #88</strong></div><div class="vehicle-speed"><strong id="vehicle-speed">200</strong><small>TOP MPH*</small></div></div>
     <div class="field-label"><span>02</span> SET YOUR RACE</div>
     <div class="setup-grid"><label class="select-field">CIRCUIT<select id="track">${TRACKS.map(t => `<option value="${safe(t.id)}">${safe(t.name)}</option>`).join('')}</select></label><label class="lap-field">LAPS<input id="laps" type="number" min="3" max="200" step="1" value="3" inputmode="numeric"></label></div>
     <div class="track-info"><span id="track-details"></span><button id="full-distance" class="text-button">Full race ↗</button></div>
@@ -65,21 +77,25 @@ $('#app').innerHTML = `
 $('.condition-row > span').textContent = 'BODY CONDITION';
 $('.condition-meter').insertAdjacentHTML('afterend', `<section id="wheel-condition" class="wheel-condition" aria-label="Wheel and suspension condition"><div id="wheel-grid" class="wheel-grid"></div><div id="wheel-warning" class="wheel-warning"></div><details class="handling-details"><summary id="handling-summary">HANDLING</summary><div id="handling-detail"></div></details></section>`);
 $('#wheel-condition').insertAdjacentHTML('beforebegin', `<section id="engine-condition" class="engine-condition" aria-label="Engine heat and condition"><div class="engine-heading"><span>ENGINE HEAT</span><strong id="engine-heat">0%</strong><small id="engine-health">CONDITION 100%</small></div><div class="engine-meter"><i id="engine-heat-fill"></i></div><small id="engine-warning" class="hidden"></small></section>`);
+$('.telemetry-meta').insertAdjacentHTML('afterend', `<section id="truck-protection" class="truck-protection hidden" aria-label="Truck pothole protection"><strong id="truck-protection-state"></strong><span id="truck-protection-detail"></span></section><section id="roadside-panel" class="roadside-panel hidden" aria-label="Roadside repair"><div class="roadside-heading"><span>ROADSIDE CREW</span><strong id="roadside-charge"></strong></div><div id="roadside-progress" class="roadside-progress hidden"><i></i></div><p id="roadside-status"></p><button id="roadside" class="roadside-button" type="button">CALL CREW <kbd>M</kbd></button><small id="roadside-warning">Contact during repair causes severe damage.</small></section>`);
+$('.controls-bar .assist-note').insertAdjacentHTML('beforebegin', `<span id="roadside-key-hint" class="hidden"><kbd>M</kbd> ROADSIDE CREW</span>`);
 $('#series-next').insertAdjacentHTML('beforebegin', `<button id="series-retry" class="primary-button hidden">RETRY FROM SAME POSITIONS <span>↗</span></button><button id="series-restart" class="secondary-button hidden">RESTART ENTIRE SERIES</button>`);
 
 function currentTrack() { return TRACKS.find(t => t.id === config.trackId) || TRACKS[0]; }
 function buildSimulation() {
   return new RaceSimulation({ ...config, difficulty: config.difficulty, seed: (Date.now() ^ Math.floor(Math.random() * 0x7fffffff)) >>> 0 });
 }
-function selectedCar() { return config.playerClass === 'stock' ? STOCK_CAR : ROAD_CARS.find(c => c.id === config.vehicleId) || ROAD_CARS[0]; }
+function selectedCar() { return config.playerClass === 'stock' ? STOCK_CAR : getStreetClass(config.streetClassId); }
 function setupChanged(rebuild = true) {
   const track = currentTrack(), car = selectedCar();
   config.laps = Math.max(3, Math.min(track.standardLaps, Math.round(Number($('#laps').value) || 3)));
   $('#laps').value = config.laps; $('#laps').max = track.standardLaps;
-  $('#vehicle').classList.toggle('hidden', config.playerClass === 'stock');
-  $('#stock-name').classList.toggle('hidden', config.playerClass !== 'stock');
+  $('#street-choices').classList.toggle('hidden', config.playerClass !== 'civilian');
+  document.body.classList.toggle('street-selection', config.playerClass === 'civilian');
+  document.querySelectorAll('[data-street-role]').forEach(button => { const selected = button.dataset.streetRole === config.streetClassId; button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected)); });
+  $('#street-role-help').textContent = streetPresentation[config.streetClassId].help;
   $('#vehicle-speed').textContent = mph(car.maxSpeed);
-  $('#stock-name').textContent = `${STOCK_CAR.name || 'V8 Stock Car'} · #88`;
+  $('#vehicle-name').textContent = config.playerClass === 'stock' ? `${STOCK_CAR.name || 'V8 Stock Car'} · #88` : car.name;
   $('#track-details').textContent = `${(track.length / 1609.344).toFixed(track.expanded || track.length < 1500 ? 3 : 2)} MI · 3–${track.standardLaps} LAPS${track.expanded ? ' · EXPANDED LAYOUT' : ''}`;
   $('#scene-track').textContent = track.name; $('#scene-subtitle').textContent = track.subtitle || 'A full-throttle oval challenge'; $('#top-track').textContent = `${track.name}${track.expanded ? ' · Expanded layout' : ''}`;
   $('#difficulty-name').textContent = difficultyName(config.difficulty);
@@ -94,7 +110,7 @@ document.querySelectorAll('[data-class]').forEach(button => button.addEventListe
   config.playerClass = button.dataset.class;
   document.querySelectorAll('[data-class]').forEach(b => { b.classList.toggle('selected', b === button); b.setAttribute('aria-pressed', String(b === button)); }); setupChanged();
 }));
-$('#vehicle').addEventListener('change', e => { config.vehicleId = e.target.value; setupChanged(); });
+document.querySelectorAll('[data-street-role]').forEach(button => button.addEventListener('click', () => { config.streetClassId = button.dataset.streetRole; setupChanged(); }));
 $('#track').addEventListener('change', e => { config.trackId = e.target.value; setupChanged(); });
 $('#laps').addEventListener('change', () => setupChanged(false));
 $('#difficulty').addEventListener('input', e => { config.difficulty = Number(e.target.value); setupChanged(false); });
@@ -143,6 +159,11 @@ function requestService() {
   if (watch || inMenu || sim.state !== 'racing' || sim.player.wrecked) return;
   if (sim.requestPitService()) { lastUI = 0; wakeFrame(); }
 }
+function requestRoadsideRepair() {
+  if (watch || inMenu || sim.state !== 'racing' || sim.player.wrecked || sim.player.mobileRepair?.state === 'active') return;
+  if (!sim.requestMobileRepair()) showMessage(sim.player.mobileRepair?.reason || 'Stop fully clear of the racing surface and pit traffic.');
+  lastUI = 0; wakeFrame();
+}
 function changeCamera() { const mode = view.cycleCamera(); $('#camera-label').textContent = mode === 'pit' ? 'PIT OVERVIEW' : `${mode.toUpperCase()} CAM`; wakeFrame(); }
 $('#start').addEventListener('click', startRace); $('#pause').addEventListener('click', pauseRace); $('#resume').addEventListener('click', pauseRace);
 $('#restart').addEventListener('click', () => watch ? startWatchSeries() : startRace()); $('#race-again').addEventListener('click', startRace);
@@ -155,12 +176,13 @@ window.addEventListener('keydown', e => {
   if (!$('#graphics-overlay').classList.contains('hidden')) return;
   if (inMenu || e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return;
   const key = e.key.toLowerCase();
-  if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' ', 'w', 'a', 's', 'd', 'e'].includes(key)) e.preventDefault();
+  if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' ', 'w', 'a', 's', 'd', 'e', 'm'].includes(key)) e.preventDefault();
   if (!e.repeat) {
     if (key === 'p' || key === 'escape') pauseRace();
     if (key === 'c') changeCamera();
     if (key === 'r') recover();
     if (key === 'e') requestService();
+    if (key === 'm') requestRoadsideRepair();
   }
   keys.add(key);
 });
@@ -190,6 +212,7 @@ document.querySelectorAll('[data-touch]').forEach(button => {
   button.addEventListener('pointerup', () => apply(false)); button.addEventListener('pointercancel', () => apply(false));
 });
 $('#service').addEventListener('click', requestService);
+$('#roadside').addEventListener('click', requestRoadsideRepair);
 
 function showMessage(message, duration = 3200) {
   $('#race-message').textContent = message; $('#race-message').classList.remove('hidden'); clearTimeout(eventTimeout);
@@ -295,8 +318,10 @@ function updateUI(input) {
   $('#condition-fill').style.background = condition < 30 ? '#ee705d' : condition < 60 ? '#f4bb57' : '#e8f95a';
   updateWheelUI(p);
   updateEngineUI(p);
+  updateRoleUI(p);
   $('#draft-label').textContent = p.wrecked ? 'PERMANENT WRECK' : p.draft > .05 ? 'IN THE DRAFT' : 'CLEAN AIR';
   $('#recover').disabled = Boolean(watch || p.wrecked); $('#service').disabled = Boolean(watch || p.wrecked || !p.pitAvailable);
+  $('#service').classList.toggle('hidden', Boolean(p.mobileRepair?.supported && !p.inPit));
   const pitState = p.pitState || p.serviceState;
   const progress = p.serviceProgress ?? p.pitProgress ?? (pitState === 'servicing' ? 1 - p.pitRemaining / (sim.pit?.serviceSeconds || 5) : 0);
   const bay = sim.getPitBay?.(p) || sim.pit.bays?.find(item => item.carId === p.id);
@@ -328,6 +353,49 @@ function pitParkingGuidance(car, bay) {
   const tolerance = sim.pit.serviceTolerance;
   if (car.speed > tolerance.speed || Math.abs(car.lateralVelocity) > tolerance.lateralSpeed) return 'STOP IN YOUR BAY FOR SERVICE';
   return car.finished ? 'RACE FINISHED' : 'NO REPAIR NEEDED';
+}
+
+function updateRoleUI(car) {
+  const truck = car.streetClassId === 'truck', mobile = car.mobileRepair;
+  const supported = Boolean(mobile?.supported), active = mobile?.state === 'active';
+  document.body.classList.toggle('has-mobile-repair', supported);
+  document.body.classList.toggle('has-truck-protection', truck);
+  $('#truck-protection').classList.toggle('hidden', !truck);
+  if (truck) {
+    const protectedNow = Boolean(car.potholeProtected && !car.wrecked);
+    $('#truck-protection').classList.toggle('active', protectedNow);
+    $('#truck-protection-state').textContent = car.wrecked ? 'TRUCK WRECKED' : protectedNow ? 'POTHOLE PROTECTION ACTIVE' : 'POTHOLE PROTECTION OFF';
+    const actualMph = Math.floor(car.speed / .44704 * 10) / 10;
+    $('#truck-protection-detail').textContent = `${actualMph.toFixed(1)} MPH · ACTIVE BELOW ${(TRUCK_SAFE_SPEED / .44704).toFixed(0)} MPH`;
+  }
+  $('#roadside-panel').classList.toggle('hidden', !supported);
+  $('#roadside-key-hint').classList.toggle('hidden', !supported);
+  if (!watch) $('#class-label').textContent = car.classId === 'stock' ? 'STOCK CLASS' : car.streetClassName || 'STREET CLASS';
+  if (!supported) return;
+  const disabled = Boolean(mobile.disabled), spent = mobile.charges <= 0;
+  const compact = car.inPit && !active;
+  $('#roadside-panel').classList.toggle('active', active);
+  $('#roadside-panel').classList.toggle('disabled', disabled);
+  $('#roadside-panel').classList.toggle('compact', compact);
+  $('#roadside-charge').textContent = disabled ? 'CREW LOST' : active ? `${Math.max(0, mobile.remaining).toFixed(1)}s` : spent ? 'CHARGE SPENT' : 'CHARGE READY';
+  $('#roadside-progress').classList.toggle('hidden', !active);
+  $('#roadside-progress i').style.width = `${active ? Math.max(0, Math.min(100, (1 - mobile.remaining / mobile.duration) * 100)) : 0}%`;
+  $('#roadside').disabled = Boolean(watch || car.wrecked || sim.state !== 'racing' || !mobile.available || active || disabled);
+  $('#roadside').classList.toggle('hidden', compact || Boolean(watch));
+  $('#roadside').innerHTML = disabled ? 'UNAVAILABLE THIS RACE' : active ? 'CREW AT WORK' : spent ? 'RECHARGE AT PIT' : 'CALL ROADSIDE CREW <kbd>M</kbd>';
+  if (disabled) {
+    $('#roadside-status').textContent = mobile.disabledReason || mobile.reason || 'Contact during repair lost your crew for this race.';
+    $('#roadside-warning').textContent = 'Pit service still works; the roadside crew will not return this race.';
+  } else if (active) {
+    $('#roadside-status').textContent = 'Stay stopped. Driving aborts this repair and spends the charge.';
+    $('#roadside-warning').textContent = 'CONTACT CAUSES SEVERE DAMAGE + CREW LOSS';
+  } else if (spent) {
+    $('#roadside-status').textContent = mobile.state === 'complete' ? mobile.message || car.repairMessage || 'Roadside repair complete.' : mobile.message || mobile.reason || 'Roadside charge spent.';
+    $('#roadside-warning').textContent = 'Complete a pit stop to restore one charge.';
+  } else {
+    $('#roadside-status').textContent = mobile.available ? '15-second repair. Four fresh tires on completion.' : mobile.reason || 'Stop fully clear of the track and pit traffic.';
+    $('#roadside-warning').textContent = 'Contact during repair causes severe damage and loses the crew.';
+  }
 }
 
 function updateWheelUI(car) {
@@ -430,7 +498,7 @@ function updateWatchUI() {
 function renderSeriesResults() {
   const report = watch.report, done = watch.phase === 'complete', stopped = watch.phase === 'stopped', stalled = watch.phase === 'stalled';
   $('#series-title').textContent = stalled ? 'Traffic stalled.' : done ? 'Series concluded.' : stopped ? 'Series stopped.' : `${watch.snapshot.name} classified.`;
-  $('#series-subtitle').textContent = stalled ? 'No active car made meaningful forward progress for 45 race seconds, and no pit service was active. The unfinished race is paused for traffic review. A passable route may still exist.' : done ? 'All three races reached a terminal classification. Finishers and DNFs below reflect what actually happened.' : stopped ? 'The current race was stopped by the viewer. Unfinished cars have not been marked as finishers or DNFs.' : 'Every car in this race has finished or retired. Wrecks remain in place until the next grid.';
+  $('#series-subtitle').textContent = stalled ? 'No active car made meaningful forward progress for 45 race seconds, and no pit or roadside service was active. The unfinished race is paused for traffic review. A passable route may still exist.' : done ? 'All three races reached a terminal classification. Finishers and DNFs below reflect what actually happened.' : stopped ? 'The current race was stopped by the viewer. Unfinished cars have not been marked as finishers or DNFs.' : 'Every car in this race has finished or retired. Wrecks remain in place until the next grid.';
   $('#series-results').innerHTML = report.results.map(result => {
     const stockWinner = result.standings.find(car => car.classId === 'stock' && car.status === 'finished');
     const streetWinner = result.standings.find(car => car.classId === 'civilian' && car.status === 'finished');

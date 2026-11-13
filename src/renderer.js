@@ -257,6 +257,10 @@ export class RaceRenderer {
     }
     for (const car of sim.cars) {
       const model = this.makeCar(car); this.carGroup.add(model); this.carMeshes.set(car.id, model);
+      if (car.streetClassId === 'suv') {
+        model.userData.roadside = this.makeRoadsideCrew(car);
+        this.carGroup.add(model.userData.roadside);
+      }
     }
     // Two instanced layers keep hundreds of visible potholes inexpensive to draw.
     const holeGeometry = new THREE.CircleGeometry(1, 13);
@@ -279,18 +283,24 @@ export class RaceRenderer {
 
   makeCar(car) {
     const group = new THREE.Group();
-    const stock = car.classId === 'stock', truck = car.body === 'pickup', suv = car.body === 'suv';
+    const stock = car.classId === 'stock', truck = car.body === 'pickup', suv = car.streetClassId === 'suv' || car.body === 'suv' || car.body === 'van';
+    const sports = car.streetClassId === 'sports', van = car.body === 'van';
     const bodyColor = new THREE.Color(car.color || (stock ? '#eac548' : '#dfe6df'));
     const paint = mat(bodyColor, { metalness: .26, roughness: .4 });
     const glass = mat(0x18313c, { metalness: .45, roughness: .22 });
     const dark = mat(0x111a21), wheelMat = mat(0x171c20), rimMat = mat(0xc2c7c9, { metalness: .6 });
     const width = car.spec?.width || (stock ? 2 : truck ? 2.04 : 1.82);
     const length = car.spec?.length || (stock ? 5 : truck ? 5.5 : 4.5);
-    const height = suv || truck ? 1.25 : .94;
+    const height = van ? 1.45 : suv || truck ? 1.25 : sports ? .82 : .94;
     group.add(box(width, .62, length, paint, 0, .7, 0));
     group.add(box(width * .88, .18, length * .93, paint, 0, 1.06, 0));
-    group.add(box(width * .79, height * .6, truck ? 2 : 2.2, glass, 0, 1.22 + (height - .94) * .5, truck ? .35 : -.22));
-    group.add(box(width * .82, .12, truck ? 1.9 : 1.88, paint, 0, 1.53 + height - .94, truck ? .34 : -.24));
+    group.add(box(width * .79, height * .6, truck ? 2 : van ? 3.2 : 2.2, glass, 0, 1.22 + (height - .94) * .5, truck ? .35 : -.22));
+    group.add(box(width * .82, .12, truck ? 1.9 : van ? 3 : 1.88, paint, 0, 1.53 + height - .94, truck ? .34 : -.24));
+    if (suv) {
+      group.add(box(width * .68, .04, 1.25, dark, 0, 1.17, length / 2 - .8));
+      const hood = new THREE.Group(); hood.position.set(0, 1.22, length / 2 - 1.65);
+      hood.add(box(width * .87, .08, 1.6, paint, 0, 0, .8)); group.add(hood); group.userData.hood = hood;
+    }
     group.add(box(width + .04, .16, .17, dark, 0, .48, length / 2));
     group.add(box(width + .04, .16, .17, dark, 0, .48, -length / 2));
     const headlights = mat(stock ? 0xe6e6cd : 0xe8f0d5, { emissive: 0xa6ad7a, emissiveIntensity: .2 });
@@ -318,6 +328,8 @@ export class RaceRenderer {
       const top = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 1.15), decalMaterial); top.rotation.x = -Math.PI / 2; top.position.set(0, 1.601, -.2); group.add(top);
     } else if (truck) {
       group.add(box(width * .77, .05, 1.8, dark, 0, 1.15, -1.55));
+    } else if (sports) {
+      group.add(box(width * .93, .12, .24, dark, 0, 1.2, -length / 2 + .26));
     }
     if (car.isPlayer) {
       const ring = new THREE.Mesh(new THREE.RingGeometry(2.65, 2.8, 48), new THREE.MeshBasicMaterial({ color: 0xe8f95a, side: THREE.DoubleSide, transparent: true, opacity: .8 }));
@@ -332,6 +344,67 @@ export class RaceRenderer {
     }
     smoke.visible = false; group.add(smoke);
     group.userData.wheels = wheels; group.userData.paint = paint; group.userData.smoke = smoke; return group;
+  }
+
+  makeRoadsideCrew(car) {
+    const crew = new THREE.Group(); crew.visible = false; crew.name = `roadside-${car.id}`;
+    const amber = new THREE.MeshBasicMaterial({ color: 0xffc55d, toneMapped: false });
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ color: 0xf6ba43, transparent: true, opacity: .12, depthWrite: false, side: THREE.DoubleSide, toneMapped: false }));
+    floor.rotation.x = -Math.PI / 2; floor.position.y = .065; crew.add(floor);
+    const border = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(-.5, 0, -.5), new THREE.Vector3(.5, 0, -.5), new THREE.Vector3(.5, 0, .5), new THREE.Vector3(-.5, 0, .5),
+    ]), new THREE.LineBasicMaterial({ color: 0xffd66f, toneMapped: false }));
+    border.position.y = .085; crew.add(border);
+    const coneGeometry = new THREE.ConeGeometry(.15, .45, 8), cones = [];
+    for (let i = 0; i < 4; i++) { const cone = new THREE.Mesh(coneGeometry, amber); crew.add(cone); cones.push(cone); }
+    const uniform = mat(0x294f68), vest = mat(0xf5bd42), boots = mat(0x17222c), skin = mat(0xc7956e), tool = mat(0xb5c2c4, { metalness: .5 });
+    const mechanics = [];
+    for (const [index, z] of [car.spec.length * .32, -car.spec.length * .32].entries()) {
+      const mechanic = new THREE.Group(); mechanic.position.set(car.spec.width / 2 + .6, 0, z); mechanic.rotation.y = -Math.PI / 2;
+      for (const x of [-.11, .11]) { mechanic.add(box(.15, .43, .17, uniform, x, .3, 0)); mechanic.add(box(.18, .12, .27, boots, x, .07, .04)); }
+      mechanic.add(box(.43, .47, .28, uniform, 0, .75, 0));
+      mechanic.add(box(.45, .32, .30, vest, 0, .8, 0));
+      mechanic.add(box(.28, .28, .26, skin, 0, 1.12, .025));
+      mechanic.add(box(.34, .13, .32, vest, 0, 1.3, .025));
+      const arms = [];
+      for (const x of [-.26, .26]) {
+        const arm = new THREE.Group(); arm.position.set(x, .93, 0);
+        arm.add(box(.13, .4, .14, uniform, 0, -.17, 0)); arm.add(box(.14, .13, .14, skin, 0, -.4, 0));
+        arm.add(box(.06, .22, .06, tool, 0, -.43, .08)); mechanic.add(arm); arms.push(arm);
+      }
+      mechanic.userData.arms = arms; mechanic.userData.phase = index * Math.PI;
+      crew.add(mechanic); mechanics.push(mechanic);
+    }
+    const jack = new THREE.Group(); jack.position.set(car.spec.width / 2 + .16, 0, car.spec.length * .31);
+    jack.add(box(.45, .08, .5, boots, 0, .05, 0));
+    const jackRam = box(.18, .45, .25, tool, 0, .3, 0); jack.add(jackRam);
+    const handle = box(.06, .65, .06, tool, .17, .4, -.1); handle.rotation.z = -.4; jack.add(handle); crew.add(jack);
+    crew.add(box(.42, .28, .55, mat(0xba5d3e), car.spec.width / 2 + .6, .16, 0));
+    crew.userData = { floor, border, cones, mechanics, jackRam, handle, area: null, elapsed: 0 };
+    return crew;
+  }
+
+  updateRoadsideCrew(car, mesh) {
+    const crew = mesh.userData.roadside, mobile = car.mobileRepair;
+    if (!crew) return;
+    const active = mobile?.state === 'active' && mobile.area && !car.wrecked;
+    crew.visible = Boolean(active);
+    const phase = active ? Math.max(0, mobile.duration - mobile.remaining) : 0;
+    if (mesh.userData.hood) mesh.userData.hood.rotation.x = active ? -1.08 * Math.min(1, phase / .6) : 0;
+    if (!active) { crew.userData.area = null; return; }
+    const area = mobile.area, point = sampleTrack(this.track, area.s, area.lateral);
+    crew.position.set(point.x, point.y + .03, point.z);
+    crew.rotation.set(0, point.heading + (area.headingOffset || 0), 0);
+    crew.userData.area = area; crew.userData.elapsed = phase;
+    crew.userData.floor.scale.set(area.width, area.length, 1);
+    crew.userData.border.scale.set(area.width, 1, area.length);
+    crew.userData.cones.forEach((cone, index) => cone.position.set((index % 2 ? 1 : -1) * (area.width / 2 - .18), .225, (index < 2 ? -1 : 1) * (area.length / 2 - .18)));
+    for (const mechanic of crew.userData.mechanics) {
+      mechanic.position.y = .015 * Math.sin(phase * 3 + mechanic.userData.phase);
+      mechanic.userData.arms.forEach((arm, index) => { arm.rotation.x = -.7 + Math.sin(phase * 5 + mechanic.userData.phase + index) * .22; });
+    }
+    crew.userData.jackRam.scale.y = .75 + Math.min(1, phase / 1.5) * .25;
+    crew.userData.handle.rotation.z = -.4 + Math.sin(phase * 5) * .16;
   }
 
   render(sim, dt, menu = false, spectating = false) {
@@ -360,6 +433,7 @@ export class RaceRenderer {
         // The flattened tire stays grounded; only the circular rim spins.
         wheel.userData.rim.rotation.x = wheel.userData.spin;
       }
+      this.updateRoadsideCrew(car, mesh);
     }
     const focusCar = spectating ? sim.getStandings().find(car => !car.wrecked && !car.finished) || sim.getStandings().find(car => !car.wrecked) || sim.player : sim.player;
     this.spectatorCar = spectating ? focusCar : null;
