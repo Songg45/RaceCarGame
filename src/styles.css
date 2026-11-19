@@ -71,7 +71,7 @@
 .roadside-panel.disabled .roadside-heading strong{color:#f0a28c}
 .roadside-progress{height:4px;background:#8d8b673b;margin-top:7px;overflow:hidden;border-radius:2px}
 .roadside-progress i{display:block;height:100%;width:0;background:#e6d884}
-.roadside-panel.compact{padding:6px}.roadside-panel.compact>small{display:none}.roadside-panel.compact p{max-height:28px;margin-bottom:0}
+.roadside-panel.compact{padding:6px}.roadside-panel.compact p{max-height:28px;margin:5px 0}
 .has-mobile-repair .telemetry{width:250px}.has-mobile-repair .speed-row>strong{font-size:58px}.has-mobile-repair .speed-row b{font-size:23px}
 .has-mobile-repair .speed-rule{margin:5px 0 8px}.has-mobile-repair .wheel-condition{margin:6px 0}.has-mobile-repair .handling-details{margin-top:4px}
 .watching #roadside{display:none!important}

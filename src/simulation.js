@@ -410,7 +410,6 @@ export class RaceSimulation {
     if (car.pitState === 'servicing') { mobile.reason = 'Finish the current pit service first.'; return; }
     if (!this.needsRepair(car)) { mobile.reason = 'No repairs needed.'; return; }
     if (car.speed > MOBILE_REPAIR_RULES.stopSpeed || Math.abs(car.lateralVelocity) > MOBILE_REPAIR_RULES.lateralStopSpeed) { mobile.reason = 'Stop completely before deploying the repair area.'; return; }
-    if (!this.mobileRepairAreaClear(car)) { mobile.reason = 'Pull clear of the racing lane, pit through lane, bays and traffic.'; return; }
     mobile.reason = 'Ready. Deploy for 15 seconds; contact causes severe damage and disables the ability.';
     mobile.available = true;
   }
@@ -528,14 +527,16 @@ export class RaceSimulation {
       }
     }
     this.updateMobileRepairInfo(car);
-    if (this.mobileRepairAreaClear(car)) targetSpeed = 0;
+    // Location is an AI stopping policy, not a restriction on player requests.
+    const areaClear = this.mobileRepairAreaClear(car);
+    if (areaClear) targetSpeed = 0;
     const steering = this.steeringDynamics(car);
     const correction = steering.disturbance / Math.max(0.05, steering.authority);
     return {
       throttle: clamp((targetSpeed - car.speed) * 0.7, 0, 1),
       brake: clamp((car.speed - targetSpeed) * 0.7, 0, 1),
       steer: clamp((car.targetLateral - car.lateral) * 0.7 - car.lateralVelocity * 0.25 - correction, -1, 1),
-      mobileRepair: mobile.available,
+      mobileRepair: mobile.available && areaClear,
     };
   }
 

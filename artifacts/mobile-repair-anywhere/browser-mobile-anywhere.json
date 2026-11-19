@@ -1,0 +1,591 @@
+{
+  "passed": true,
+  "baseURL": "http://127.0.0.1:4174/",
+  "sourceSha256": "1aa43066ac9dead27f2c212023124cc28da0820a6086ce7c39358034bd031819",
+  "buildSha256": "f22965be0f0d41e4ef0b52c33da67b763304e0db53d7f125d455ab79a8b6a35b",
+  "checks": [
+    {
+      "check": "Real M starts and completes normal fifteen-second mobile repair while stopped on the racing lane",
+      "initial": {
+        "available": true,
+        "racingLane": true,
+        "safeForAI": false
+      },
+      "roadStarted": {
+        "elapsed": 0.4416666666666672,
+        "state": "racing",
+        "inPit": false,
+        "pose": [
+          865.91190912,
+          0,
+          0
+        ],
+        "damage": 0.24,
+        "engineWear": 0.12,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0.2,
+            "suspensionStatus": "worn",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0.1,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 14.641666666666687,
+          "duration": 15,
+          "area": {
+            "s": 865.91190912,
+            "lateral": 0,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 1,
+          "completed": 0,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "none",
+        "pitVisits": 0
+      },
+      "roadCompleted": {
+        "elapsed": 15.09166666666645,
+        "state": "racing",
+        "inPit": false,
+        "pose": [
+          865.91190912,
+          0,
+          0
+        ],
+        "damage": 0,
+        "engineWear": 0,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "complete",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Charge spent. Complete a pit stop to recharge.",
+          "attempts": 1,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair completed. All four tires replaced. Perfect repair: body, engine, wheels and suspension fully restored."
+        },
+        "pitState": "none",
+        "pitVisits": 0
+      }
+    },
+    {
+      "check": "Actual E and normal completed five-second pit service recharge the spent charge",
+      "recharged": {
+        "elapsed": 20.091666666666168,
+        "state": "racing",
+        "inPit": true,
+        "pose": [
+          -8,
+          -30.5,
+          0
+        ],
+        "damage": 0,
+        "engineWear": 0,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 1,
+          "disabled": false,
+          "disabledReason": "",
+          "used": false,
+          "state": "ready",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "No repairs needed.",
+          "attempts": 1,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": true,
+          "message": "Mobile repair charge restored by completed pit service."
+        },
+        "pitState": "complete",
+        "pitVisits": 1
+      }
+    },
+    {
+      "check": "Visible reachable mobile button works in the pit through lane; M/E controls and warning fit desktop and mobile",
+      "desktop": {
+        "width": 1366,
+        "height": 768,
+        "scrollWidth": 1366,
+        "mobile": {
+          "left": 53,
+          "right": 253,
+          "top": 536.53125,
+          "bottom": 572.53125,
+          "width": 200,
+          "height": 36,
+          "visible": true,
+          "disabled": false,
+          "text": "CALL ROADSIDE CREW M"
+        },
+        "pit": {
+          "left": 46,
+          "right": 260,
+          "top": 648.8125,
+          "bottom": 676,
+          "width": 214,
+          "height": 27.1875,
+          "visible": true,
+          "disabled": true,
+          "text": "STOP INSIDE YOUR ASSIGNED BAY"
+        },
+        "warning": {
+          "left": 53,
+          "right": 253,
+          "top": 578.53125,
+          "bottom": 598.8125,
+          "width": 200,
+          "height": 20.28125,
+          "visible": true,
+          "disabled": null,
+          "text": "Contact during repair causes severe damage and loses the crew for this race."
+        },
+        "pedals": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false,
+          "disabled": null,
+          "text": "◀▶BRAKEGAS"
+        }
+      },
+      "mobile": {
+        "width": 390,
+        "height": 844,
+        "scrollWidth": 390,
+        "mobile": {
+          "left": 34,
+          "right": 156,
+          "top": 574.734375,
+          "bottom": 618.734375,
+          "width": 122,
+          "height": 44,
+          "visible": true,
+          "disabled": false,
+          "text": "CALL ROADSIDE CREW M"
+        },
+        "pit": {
+          "left": 27,
+          "right": 163,
+          "top": 694.609375,
+          "bottom": 719,
+          "width": 136,
+          "height": 24.390625,
+          "visible": true,
+          "disabled": true,
+          "text": "STOP INSIDE YOUR ASSIGNED BAY"
+        },
+        "warning": {
+          "left": 34,
+          "right": 156,
+          "top": 623.734375,
+          "bottom": 641.109375,
+          "width": 122,
+          "height": 17.375,
+          "visible": true,
+          "disabled": null,
+          "text": "Contact during repair causes severe damage and loses the crew for this race."
+        },
+        "pedals": {
+          "left": 14,
+          "right": 376,
+          "top": 761,
+          "bottom": 826,
+          "width": 362,
+          "height": 65,
+          "visible": true,
+          "disabled": null,
+          "text": "◀▶BRAKEGAS"
+        }
+      },
+      "pitStarted": {
+        "elapsed": 20.549999999999475,
+        "state": "racing",
+        "inPit": true,
+        "pose": [
+          0,
+          -20.5,
+          0
+        ],
+        "damage": 0.2,
+        "engineWear": 0.1,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "blown",
+            "pressure": 0,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "active",
+          "available": false,
+          "remaining": 15,
+          "duration": 15,
+          "area": {
+            "s": 0,
+            "lateral": -20.5,
+            "headingOffset": 0,
+            "length": 7.8,
+            "width": 4.58,
+            "carId": "civilian-5"
+          },
+          "reason": "",
+          "attempts": 2,
+          "completed": 1,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair active. Remain stopped and protect the crew area."
+        },
+        "pitState": "complete",
+        "pitVisits": 1
+      },
+      "pitCompleted": {
+        "elapsed": 35.55833333333196,
+        "state": "racing",
+        "inPit": true,
+        "pose": [
+          0,
+          -20.5,
+          0
+        ],
+        "damage": 0,
+        "engineWear": 0,
+        "wheels": [
+          {
+            "id": "FL",
+            "label": "Front left",
+            "side": -1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "FR",
+            "label": "Front right",
+            "side": 1,
+            "axle": 1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RL",
+            "label": "Rear left",
+            "side": -1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          },
+          {
+            "id": "RR",
+            "label": "Rear right",
+            "side": 1,
+            "axle": -1,
+            "suspensionDamage": 0,
+            "suspensionStatus": "healthy",
+            "tire": "intact",
+            "pressure": 1,
+            "leakRate": 0,
+            "bend": 0,
+            "assembly": "intact",
+            "lastImpactTime": null
+          }
+        ],
+        "mobile": {
+          "supported": true,
+          "charges": 0,
+          "disabled": false,
+          "disabledReason": "",
+          "used": true,
+          "state": "complete",
+          "available": false,
+          "remaining": 0,
+          "duration": 15,
+          "area": null,
+          "reason": "Charge spent. Complete a pit stop to recharge.",
+          "attempts": 2,
+          "completed": 2,
+          "penaltyApplied": false,
+          "aiTarget": null,
+          "chargeAvailable": false,
+          "message": "Mobile repair completed. All four tires replaced. Perfect repair: body, engine, wheels and suspension fully restored."
+        },
+        "pitState": "complete",
+        "pitVisits": 1
+      }
+    }
+  ],
+  "errors": [],
+  "boundary": "Declared initial positions/damage and isolated traffic; real keyboard M/E and mobile button with normal15s/5s service, no elapsed-time or charge injection. This is UI acceptance, not a naturally driven pit approach."
+}

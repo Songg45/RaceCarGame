@@ -17,7 +17,7 @@ const keys = new Set(), touch = { throttle: 0, brake: 0, steer: 0, service: fals
 const streetPresentation = {
   sedan: { speed: 3, protection: 2, perk: 'Balanced handling · Strong brakes', outline: 'M8 31L23 26L33 15H62L76 28L91 32V43H8Z', cabin: 'M31 26L38 19H60L69 26Z', help: 'A balanced everyday car with dependable steering and braking.' },
   sports: { speed: 4, protection: 1, perk: 'Maximum pace · Most vulnerable', outline: 'M6 34L29 28L43 20H63L78 30L93 34V43H6Z', cabin: 'M38 28L47 23H61L69 28Z', help: 'The fastest Street role, including sports and muscle cars. Potholes punish it hardest.' },
-  suv: { speed: 2, protection: 3, perk: 'Roadside crew · 15-second repair', outline: 'M8 25L20 11H68L81 27L91 30V43H8Z', cabin: 'M21 24L27 15H65L73 24Z', help: 'Stop clear of traffic for a 15-second roadside repair. Pit stops recharge it; contact during repair causes severe damage and loses the crew for the race.' },
+  suv: { speed: 2, protection: 3, perk: 'Roadside crew · 15-second repair', outline: 'M8 25L20 11H68L81 27L91 30V43H8Z', cabin: 'M21 24L27 15H65L73 24Z', help: 'Stop completely anywhere for a 15-second mobile repair. Pit stops recharge it; contact during repair causes severe damage and loses the crew for the race.' },
   truck: { speed: 1, protection: 4, perk: 'Pothole immunity below 15 MPH', outline: 'M8 18H37L48 29H92V43H8Z', cabin: 'M15 22H34L40 29H15Z', help: 'The slowest, toughest Street role. Potholes cause no new damage or slowdown below 15 MPH; collisions and engine wear still matter.' },
 };
 const rating = value => Array.from({ length: 4 }, (_, index) => `<i class="${index < value ? 'filled' : ''}"></i>`).join('');
@@ -161,7 +161,7 @@ function requestService() {
 }
 function requestRoadsideRepair() {
   if (watch || inMenu || sim.state !== 'racing' || sim.player.wrecked || sim.player.mobileRepair?.state === 'active') return;
-  if (!sim.requestMobileRepair()) showMessage(sim.player.mobileRepair?.reason || 'Stop fully clear of the racing surface and pit traffic.');
+  if (!sim.requestMobileRepair()) showMessage(sim.player.mobileRepair?.reason || 'Stop completely to call the mobile crew.');
   lastUI = 0; wakeFrame();
 }
 function changeCamera() { const mode = view.cycleCamera(); $('#camera-label').textContent = mode === 'pit' ? 'PIT OVERVIEW' : `${mode.toUpperCase()} CAM`; wakeFrame(); }
@@ -381,7 +381,7 @@ function updateRoleUI(car) {
   $('#roadside-progress').classList.toggle('hidden', !active);
   $('#roadside-progress i').style.width = `${active ? Math.max(0, Math.min(100, (1 - mobile.remaining / mobile.duration) * 100)) : 0}%`;
   $('#roadside').disabled = Boolean(watch || car.wrecked || sim.state !== 'racing' || !mobile.available || active || disabled);
-  $('#roadside').classList.toggle('hidden', compact || Boolean(watch));
+  $('#roadside').classList.toggle('hidden', Boolean(watch));
   $('#roadside').innerHTML = disabled ? 'UNAVAILABLE THIS RACE' : active ? 'CREW AT WORK' : spent ? 'RECHARGE AT PIT' : 'CALL ROADSIDE CREW <kbd>M</kbd>';
   if (disabled) {
     $('#roadside-status').textContent = mobile.disabledReason || mobile.reason || 'Contact during repair lost your crew for this race.';
@@ -393,8 +393,8 @@ function updateRoleUI(car) {
     $('#roadside-status').textContent = mobile.state === 'complete' ? mobile.message || car.repairMessage || 'Roadside repair complete.' : mobile.message || mobile.reason || 'Roadside charge spent.';
     $('#roadside-warning').textContent = 'Complete a pit stop to restore one charge.';
   } else {
-    $('#roadside-status').textContent = mobile.available ? '15-second repair. Four fresh tires on completion.' : mobile.reason || 'Stop fully clear of the track and pit traffic.';
-    $('#roadside-warning').textContent = 'Contact during repair causes severe damage and loses the crew.';
+    $('#roadside-status').textContent = mobile.available ? '15-second repair at any stop. Four fresh tires on completion.' : mobile.reason || 'Stop completely to call the mobile crew.';
+    $('#roadside-warning').textContent = 'Contact during repair causes severe damage and loses the crew for this race.';
   }
 }
 

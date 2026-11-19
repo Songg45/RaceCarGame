@@ -41,24 +41,73 @@ function restoreLiveOther(sim, position) {
   return other;
 }
 
-test('only a stopped repairable SUV with a clear off-line work area can deploy without wasting invalid attempts', () => {
+test('manual mobile deployment retains role, motion, charge, terminal, pause and active-pit guards without consuming invalid attempts', () => {
   for (const role of ['sports', 'sedan', 'truck']) {
     const sim = fixture({ role });
     assert.equal(sim.requestMobileRepair(), false);
     assert.equal(sim.player.mobileRepair.supported, false);
   }
-  for (const invalid of ['road', 'pit-through', 'speed', 'lateral-speed', 'paused', 'wreck', 'crew-blocked']) {
+  const stock = new RaceSimulation({ playerClass: 'stock' }); advance(stock, 3.02); stock.player.damage = 0.2;
+  assert.equal(stock.requestMobileRepair(), false);
+  for (const invalid of ['speed', 'lateral-speed', 'paused', 'wreck', 'finished', 'spent', 'disabled', 'pit-servicing']) {
     const sim = fixture(), car = sim.player;
-    if (invalid === 'road') car.lateral = 0;
-    if (invalid === 'pit-through') Object.assign(car, { s: 0, lateral: sim.pit.throughLateral });
     if (invalid === 'speed') car.speed = 0.2;
     if (invalid === 'lateral-speed') car.lateralVelocity = 0.2;
     if (invalid === 'paused') sim.togglePause();
     if (invalid === 'wreck') sim.wreckCar(car, 'Controlled terminal condition');
-    if (invalid === 'crew-blocked') restoreLiveOther(sim, { s: car.s, lateral: car.lateral + 2.5 });
+    if (invalid === 'finished') car.finished = true;
+    if (invalid === 'spent') car.mobileRepair.charges = 0;
+    if (invalid === 'disabled') { car.mobileRepair.disabled = true; car.mobileRepair.charges = 0; }
+    if (invalid === 'pit-servicing') { pitPosition(sim); assert.equal(sim.requestPitService(), true); }
+    const initialCharges = car.mobileRepair.charges;
     assert.equal(sim.requestMobileRepair(), false, invalid);
-    assert.equal(car.mobileRepair.charges, 1, `${invalid}: invalid deployment must not consume charge`);
+    assert.equal(car.mobileRepair.charges, initialCharges, `${invalid}: invalid deployment must not consume charge`);
     assert.equal(car.mobileRepair.attempts, 0);
+  }
+});
+
+for (const location of ['racing-lane', 'pit-through-lane', 'own-bay', 'other-bay', 'grass']) test(`manual mobile repair completes its full fifteen seconds while stopped in ${location}`, () => {
+  const sim = fixture(), car = sim.player;
+  if (location === 'racing-lane') car.lateral = 0;
+  if (location === 'pit-through-lane') Object.assign(car, { s: 0, lateral: sim.pit.throughLateral });
+  if (location === 'own-bay' || location === 'other-bay') {
+    const bay = sim.getPitBay(location === 'own-bay' ? car : sim.cars.find(other => other !== car));
+    Object.assign(car, { s: bay.s, lateral: bay.lateral });
+  }
+  sim.updateWorld(car); sim.updatePitInfo(car);
+  const pose = [car.s, car.lateral, car.headingOffset], damage = car.damage, wear = car.engine.wear;
+  assert.equal(sim.requestMobileRepair(), true, `${location} must not impose a manual location gate`);
+  advance(sim, 14.9);
+  assert.equal(car.mobileRepair.completed, 0); assert.ok(car.mobileRepair.remaining > 0);
+  assert.equal(car.damage, damage); assert.equal(car.engine.wear, wear); assert.equal(car.wheels[0].tire, 'blown');
+  advance(sim, 0.12);
+  assert.equal(car.mobileRepair.completed, 1); assert.equal(car.mobileRepair.charges, 0); assert.equal(car.mobileRepair.disabled, false);
+  assert.equal(car.damage, 0); assert.equal(car.engine.wear, 0); freshTires(car);
+  assert.equal(car.pitVisits, 0, 'mobile work in a bay is still mobile work, not a five-second pit visit');
+  assert.deepEqual([car.s, car.lateral, car.headingOffset], pose);
+});
+
+test('nearby traffic cannot deny manual deployment, but existing crew-only overlap immediately penalizes and disables it once', () => {
+  for (const overlapping of [false, true]) {
+    const sim = fixture({ damage: 0.1 }), car = sim.player;
+    car.lateral = 0; sim.updateWorld(car);
+    const area = sim.getMobileRepairArea(car), other = sim.cars.find(driver => driver !== car);
+    restoreLiveOther(sim, { s: car.s, lateral: car.lateral + (area.width + other.spec.width) / 2 + (overlapping ? -0.02 : 0.02) });
+    car.contactCooldown = 100;
+    assert.equal(sim.mobileRepairAreaClear(car), false, 'fixture is deliberately outside the AI safe-area policy');
+    const damage = car.damage, wear = car.engine.wear;
+    assert.equal(sim.requestMobileRepair(), true, 'manual requests do not pre-reject traffic or crew-area overlap');
+    assert.equal(car.damage, damage); assert.equal(car.mobileRepair.completed, 0);
+    if (!overlapping) {
+      advance(sim, 15.02); assert.equal(car.mobileRepair.completed, 1); assert.equal(car.mobileRepair.disabled, false); freshTires(car);
+    } else {
+      sim.update(step);
+      assert.equal(car.mobileRepair.state, 'cancelled'); assert.equal(car.mobileRepair.disabled, true); assert.equal(car.mobileRepair.charges, 0);
+      assert.ok(Math.abs(car.damage - damage - 0.25) < 1e-9); assert.ok(Math.abs(car.engine.wear - wear - 0.2) < 1e-9);
+      assert.equal(car.mobileRepair.completed, 0); assert.equal(car.wheels[0].tire, 'blown');
+      const penalty = car.damage; advance(sim, 0.1); assert.equal(car.damage, penalty);
+      assert.equal(sim.events.filter(event => event.kind === 'mobile-crew-collision' && event.carId === car.id).length, 1);
+    }
   }
 });
 
@@ -173,7 +222,7 @@ test('SUV AI physically pulls clear, stops, completes roadside service, and resu
   sim.requestMobileRepair = (driver = car) => {
     const before = [driver.s, driver.lateral, driver.headingOffset];
     const result = request(driver);
-    if (result && driver === car) accepted = { before, after: [driver.s, driver.lateral, driver.headingOffset], speed: driver.speed, lateralVelocity: driver.lateralVelocity, area: { ...driver.mobileRepair.area } };
+    if (result && driver === car) accepted = { before, after: [driver.s, driver.lateral, driver.headingOffset], speed: driver.speed, lateralVelocity: driver.lateralVelocity, area: { ...driver.mobileRepair.area }, safeArea: sim.mobileRepairAreaClear(driver) };
     return result;
   };
   for (let frame = 0; frame < 120 / step && !car.wrecked; frame += 1) {
@@ -183,6 +232,7 @@ test('SUV AI physically pulls clear, stops, completes roadside service, and resu
     if (car.mobileRepair.completed > 0 && car.lateral > -sim.track.width / 2 + car.spec.width / 2 && car.speed > 5) break;
   }
   assert.ok(accepted, 'the AI must reach an actual legal roadside deployment');
+  assert.equal(accepted.safeArea, true, 'AI retains its independent safe-site policy although manual use is allowed anywhere');
   assert.deepEqual(accepted.after, accepted.before, 'deploying the crew must not teleport the car');
   assert.ok(accepted.speed <= 0.05 && Math.abs(accepted.lateralVelocity) <= 0.05);
   const halfWidth = Math.abs(Math.sin(accepted.area.headingOffset)) * accepted.area.length / 2 + Math.abs(Math.cos(accepted.area.headingOffset)) * accepted.area.width / 2;

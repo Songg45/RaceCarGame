@@ -69,18 +69,18 @@ These are arcade class values, not real vehicle specifications. Truck protection
 | C | Cycle chase, hood, overhead, and pit overview cameras |
 | P / Escape | Pause or resume the entire field |
 | E | Request pit service when stopped in your numbered service bay |
-| M | Deploy SUV / Van mobile repair when fully stopped in a clear off-line location |
+| M | Deploy SUV / Van mobile repair when fully stopped, anywhere on the circuit |
 | R | Recover a still-drivable car to a clear lane; preserves distance and damage |
 
 Touch-sized steering, throttle, and brake buttons are available on small screens. Sound and fullscreen controls are optional. Steering assistance follows the oval's direction while you control speed and lateral position; brake for the tighter Bristol-inspired corners and steer around hazards. The timing panel switches between stock, street, and overall standings.
 
 For repairs, move left toward the inside, enter the marked pit through lane, then pull into your assigned numbered bay shown in the HUD and map. **Stop with the entire car inside your bay and tap E once**, or click the service button when it says **READY**. A reasonable offset or slight angle is accepted; precise centering is unnecessary. The car must fit within the bay with a small clearance, face approximately along it (within about 10°), and be nearly stopped. Service takes five simulated seconds and never snaps the car into place. Holding E is unnecessary. AI drivers still aim for the center of their stalls. Leave the stall and merge back into the through lane before returning to the track. One repair outcome is allowed per pit visit; leave the lane before requesting another. Other cars and permanent wrecks remain physical obstacles, including in the pits. Damage from collisions and potholes can still end the race before you reach the pits. A terminal wreck is permanent for that race; choose **Watch the race**, **Race again**, or return to the garage after retiring.
 
-An **SUV / Van** can also pull into a clear location on the inside of the circuit, fully stop, and tap **M** or the mobile-repair button. The complete marked crew area must be clear of the racing surface, pit through lane, service bays, and other cars. Mobile service takes **15 simulated seconds** and holds the car where it stopped. Completion uses the same difficulty-dependent repair quality as the pits and always installs four fresh tires. Easy repairs all repairable damage; harder crews may leave or worsen body, engine, rim, and suspension damage. No service can revive a terminal wreck.
+An **SUV / Van** can fully stop and tap **M** or the mobile-repair button **anywhere**, including the racing surface, pit through lane, a service bay, or grass. Location and nearby traffic do not block a manual request, and the mobile button remains available in the pits. Mobile service takes **15 simulated seconds** and holds the car where it stopped. Completion uses the same difficulty-dependent repair quality as the pits and always installs four fresh tires. Easy repairs all repairable damage; harder crews may leave or worsen body, engine, rim, and suspension damage. The car must still need repairs, have an available charge, and be fully stopped; mobile work cannot run during active pit service or revive a terminal wreck.
 
 The SUV starts with **one mobile-repair charge**. Starting a valid attempt spends it; completing any normal five-second pit stop replenishes it, even if the SUV only needs a recharge. Entering the pits or interrupting a pit stop does not recharge it. Moving or using R during mobile service cancels the attempt without granting repairs; the spent charge can still be restored in the pits. Pausing freezes service time.
 
-**Any vehicle contact with the SUV or its deployed crew area during mobile service immediately cancels the repair, adds a severe crew-interruption damage penalty, and permanently disables mobile repair for that race.** This can wreck the SUV. No fresh tires or partial repair are granted on interruption, and later pit service cannot restore a collision-disabled ability. A new race restores it. The HUD distinguishes a ready charge, a spent charge that needs a pit stop, and permanent disablement. AI SUVs use the same physical pull-off, service, contact, and recharge rules.
+**Any vehicle contact with the SUV or its deployed crew area during mobile service immediately cancels the repair, adds a severe crew-interruption damage penalty, and permanently disables mobile repair for that race.** This includes deploying into an existing overlap: the request is accepted, then ordinary collision processing cancels it immediately. Nearby traffic without actual contact does not cancel service. This can wreck the SUV. No fresh tires or partial repair are granted on interruption, and later pit service cannot restore a collision-disabled ability. A new race restores it. The HUD distinguishes a ready charge, a spent charge that needs a pit stop, and permanent disablement. AI SUVs still choose clear off-line work areas before deploying and use the same service, contact, and recharge rules.
 
 ## Watch the autonomous series
 
@@ -98,6 +98,8 @@ The series uses seed `20261112` for reproducibility. The four-street-class revis
 
 ## Verification
 
+The November 18 manual-mobile-repair update passed **49 focused engine tests and 3 isolated browser checks**, with zero browser errors. Tests cover normal 15-second service on the racing lane, pit through lane, both assigned and other bays, and grass; nearby traffic and immediate overlap penalties; preserved nonlocation guards; completed-pit recharge; and AI safe-site behavior. In the browser, an actual M tap completed service on the road, an E tap restored the charge through normal pit service, and the mobile button completed service in the pit through lane. Both repair controls and the warning fit desktop and portrait layouts. These browser cases use declared starting positions/damage and ordinary timing. See [the current mobile-anywhere QA report](artifacts/mobile-repair-anywhere/QA-REPORT.md) and [browser evidence](artifacts/mobile-repair-anywhere/browser-mobile-anywhere.json). Prior full-race results below remain historical; no new endurance claim is made for this narrow change.
+
 The follow-camera correction passed its matched browser comparison and transition checks with **zero reported browser errors**. On the same recorded clear-road movement, the largest vertical screen-position jump fell from **4.15 pixels to less than 0.000001 pixel**; fresh real-keyboard clear-road and Extreme-grid checks also kept the tracked car stable. Camera modes, pause, turns, recovery, collisions, focus changes, and new races passed. A deliberate collision still moved the car backwards in the simulation and its displayed position matched, preserving physical contact response. The engine and catalog are unchanged from the verified street-class revision below. This fixes camera-relative surging; it does not claim to eliminate GPU/frame-rate stalls. The exact accepted build was promoted to stable play on November 13, 2026, with HTTP and current/prior asset hashes verified; existing user tabs were left untouched. See the [camera QA report](artifacts/driving-rubberband/QA-REPORT.md) and [measured comparison](artifacts/driving-rubberband/comparison.json).
 
 ```sh
@@ -105,6 +107,7 @@ npm test
 node tests/straight-pits.mjs --output=artifacts/manual-pits-avoidance
 node tests/browser-manual-pits.mjs
 node tests/browser-guaranteed-tires.mjs
+node tests/browser-mobile-anywhere.mjs
 node tests/browser-street-classes.mjs
 node tests/extreme-opening.mjs
 node tests/compare-extreme-opening.mjs
